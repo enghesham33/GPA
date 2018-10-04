@@ -131,7 +131,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.setStyle(style: .solid, tintColor: UIColor.white, forgroundColor: .black)
         
         if let loggedIn = Defaults[.isLoggedIn], loggedIn {
-            
+            if let userDic = Defaults[.user] {
+                let user = User.getInstance(dictionary: userDic)
+                if !user.takeTutorial {
+                    self.window?.rootViewController = navigationController
+                    navigationController.pushViewController(TutorialPagerVC.buildVC(), animated: false)
+                } else {
+                    // go to main view controller that will contain the bottom tabs
+                }
+                
+            } else {
+                self.window?.rootViewController = navigationController
+                navigationController.pushViewController(LoginVC.buildVC(), animated: false)
+            }
         } else {
             self.window?.rootViewController = navigationController
             navigationController.pushViewController(LoginVC.buildVC(), animated: false)

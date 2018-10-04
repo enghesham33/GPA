@@ -21,3 +21,4 @@
 "emailSent" = "We sent a link to your email";
 "checkEmail" = "Please check your email to change your password";
 "changePassword" = "Change Password";
+"startSuccess" = "Start Success";

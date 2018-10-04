@@ -13,6 +13,9 @@
 		E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */; };
 		E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */; };
 		E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */; };
+		E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3E3442166738200CDCBF0 /* TutorialPagerVC.swift */; };
+		E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3E3462166753D00CDCBF0 /* TutorialPageVC.swift */; };
+		E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3E3482166758A00CDCBF0 /* TutorialPageLayout.swift */; };
 		E8E841872160E409009E5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841862160E409009E5080 /* AppDelegate.swift */; };
 		E8E841892160E409009E5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841882160E409009E5080 /* ViewController.swift */; };
 		E8E8418C2160E409009E5080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E8418A2160E409009E5080 /* Main.storyboard */; };
@@ -66,6 +69,9 @@
 		E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPresenter.swift; sourceTree = "<group>"; };
 		E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRepository.swift; sourceTree = "<group>"; };
 		E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDoneLayout.swift; sourceTree = "<group>"; };
+		E8E3E3442166738200CDCBF0 /* TutorialPagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPagerVC.swift; sourceTree = "<group>"; };
+		E8E3E3462166753D00CDCBF0 /* TutorialPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageVC.swift; sourceTree = "<group>"; };
+		E8E3E3482166758A00CDCBF0 /* TutorialPageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageLayout.swift; sourceTree = "<group>"; };
 		E8E841832160E409009E5080 /* Mosare3at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosare3at.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E841862160E409009E5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8E841882160E409009E5080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +156,9 @@
 		E8E3E34321666EF600CDCBF0 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				E8E3E3442166738200CDCBF0 /* TutorialPagerVC.swift */,
+				E8E3E3462166753D00CDCBF0 /* TutorialPageVC.swift */,
+				E8E3E3482166758A00CDCBF0 /* TutorialPageLayout.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -471,11 +480,14 @@
 				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
 				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
 				E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */,
+				E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */,
 				E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */,
+				E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */,
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */,
 				E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */,
+				E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */,
 				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
 				E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,

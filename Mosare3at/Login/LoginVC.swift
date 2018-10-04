@@ -51,7 +51,7 @@ extension LoginVC: LoginDelegate {
     }
     
     func goToTutorial() {
-        
+        navigator.navigateToTutorial()
     }
     
     func goToProgramScreen() {
@@ -71,6 +71,11 @@ extension LoginVC : LoginView {
         Defaults[.token] = user.token
         Defaults[.isLoggedIn] = true
         self.view.makeToast("تم الدخول بنجاح")
+        if user.takeTutorial {
+            
+        } else {
+            self.goToTutorial()
+        }
     }
     
     func loginFailed(errorMessage: String) {

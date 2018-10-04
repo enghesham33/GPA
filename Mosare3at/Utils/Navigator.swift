@@ -27,4 +27,9 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
+    public func navigateToTutorial() {
+        let vc = TutorialPagerVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
 }
