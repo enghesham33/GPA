@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Mosare3at
+
+  Created by Hesham Donia on 10/2/18.
+  Copyright © 2018 Hesham Donia. All rights reserved.
+*/
+"email" = "Email";
+"password" = "Password";
+"forgetPassword" = "Forget password?";
+"loginAsGuest" = "Login as guest";
+"login" = "Login";
+"enterEmail" = "Enter email";
+"enterPassword" = "Enter password";
+"somethingWentWrong" = "Something went wrong. Please try again.";
+"noInternetConnection" = "No internet connection. Please check your network connection and try again.";
+"emptyFieldsError" = "Please fill empty fields.";
+"validEmail" = "Please enter a valid email";
+"sendPassword" = "Send Password";
+"resendPassword" = "Resend Password";
+"emailSent" = "We sent a link to your email";
+"checkEmail" = "Please check your email to change your password";
+"changePassword" = "Change Password";

@@ -1,0 +1,774 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BB4269DE14B2DE73A7C6DD7 /* Pods_Mosare3at.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BDD68F1940C095EC3E5E0B /* Pods_Mosare3at.framework */; };
+		35324D8EE88E6580193639B3 /* Pods_Mosare3atUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3080792DFD337125B8A439B /* Pods_Mosare3atUITests.framework */; };
+		E812F6B6216520AA00A02952 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B5216520AA00A02952 /* TopView.swift */; };
+		E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */; };
+		E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */; };
+		E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */; };
+		E8E841872160E409009E5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841862160E409009E5080 /* AppDelegate.swift */; };
+		E8E841892160E409009E5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841882160E409009E5080 /* ViewController.swift */; };
+		E8E8418C2160E409009E5080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E8418A2160E409009E5080 /* Main.storyboard */; };
+		E8E8418E2160E40B009E5080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E8418D2160E40B009E5080 /* Assets.xcassets */; };
+		E8E841912160E40B009E5080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E8418F2160E40B009E5080 /* LaunchScreen.storyboard */; };
+		E8E8419C2160E40B009E5080 /* Mosare3atUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8419B2160E40B009E5080 /* Mosare3atUITests.swift */; };
+		E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841A62160E8DC009E5080 /* Navigator.swift */; };
+		E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841A82160E90B009E5080 /* BaseVC.swift */; };
+		E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841AB2160E976009E5080 /* NavigationBarUtils.swift */; };
+		E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841AC2160E976009E5080 /* ViewControllersExtension.swift */; };
+		E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841AD2160E976009E5080 /* UIDevice+extensions.swift */; };
+		E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841B12160E9C4009E5080 /* BaseScrollableLayout.swift */; };
+		E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841B32160E9F9009E5080 /* BaseLayout.swift */; };
+		E8E841B62160F070009E5080 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841B52160F070009E5080 /* Colors.swift */; };
+		E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841BA2160F58F009E5080 /* FontUtils.swift */; };
+		E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841BD216102C1009E5080 /* LoginVC.swift */; };
+		E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841BF216102D8009E5080 /* LoginLayout.swift */; };
+		E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E841C12161031B009E5080 /* UiHelpers.swift */; };
+		E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB00152163511700CD23ED /* DefaultsKeys.swift */; };
+		E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB00172163540500CD23ED /* CommonConstants.swift */; };
+		E8EB00212163582300CD23ED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8EB00232163582300CD23ED /* Localizable.strings */; };
+		E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB0025216360EC00CD23ED /* LoginPresenter.swift */; };
+		E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB0027216360F700CD23ED /* LoginRepository.swift */; };
+		E8EB002A2163641700CD23ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB00292163641700CD23ED /* User.swift */; };
+		E8EB002C216374C400CD23ED /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB002B216374C400CD23ED /* Injector.swift */; };
+		E8EB002E21638E5D00CD23ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8EB002D21638E5D00CD23ED /* GoogleService-Info.plist */; };
+		E8EB00372163A51600CD23ED /* TheSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8EB00352163A4D200CD23ED /* TheSans-Bold.otf */; };
+		E8EB00382163A51900CD23ED /* TheSans-Plain.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8EB00362163A4D200CD23ED /* TheSans-Plain.otf */; };
+		E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB003A2163A76600CD23ED /* ForgetPasswordLayout.swift */; };
+		E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB003C2163ADCE00CD23ED /* ForgetPasswordVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8E841982160E40B009E5080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8E8417B2160E409009E5080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8E841822160E409009E5080;
+			remoteInfo = Mosare3at;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		34BDD68F1940C095EC3E5E0B /* Pods_Mosare3at.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mosare3at.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C5C1C3DE6FC87667D0F6AD /* Pods-Mosare3at.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosare3at.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mosare3at/Pods-Mosare3at.debug.xcconfig"; sourceTree = "<group>"; };
+		6915E81428A08E0A4A119023 /* Pods-Mosare3atUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosare3atUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mosare3atUITests/Pods-Mosare3atUITests.release.xcconfig"; sourceTree = "<group>"; };
+		75A75B1B663BE8204DA48F89 /* Pods-Mosare3at.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosare3at.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mosare3at/Pods-Mosare3at.release.xcconfig"; sourceTree = "<group>"; };
+		941078E8AE0278871A36E9D2 /* Pods-Mosare3atUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosare3atUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mosare3atUITests/Pods-Mosare3atUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3080792DFD337125B8A439B /* Pods_Mosare3atUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mosare3atUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E812F6B5216520AA00A02952 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPresenter.swift; sourceTree = "<group>"; };
+		E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRepository.swift; sourceTree = "<group>"; };
+		E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDoneLayout.swift; sourceTree = "<group>"; };
+		E8E841832160E409009E5080 /* Mosare3at.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosare3at.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E841862160E409009E5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8E841882160E409009E5080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8E8418B2160E409009E5080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8E8418D2160E40B009E5080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8E841902160E40B009E5080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8E841922160E40B009E5080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8E841972160E40B009E5080 /* Mosare3atUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mosare3atUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E8419B2160E40B009E5080 /* Mosare3atUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mosare3atUITests.swift; sourceTree = "<group>"; };
+		E8E8419D2160E40B009E5080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8E841A62160E8DC009E5080 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		E8E841A82160E90B009E5080 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		E8E841AB2160E976009E5080 /* NavigationBarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarUtils.swift; sourceTree = "<group>"; };
+		E8E841AC2160E976009E5080 /* ViewControllersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersExtension.swift; sourceTree = "<group>"; };
+		E8E841AD2160E976009E5080 /* UIDevice+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+extensions.swift"; sourceTree = "<group>"; };
+		E8E841B12160E9C4009E5080 /* BaseScrollableLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollableLayout.swift; sourceTree = "<group>"; };
+		E8E841B32160E9F9009E5080 /* BaseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayout.swift; sourceTree = "<group>"; };
+		E8E841B52160F070009E5080 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E8E841BA2160F58F009E5080 /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
+		E8E841BD216102C1009E5080 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E8E841BF216102D8009E5080 /* LoginLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLayout.swift; sourceTree = "<group>"; };
+		E8E841C12161031B009E5080 /* UiHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiHelpers.swift; sourceTree = "<group>"; };
+		E8EB00152163511700CD23ED /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		E8EB00172163540500CD23ED /* CommonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
+		E8EB00192163577400CD23ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		E8EB001A2163577400CD23ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E8EB001B2163578300CD23ED /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		E8EB001C2163578300CD23ED /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E8EB00222163582300CD23ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E8EB00242163582800CD23ED /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E8EB0025216360EC00CD23ED /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		E8EB0027216360F700CD23ED /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		E8EB00292163641700CD23ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E8EB002B216374C400CD23ED /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		E8EB002D21638E5D00CD23ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8EB00352163A4D200CD23ED /* TheSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TheSans-Bold.otf"; sourceTree = "<group>"; };
+		E8EB00362163A4D200CD23ED /* TheSans-Plain.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TheSans-Plain.otf"; sourceTree = "<group>"; };
+		E8EB003A2163A76600CD23ED /* ForgetPasswordLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordLayout.swift; sourceTree = "<group>"; };
+		E8EB003C2163ADCE00CD23ED /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8E841802160E409009E5080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BB4269DE14B2DE73A7C6DD7 /* Pods_Mosare3at.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E841942160E40B009E5080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35324D8EE88E6580193639B3 /* Pods_Mosare3atUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FC3D6C64887E6EB29F296B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34C5C1C3DE6FC87667D0F6AD /* Pods-Mosare3at.debug.xcconfig */,
+				75A75B1B663BE8204DA48F89 /* Pods-Mosare3at.release.xcconfig */,
+				941078E8AE0278871A36E9D2 /* Pods-Mosare3atUITests.debug.xcconfig */,
+				6915E81428A08E0A4A119023 /* Pods-Mosare3atUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		987310A793EF5D2AC3638AD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34BDD68F1940C095EC3E5E0B /* Pods_Mosare3at.framework */,
+				D3080792DFD337125B8A439B /* Pods_Mosare3atUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8E3E34321666EF600CDCBF0 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		E8E8417A2160E409009E5080 = {
+			isa = PBXGroup;
+			children = (
+				E8E841852160E409009E5080 /* Mosare3at */,
+				E8E8419A2160E40B009E5080 /* Mosare3atUITests */,
+				E8E841842160E409009E5080 /* Products */,
+				6FC3D6C64887E6EB29F296B1 /* Pods */,
+				987310A793EF5D2AC3638AD1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E8E841842160E409009E5080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8E841832160E409009E5080 /* Mosare3at.app */,
+				E8E841972160E40B009E5080 /* Mosare3atUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8E841852160E409009E5080 /* Mosare3at */ = {
+			isa = PBXGroup;
+			children = (
+				E8E841862160E409009E5080 /* AppDelegate.swift */,
+				E8E841882160E409009E5080 /* ViewController.swift */,
+				E8E8418A2160E409009E5080 /* Main.storyboard */,
+				E8E8418D2160E40B009E5080 /* Assets.xcassets */,
+				E8E8418F2160E40B009E5080 /* LaunchScreen.storyboard */,
+				E8EB002D21638E5D00CD23ED /* GoogleService-Info.plist */,
+				E8E841922160E40B009E5080 /* Info.plist */,
+				E8E841A82160E90B009E5080 /* BaseVC.swift */,
+				E8E841B12160E9C4009E5080 /* BaseScrollableLayout.swift */,
+				E8E841B32160E9F9009E5080 /* BaseLayout.swift */,
+				E8E841BC2161014B009E5080 /* Login */,
+				E8EB00392163A74C00CD23ED /* ForgetPassword */,
+				E8E3E34321666EF600CDCBF0 /* Tutorial */,
+				E8E841AA2160E96C009E5080 /* Utils */,
+				E8E841B72160F551009E5080 /* Fonts */,
+				E8EB00232163582300CD23ED /* Localizable.strings */,
+			);
+			path = Mosare3at;
+			sourceTree = "<group>";
+		};
+		E8E8419A2160E40B009E5080 /* Mosare3atUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8E8419B2160E40B009E5080 /* Mosare3atUITests.swift */,
+				E8E8419D2160E40B009E5080 /* Info.plist */,
+			);
+			path = Mosare3atUITests;
+			sourceTree = "<group>";
+		};
+		E8E841AA2160E96C009E5080 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E8E841A62160E8DC009E5080 /* Navigator.swift */,
+				E8E841AB2160E976009E5080 /* NavigationBarUtils.swift */,
+				E8E841AD2160E976009E5080 /* UIDevice+extensions.swift */,
+				E8E841AC2160E976009E5080 /* ViewControllersExtension.swift */,
+				E8E841B52160F070009E5080 /* Colors.swift */,
+				E8E841BA2160F58F009E5080 /* FontUtils.swift */,
+				E8E841C12161031B009E5080 /* UiHelpers.swift */,
+				E8EB00152163511700CD23ED /* DefaultsKeys.swift */,
+				E8EB00172163540500CD23ED /* CommonConstants.swift */,
+				E8EB002B216374C400CD23ED /* Injector.swift */,
+				E812F6B5216520AA00A02952 /* TopView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E8E841B72160F551009E5080 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E8EB00352163A4D200CD23ED /* TheSans-Bold.otf */,
+				E8EB00362163A4D200CD23ED /* TheSans-Plain.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E8E841BC2161014B009E5080 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E8E841BD216102C1009E5080 /* LoginVC.swift */,
+				E8E841BF216102D8009E5080 /* LoginLayout.swift */,
+				E8EB0025216360EC00CD23ED /* LoginPresenter.swift */,
+				E8EB0027216360F700CD23ED /* LoginRepository.swift */,
+				E8EB00292163641700CD23ED /* User.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E8EB00392163A74C00CD23ED /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */,
+				E8EB003A2163A76600CD23ED /* ForgetPasswordLayout.swift */,
+				E8EB003C2163ADCE00CD23ED /* ForgetPasswordVC.swift */,
+				E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */,
+				E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8E841822160E409009E5080 /* Mosare3at */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8E841A02160E40B009E5080 /* Build configuration list for PBXNativeTarget "Mosare3at" */;
+			buildPhases = (
+				C4D20C35D33B6C778F3556A9 /* [CP] Check Pods Manifest.lock */,
+				E8E8417F2160E409009E5080 /* Sources */,
+				E8E841802160E409009E5080 /* Frameworks */,
+				E8E841812160E409009E5080 /* Resources */,
+				76B541C5B0B918EAA7357732 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mosare3at;
+			productName = Mosare3at;
+			productReference = E8E841832160E409009E5080 /* Mosare3at.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8E841962160E40B009E5080 /* Mosare3atUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8E841A32160E40B009E5080 /* Build configuration list for PBXNativeTarget "Mosare3atUITests" */;
+			buildPhases = (
+				BBBA1B67D2F9F7EEF409CEA9 /* [CP] Check Pods Manifest.lock */,
+				E8E841932160E40B009E5080 /* Sources */,
+				E8E841942160E40B009E5080 /* Frameworks */,
+				E8E841952160E40B009E5080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8E841992160E40B009E5080 /* PBXTargetDependency */,
+			);
+			name = Mosare3atUITests;
+			productName = Mosare3atUITests;
+			productReference = E8E841972160E40B009E5080 /* Mosare3atUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8E8417B2160E409009E5080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Hesham Donia";
+				TargetAttributes = {
+					E8E841822160E409009E5080 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					E8E841962160E40B009E5080 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = E8E841822160E409009E5080;
+					};
+				};
+			};
+			buildConfigurationList = E8E8417E2160E409009E5080 /* Build configuration list for PBXProject "Mosare3at" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ar,
+			);
+			mainGroup = E8E8417A2160E409009E5080;
+			productRefGroup = E8E841842160E409009E5080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8E841822160E409009E5080 /* Mosare3at */,
+				E8E841962160E40B009E5080 /* Mosare3atUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8E841812160E409009E5080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E841912160E40B009E5080 /* LaunchScreen.storyboard in Resources */,
+				E8EB00212163582300CD23ED /* Localizable.strings in Resources */,
+				E8EB002E21638E5D00CD23ED /* GoogleService-Info.plist in Resources */,
+				E8E8418E2160E40B009E5080 /* Assets.xcassets in Resources */,
+				E8E8418C2160E409009E5080 /* Main.storyboard in Resources */,
+				E8EB00372163A51600CD23ED /* TheSans-Bold.otf in Resources */,
+				E8EB00382163A51900CD23ED /* TheSans-Plain.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E841952160E40B009E5080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76B541C5B0B918EAA7357732 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mosare3at/Pods-Mosare3at-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
+				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-Gloss/Moya_Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mosare3at/Pods-Mosare3at-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBBA1B67D2F9F7EEF409CEA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mosare3atUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4D20C35D33B6C778F3556A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mosare3at-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8E8417F2160E409009E5080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
+				E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */,
+				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
+				E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */,
+				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
+				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
+				E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */,
+				E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */,
+				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
+				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
+				E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */,
+				E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */,
+				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
+				E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */,
+				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
+				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
+				E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */,
+				E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */,
+				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
+				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
+				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
+				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
+				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
+				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
+				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,
+				E8EB002A2163641700CD23ED /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E841932160E40B009E5080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E8419C2160E40B009E5080 /* Mosare3atUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8E841992160E40B009E5080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8E841822160E409009E5080 /* Mosare3at */;
+			targetProxy = E8E841982160E40B009E5080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8E8418A2160E409009E5080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8E8418B2160E409009E5080 /* Base */,
+				E8EB00192163577400CD23ED /* en */,
+				E8EB001B2163578300CD23ED /* ar */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8E8418F2160E40B009E5080 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8E841902160E40B009E5080 /* Base */,
+				E8EB001A2163577400CD23ED /* en */,
+				E8EB001C2163578300CD23ED /* ar */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E8EB00232163582300CD23ED /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8EB00222163582300CD23ED /* en */,
+				E8EB00242163582800CD23ED /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8E8419E2160E40B009E5080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8E8419F2160E40B009E5080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8E841A12160E40B009E5080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34C5C1C3DE6FC87667D0F6AD /* Pods-Mosare3at.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Mosare3at/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KWN.GPA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8E841A22160E40B009E5080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75A75B1B663BE8204DA48F89 /* Pods-Mosare3at.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Mosare3at/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KWN.GPA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8E841A42160E40B009E5080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 941078E8AE0278871A36E9D2 /* Pods-Mosare3atUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Mosare3atUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KWN.Mosare3atUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mosare3at;
+			};
+			name = Debug;
+		};
+		E8E841A52160E40B009E5080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6915E81428A08E0A4A119023 /* Pods-Mosare3atUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Mosare3atUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KWN.Mosare3atUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mosare3at;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8E8417E2160E409009E5080 /* Build configuration list for PBXProject "Mosare3at" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E8419E2160E40B009E5080 /* Debug */,
+				E8E8419F2160E40B009E5080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8E841A02160E40B009E5080 /* Build configuration list for PBXNativeTarget "Mosare3at" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E841A12160E40B009E5080 /* Debug */,
+				E8E841A22160E40B009E5080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8E841A32160E40B009E5080 /* Build configuration list for PBXNativeTarget "Mosare3atUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E841A42160E40B009E5080 /* Debug */,
+				E8E841A52160E40B009E5080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8E8417B2160E409009E5080 /* Project object */;
+}

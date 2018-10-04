@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Mosare3at
+
+  Created by Hesham Donia on 10/2/18.
+  Copyright © 2018 Hesham Donia. All rights reserved.
+*/
+
+"email" = "البريد الإلكتروني";
+"enterEmail" = "أدخل البريد الاكتروني";
+"enterPassword" = "ادخل كلمة المرور";
+"password" = "كلمة المرور";
+"forgetPassword" = "نسيت كلمة المرور";
+"loginAsGuest" = "الدخول كضيف";
+"login" = "تسجيل الدخول";
+"somethingWentWrong" = "حدث خطأ ما. من فضلك اعد المحاولة مرة اخري.";
+"noInternetConnection" = "لا يوجد اتصال بالانترنت. من فضلك تحقق من الاتصال بالانترنت و اعد المحاولة مره اخري.";
+"emptyFieldsError" = "من فضلك ادخل الحقول الفارغه اولا.";
+"validEmail" = "من فضلك ادخل بريد الكتروني صحيح";
+"sendPassword" = "ارسال كلمة المرور";
+"resendPassword" = "اعادة ارسال كلمة المرور";
+"emailSent" = "لقد تم ارسال رابط استعادة كلمة المرور بنجاح";
+"checkEmail" = "الرجاء مراجعة البريد الاكتروني لتغيير كلمة المرور";
+"changePassword" = "تغيير كلمة المرور";
