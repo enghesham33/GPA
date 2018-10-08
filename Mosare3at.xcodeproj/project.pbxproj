@@ -13,6 +13,9 @@
 		E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */; };
 		E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */; };
 		E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */; };
+		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
+		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
+		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
 		E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3E3442166738200CDCBF0 /* TutorialPagerVC.swift */; };
 		E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3E3462166753D00CDCBF0 /* TutorialPageVC.swift */; };
 		E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3E3482166758A00CDCBF0 /* TutorialPageLayout.swift */; };
@@ -69,6 +72,9 @@
 		E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPresenter.swift; sourceTree = "<group>"; };
 		E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRepository.swift; sourceTree = "<group>"; };
 		E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDoneLayout.swift; sourceTree = "<group>"; };
+		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
+		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
+		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		E8E3E3442166738200CDCBF0 /* TutorialPagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPagerVC.swift; sourceTree = "<group>"; };
 		E8E3E3462166753D00CDCBF0 /* TutorialPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageVC.swift; sourceTree = "<group>"; };
 		E8E3E3482166758A00CDCBF0 /* TutorialPageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageLayout.swift; sourceTree = "<group>"; };
@@ -153,6 +159,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8C75929216BB4080075B0E9 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */,
+				E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */,
+				E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
 		E8E3E34321666EF600CDCBF0 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +215,7 @@
 				E8E841BC2161014B009E5080 /* Login */,
 				E8EB00392163A74C00CD23ED /* ForgetPassword */,
 				E8E3E34321666EF600CDCBF0 /* Tutorial */,
+				E8C75929216BB4080075B0E9 /* Avatar */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -379,6 +396,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mosare3at/Pods-Mosare3at-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
@@ -404,6 +422,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
@@ -483,6 +502,7 @@
 				E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */,
 				E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */,
 				E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */,
+				E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */,
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */,
@@ -490,6 +510,7 @@
 				E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */,
 				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
 				E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */,
+				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
 				E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */,
@@ -497,6 +518,7 @@
 				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
 				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
+				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,

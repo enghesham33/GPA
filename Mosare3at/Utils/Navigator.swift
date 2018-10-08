@@ -32,4 +32,9 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
+    public func navigateToChooseAvatar() {
+        let vc = ChooseAvatarVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
 }

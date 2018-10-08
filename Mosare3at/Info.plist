@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to access your Photo Library</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>TheSans-Bold.otf</string>
@@ -38,9 +40,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>We need to access your camera</string>
+	<string>We need to access your Photo Library</string>
 	<key>NSCameraUsageDescription - 2</key>
-	<string>Need camera access for uploading Images</string>
+	<string>Need Photo Library access</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

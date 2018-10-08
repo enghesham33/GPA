@@ -23,7 +23,12 @@
 "checkEmail" = "الرجاء مراجعة البريد الاكتروني لتغيير كلمة المرور";
 "changePassword" = "تغيير كلمة المرور";
 "startSuccess" = "ابدأ النجاح";
-
+"welcome" = "أهلا بك";
+"kwnPlatform" = "في منصة كوَن";
+"chooseAvatar" = "اختر صورة رمزية";
+"or" = "او";
+"addPersonalImage" = "إضافة صورة شخصية";
+"joinNow" = "انضم الان";
 
 
 

@@ -23,6 +23,7 @@ target 'Mosare3at' do
   pod 'SideMenu'
   pod 'EZSwiftExtensions'
   pod 'NVActivityIndicatorView'
+  pod 'AlamofireImage'
 #  pod 'PopupDialog'
 
   target 'Mosare3atUITests' do

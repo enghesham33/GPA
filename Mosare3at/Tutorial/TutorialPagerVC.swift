@@ -8,7 +8,15 @@
 
 import UIKit
 
-class TutorialPagerVC: UIPageViewController {
+public protocol TutorialPagerDelegate: class {
+    func goToChooseAvatar()
+}
+
+class TutorialPagerVC: UIPageViewController, TutorialPagerDelegate {
+    func goToChooseAvatar() {
+        self.navigationController?.pushViewController(ChooseAvatarVC.buildVC(), animated: true)
+    }
+    
 
     var pageControl = UIPageControl()
     var page0 = TutorialPageVC()
@@ -44,26 +52,32 @@ class TutorialPagerVC: UIPageViewController {
         page0.index = 0
         page0.pageTitle = "page0Title".localized()
         page0.message = "page0Message".localized()
+        page0.delegate = self
         
         page1.index = 1
         page1.pageTitle = "page1Title".localized()
         page1.message = "page1Message".localized()
+        page1.delegate = self
         
         page2.index = 2
         page2.pageTitle = "page2Title".localized()
         page2.message = "page2Message".localized()
+        page2.delegate = self
         
         page3.index = 3
         page3.pageTitle = "page3Title".localized()
         page3.message = "page3Message".localized()
+        page3.delegate = self
         
         page4.index = 4
         page4.pageTitle = "page4Title".localized()
         page4.message = "page4Message".localized()
+        page4.delegate = self
         
         page5.index = 5
         page5.pageTitle = "page5Title".localized()
         page5.message = "page5Message".localized()
+        page5.delegate = self
         
         pages = [page0, page1, page2, page3, page4, page5]
         
@@ -80,7 +94,7 @@ class TutorialPagerVC: UIPageViewController {
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.black
         self.pageControl.pageIndicatorTintColor = UIColor.white
-        self.pageControl.currentPageIndicatorTintColor = UIColor(hexString: "#FAC900")!
+        self.pageControl.currentPageIndicatorTintColor = UIColor.AppColors.yellow
         self.view.addSubviews([pageControl, exitImageView])
         
         self.exitImageView.snp.makeConstraints { maker in

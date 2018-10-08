@@ -22,3 +22,9 @@
 "checkEmail" = "Please check your email to change your password";
 "changePassword" = "Change Password";
 "startSuccess" = "Start Success";
+"welcome" = "Welcome";
+"kwnPlatform" = "in KWN platform";
+"chooseAvatar" = "Choose Avatar";
+"or" = "OR";
+"addPersonalImage" = "Add Personal Image";
+"joinNow" = "Join Now";

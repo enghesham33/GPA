@@ -15,6 +15,7 @@ class TutorialPageVC : BaseVC {
     var index: Int!
     var message: String!
     var pageTitle: String!
+    var delegate: TutorialPagerDelegate!
     
     // to return object of TutorialPageVC
     static func buildVC() -> TutorialPageVC {
@@ -32,7 +33,7 @@ class TutorialPageVC : BaseVC {
 
 extension TutorialPageVC: TutorialDelegate {
     func goToChooseAvatar() {
-        // go to choose avatar
+       self.delegate.goToChooseAvatar()
     }
     
     func retry() {

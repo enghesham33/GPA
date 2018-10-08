@@ -12,7 +12,6 @@ import UIKit
 class BaseVC: UIViewController {
     
     public var navigator: Navigator!
-    
     /**
      This method is called when any child ViewController's view loaded, Initialize the navigator object and set the status bar style .
      */
@@ -42,5 +41,4 @@ class BaseVC: UIViewController {
         // needed to clear the text in the back navigation:
         self.navigationItem.title = " "
     }
-    
 }
