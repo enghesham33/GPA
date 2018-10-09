@@ -88,8 +88,8 @@ class ChooseAvatarVC: BaseVC {
         avatarChoiceSource = .FROM_SERVER
     }
     
-    func goToProgramScreen() {
-        
+    func goToJoinSuccessScreen() {
+        navigator.navigateToJoinSuccess()
     }
 }
 
@@ -108,8 +108,11 @@ extension ChooseAvatarVC : AvatarView {
     }
     
     func updateAvatarSuccess(message: String) {
+        let user = User.getInstance(dictionary: Defaults[.user]!)
+        user.profilePic = self.choosenAvatarName
+        Defaults[.user] = User.convertToDictionary(user)()
         self.view.makeToast(message, duration: 2) {
-            self.goToProgramScreen()
+            self.goToJoinSuccessScreen()
         }
     }
     

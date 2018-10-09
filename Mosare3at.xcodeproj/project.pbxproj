@@ -15,6 +15,8 @@
 		E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */; };
 		E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D891216C852C0097911F /* AvatarPresenter.swift */; };
 		E839D894216C853A0097911F /* AvatarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D893216C853A0097911F /* AvatarRepository.swift */; };
+		E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D896216CC1E20097911F /* JoinSuccessLayout.swift */; };
+		E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D898216CD11C0097911F /* JoinSuccessVC.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -76,6 +78,8 @@
 		E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDoneLayout.swift; sourceTree = "<group>"; };
 		E839D891216C852C0097911F /* AvatarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPresenter.swift; sourceTree = "<group>"; };
 		E839D893216C853A0097911F /* AvatarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRepository.swift; sourceTree = "<group>"; };
+		E839D896216CC1E20097911F /* JoinSuccessLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSuccessLayout.swift; sourceTree = "<group>"; };
+		E839D898216CD11C0097911F /* JoinSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSuccessVC.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E839D895216CC1A90097911F /* JoinSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				E839D896216CC1E20097911F /* JoinSuccessLayout.swift */,
+				E839D898216CD11C0097911F /* JoinSuccessVC.swift */,
+			);
+			path = JoinSuccess;
+			sourceTree = "<group>";
+		};
 		E8C75929216BB4080075B0E9 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 				E8EB00392163A74C00CD23ED /* ForgetPassword */,
 				E8E3E34321666EF600CDCBF0 /* Tutorial */,
 				E8C75929216BB4080075B0E9 /* Avatar */,
+				E839D895216CC1A90097911F /* JoinSuccess */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -498,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */,
 				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
 				E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */,
 				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
@@ -528,6 +543,7 @@
 				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
 				E839D894216C853A0097911F /* AvatarRepository.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
+				E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
 				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,

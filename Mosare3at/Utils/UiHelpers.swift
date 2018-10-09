@@ -85,6 +85,16 @@ class UiHelpers {
         return isConnected
         
     }
+    
+    class func share(textToShare: String, sourceView: UIView, vc: BaseVC) {
+        
+        // set up activity view controller
+        let activityViewController = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = sourceView // so that iPads won't crash
+        
+        // present the view controller
+        vc.present(activityViewController, animated: true, completion: nil)
+    }
 }
 
 public enum LengthRelation: Int {

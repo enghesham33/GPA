@@ -37,4 +37,9 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
+    public func navigateToJoinSuccess() {
+        let vc = JoinSuccessVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
 }

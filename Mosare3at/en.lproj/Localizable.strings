@@ -30,3 +30,7 @@
 "joinNow" = "Join Now";
 "updateAvatarSuccess" = "Your avatar updated successfully";
 "updateAvatarFailed" = "Something went wrong while updating your avatar. Please try again.";
+"congrat" = "Congratulations";
+"badgeCongrat" = "";
+"startLearn" = "Start Learn";
+"share" = "";
