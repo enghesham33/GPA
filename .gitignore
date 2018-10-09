@@ -1088,3 +1088,21 @@ Pods/Target Support Files/Toast-Swift/Toast-Swift.xcconfig
 Pods/Toast-Swift/LICENSE
 Pods/Toast-Swift/README.markdown
 Pods/Toast-Swift/Toast/Toast.swift
+Pods/AlamofireImage/LICENSE
+Pods/AlamofireImage/README.md
+Pods/AlamofireImage/Source/AFIError.swift
+Pods/AlamofireImage/Source/Image.swift
+Pods/AlamofireImage/Source/ImageCache.swift
+Pods/AlamofireImage/Source/ImageDownloader.swift
+Pods/AlamofireImage/Source/ImageFilter.swift
+Pods/AlamofireImage/Source/Request+AlamofireImage.swift
+Pods/AlamofireImage/Source/UIButton+AlamofireImage.swift
+Pods/AlamofireImage/Source/UIImage+AlamofireImage.swift
+Pods/AlamofireImage/Source/UIImageView+AlamofireImage.swift
+Pods/Pods.xcodeproj/xcuserdata/heshamdonia.xcuserdatad/xcschemes/AlamofireImage.xcscheme
+Pods/Target Support Files/AlamofireImage/AlamofireImage-dummy.m
+Pods/Target Support Files/AlamofireImage/AlamofireImage-prefix.pch
+Pods/Target Support Files/AlamofireImage/AlamofireImage-umbrella.h
+Pods/Target Support Files/AlamofireImage/AlamofireImage.modulemap
+Pods/Target Support Files/AlamofireImage/AlamofireImage.xcconfig
+Pods/Target Support Files/AlamofireImage/Info.plist
