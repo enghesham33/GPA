@@ -13,6 +13,8 @@
 		E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */; };
 		E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */; };
 		E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */; };
+		E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D891216C852C0097911F /* AvatarPresenter.swift */; };
+		E839D894216C853A0097911F /* AvatarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D893216C853A0097911F /* AvatarRepository.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -72,6 +74,8 @@
 		E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPresenter.swift; sourceTree = "<group>"; };
 		E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRepository.swift; sourceTree = "<group>"; };
 		E812F6BB2165460400A02952 /* ForgetPasswordDoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDoneLayout.swift; sourceTree = "<group>"; };
+		E839D891216C852C0097911F /* AvatarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPresenter.swift; sourceTree = "<group>"; };
+		E839D893216C853A0097911F /* AvatarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRepository.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */,
 				E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */,
 				E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */,
+				E839D891216C852C0097911F /* AvatarPresenter.swift */,
+				E839D893216C853A0097911F /* AvatarRepository.swift */,
 			);
 			path = Avatar;
 			sourceTree = "<group>";
@@ -516,9 +522,11 @@
 				E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */,
 				E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */,
 				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
+				E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */,
 				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
 				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
+				E839D894216C853A0097911F /* AvatarRepository.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,

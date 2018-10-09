@@ -9,18 +9,25 @@
 import UIKit
 import AlamofireImage
 
-class AvatarCell: UICollectionViewCell {
+protocol ChooseImageDelegat : class {
+    func chooseImage(image: UIImage, imageName: String)
+}
+
+public class AvatarCell: UICollectionViewCell {
     
-    static let identifier = "CountrykpisCell"
-    public var avatarLink: String!
+    static let identifier = "AvatarCell"
     var superView: UIView!
     var raduis: CGFloat!
+    var delegate: ChooseImageDelegat!
+    var imageName: String!
     
-    var avatarImageview: UIImageView = {
-        
+    lazy var avatarImageview: UIImageView = {
         let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleToFill
-        
+        imageView.addTapGesture(action: { (recognizer) in
+            self.delegate.chooseImage(image: imageView.image!, imageName: self.imageName)
+        })
         return imageView
     }()
     
@@ -28,5 +35,14 @@ class AvatarCell: UICollectionViewCell {
         superView = self.contentView
         superView.addSubviews([avatarImageview])
         avatarImageview.layer.cornerRadius = raduis
+        
+        avatarImageview.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(superView)
+        }
+    }
+    
+    public func populateImage(imageName: String) {
+        self.avatarImageview.af_setImage(withURL: URL(string: "\(CommonConstants.BASE_URL)media/download/\(imageName)")!, placeholderImage: UIImage(named: "placeholder"))
+        self.imageName = imageName
     }
 }

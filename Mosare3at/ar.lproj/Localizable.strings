@@ -29,7 +29,8 @@
 "or" = "او";
 "addPersonalImage" = "إضافة صورة شخصية";
 "joinNow" = "انضم الان";
-
+"updateAvatarSuccess" = "تم تحديث صورتك الرمزية بنجاح";
+"updateAvatarFailed" = "حدث خطأ ما اثناء تحديث صورتك الرمزية. من فضلك حاول مرة اخري";
 
 
 

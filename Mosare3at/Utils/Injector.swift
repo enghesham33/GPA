@@ -24,4 +24,12 @@ public class Injector {
     public class func provideForgetPasswordRepository() -> ForgetPasswordRepository {
         return ForgetPasswordRepository()
     }
+    
+    public class func provideAvatarPresenter() -> AvatarPresenter {
+        return AvatarPresenter(repository: Injector.provideAvatarRepository())
+    }
+    
+    public class func provideAvatarRepository() -> AvatarRepository {
+        return AvatarRepository()
+    }
 }
