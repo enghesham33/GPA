@@ -27,4 +27,13 @@ public class BaseLayout {
         self.superview = superview
         superview.backgroundColor = .white
     }
+    
+    /**
+     Initializer that initialize the superView of the layout and set its background.
+     - Parameter superview: The main container of the screen
+     */
+    init(superview: UIView) {
+        self.superview = superview
+        superview.backgroundColor = .white
+    }
 }

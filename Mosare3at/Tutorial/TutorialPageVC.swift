@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyUserDefaults
 
 class TutorialPageVC : BaseVC {
     
@@ -33,7 +34,10 @@ class TutorialPageVC : BaseVC {
 
 extension TutorialPageVC: TutorialDelegate {
     func goToChooseAvatar() {
-       self.delegate.goToChooseAvatar()
+        let user = User.getInstance(dictionary: Defaults[.user]!)
+        user.takeTutorial = true
+        Defaults[.user] = user.convertToDictionary()
+        self.delegate.goToChooseAvatar()
     }
     
     func retry() {

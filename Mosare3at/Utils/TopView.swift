@@ -45,6 +45,14 @@ public class TopView: UIView {
         return label
     }()
     
+    lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo_white")
+        imageView.contentMode = .scaleAspectFill
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
@@ -54,7 +62,7 @@ public class TopView: UIView {
     }
     
     public func setupViews(screenTitle: String) {
-        let views = [backImageView, screenTitleLabel]
+        let views = [backImageView, screenTitleLabel, logoImageView]
         self.backgroundColor = .black
         
         self.addSubviews(views)
@@ -75,6 +83,12 @@ public class TopView: UIView {
             maker.top.height.equalTo(backImageView)
             
             maker.width.equalTo(screenTitle.widthOfString(usingFont: screenTitleLabel.font) + 15)
+        }
+        
+        self.logoImageView.snp.makeConstraints { maker in
+            maker.centerX.equalTo(self.snp.centerX)
+            maker.top.height.equalTo(backImageView)
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 30))
         }
     }
     

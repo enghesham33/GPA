@@ -42,4 +42,9 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
+    public func navigateToMainScreen() {
+        let vc = MainScreenVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
 }

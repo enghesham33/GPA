@@ -11,6 +11,7 @@ import NVActivityIndicatorView
 import Material
 import Localize_Swift
 import SystemConfiguration
+import SideMenu
 
 class UiHelpers {
     
@@ -94,6 +95,27 @@ class UiHelpers {
         
         // present the view controller
         vc.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    class func setupSideMenu(delegate: UISideMenuNavigationControllerDelegate, viewToPresent: UIView, viewToEdge: UIView, sideMenuCellDelegate: SideMenuCellDelegate, sideMenuHeaderDelegate: SideMenuHeaderDelegate) {
+        
+        let sideMenuVC = SideMenuVC.buildVC()
+        sideMenuVC.sideMenuCellDelegate = sideMenuCellDelegate
+        sideMenuVC.sideMenuHeaderDelegate = sideMenuHeaderDelegate
+        
+        let menuNavigationController = UISideMenuNavigationController(rootViewController: sideMenuVC)
+        menuNavigationController.sideMenuDelegate = delegate
+        menuNavigationController.menuWidth = UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 90)
+        if Localize.currentLanguage() == "ar" {
+            SideMenuManager.default.menuRightNavigationController = menuNavigationController
+            SideMenuManager.default.menuLeftNavigationController = nil
+        } else {
+            SideMenuManager.default.menuLeftNavigationController = menuNavigationController
+            SideMenuManager.default.menuRightNavigationController = nil
+        }
+        
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: viewToPresent)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: viewToEdge)
     }
 }
 

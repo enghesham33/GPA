@@ -51,6 +51,10 @@ public class AvatarRepository {
             if response.result.isSuccess {
                 if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
                     self.delegate.updateAvatarSuccess(message: "updateAvatarSuccess".localized())
+                    // update the user's profile image using the uploaded one
+                    let user = User.getInstance(dictionary: Defaults[.user]!)
+                    user.profilePic = imageName
+                    Defaults[.user] = user.convertToDictionary()
                 } else {
                     self.delegate.updateAvatarFailed(message: "updateAvatarFailed".localized())
                 }

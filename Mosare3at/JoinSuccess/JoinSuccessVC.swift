@@ -35,7 +35,7 @@ class JoinSuccessVC: BaseVC {
 
 extension JoinSuccessVC : JoinSuccessDelegate {
     func goToProgram() {
-        
+        navigator.navigateToMainScreen()
     }
     
     func retry() {

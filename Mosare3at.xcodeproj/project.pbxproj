@@ -17,6 +17,19 @@
 		E839D894216C853A0097911F /* AvatarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D893216C853A0097911F /* AvatarRepository.swift */; };
 		E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D896216CC1E20097911F /* JoinSuccessLayout.swift */; };
 		E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839D898216CD11C0097911F /* JoinSuccessVC.swift */; };
+		E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABDC2173174C00055C11 /* MainScreenVC.swift */; };
+		E848ABE521731BE900055C11 /* ProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABE421731BE900055C11 /* ProgramVC.swift */; };
+		E848ABE721731C1E00055C11 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABE621731C1E00055C11 /* DashboardVC.swift */; };
+		E848ABE921731C3600055C11 /* TeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABE821731C3600055C11 /* TeamVC.swift */; };
+		E848ABEB21731C4C00055C11 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABEA21731C4C00055C11 /* ScheduleVC.swift */; };
+		E848ABED217323F700055C11 /* MainScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABEC217323F700055C11 /* MainScreenLayout.swift */; };
+		E848ABEF2173267900055C11 /* ProgramLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABEE2173267900055C11 /* ProgramLayout.swift */; };
+		E848ABF121732A0E00055C11 /* DashboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF021732A0E00055C11 /* DashboardLayout.swift */; };
+		E848ABF321732A4200055C11 /* TeamLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF221732A4200055C11 /* TeamLayout.swift */; };
+		E848ABF521732B0000055C11 /* ScheduleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF421732B0000055C11 /* ScheduleLayout.swift */; };
+		E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF72173337600055C11 /* SideMenuVC.swift */; };
+		E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF92173338600055C11 /* SideMenuLayout.swift */; };
+		E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABFB2173339C00055C11 /* SideMenuCell.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -80,6 +93,19 @@
 		E839D893216C853A0097911F /* AvatarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRepository.swift; sourceTree = "<group>"; };
 		E839D896216CC1E20097911F /* JoinSuccessLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSuccessLayout.swift; sourceTree = "<group>"; };
 		E839D898216CD11C0097911F /* JoinSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSuccessVC.swift; sourceTree = "<group>"; };
+		E848ABDC2173174C00055C11 /* MainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVC.swift; sourceTree = "<group>"; };
+		E848ABE421731BE900055C11 /* ProgramVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramVC.swift; sourceTree = "<group>"; };
+		E848ABE621731C1E00055C11 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		E848ABE821731C3600055C11 /* TeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamVC.swift; sourceTree = "<group>"; };
+		E848ABEA21731C4C00055C11 /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
+		E848ABEC217323F700055C11 /* MainScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenLayout.swift; sourceTree = "<group>"; };
+		E848ABEE2173267900055C11 /* ProgramLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramLayout.swift; sourceTree = "<group>"; };
+		E848ABF021732A0E00055C11 /* DashboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardLayout.swift; sourceTree = "<group>"; };
+		E848ABF221732A4200055C11 /* TeamLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLayout.swift; sourceTree = "<group>"; };
+		E848ABF421732B0000055C11 /* ScheduleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLayout.swift; sourceTree = "<group>"; };
+		E848ABF72173337600055C11 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		E848ABF92173338600055C11 /* SideMenuLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuLayout.swift; sourceTree = "<group>"; };
+		E848ABFB2173339C00055C11 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -176,6 +202,65 @@
 			path = JoinSuccess;
 			sourceTree = "<group>";
 		};
+		E848ABDB217316D400055C11 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E848ABDC2173174C00055C11 /* MainScreenVC.swift */,
+				E848ABEC217323F700055C11 /* MainScreenLayout.swift */,
+				E848ABE021731BAF00055C11 /* Program */,
+				E848ABE121731BB800055C11 /* Dashboard */,
+				E848ABE221731BC000055C11 /* Team */,
+				E848ABE321731BC500055C11 /* Schedule */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		E848ABE021731BAF00055C11 /* Program */ = {
+			isa = PBXGroup;
+			children = (
+				E848ABE421731BE900055C11 /* ProgramVC.swift */,
+				E848ABEE2173267900055C11 /* ProgramLayout.swift */,
+			);
+			path = Program;
+			sourceTree = "<group>";
+		};
+		E848ABE121731BB800055C11 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E848ABE621731C1E00055C11 /* DashboardVC.swift */,
+				E848ABF021732A0E00055C11 /* DashboardLayout.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E848ABE221731BC000055C11 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				E848ABE821731C3600055C11 /* TeamVC.swift */,
+				E848ABF221732A4200055C11 /* TeamLayout.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		E848ABE321731BC500055C11 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				E848ABEA21731C4C00055C11 /* ScheduleVC.swift */,
+				E848ABF421732B0000055C11 /* ScheduleLayout.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		E848ABF62173334700055C11 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E848ABF72173337600055C11 /* SideMenuVC.swift */,
+				E848ABF92173338600055C11 /* SideMenuLayout.swift */,
+				E848ABFB2173339C00055C11 /* SideMenuCell.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		E8C75929216BB4080075B0E9 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +321,8 @@
 				E8E3E34321666EF600CDCBF0 /* Tutorial */,
 				E8C75929216BB4080075B0E9 /* Avatar */,
 				E839D895216CC1A90097911F /* JoinSuccess */,
+				E848ABF62173334700055C11 /* SideMenu */,
+				E848ABDB217316D400055C11 /* MainScreen */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -513,10 +600,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */,
+				E848ABE721731C1E00055C11 /* DashboardVC.swift in Sources */,
 				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
 				E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */,
+				E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */,
 				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
 				E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */,
+				E848ABED217323F700055C11 /* MainScreenLayout.swift in Sources */,
+				E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */,
+				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
 				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
 				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
 				E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */,
@@ -527,27 +619,35 @@
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */,
+				E848ABF521732B0000055C11 /* ScheduleLayout.swift in Sources */,
 				E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */,
 				E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */,
 				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
+				E848ABF321732A4200055C11 /* TeamLayout.swift in Sources */,
 				E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */,
 				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
+				E848ABEB21731C4C00055C11 /* ScheduleVC.swift in Sources */,
 				E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */,
 				E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */,
 				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
+				E848ABEF2173267900055C11 /* ProgramLayout.swift in Sources */,
 				E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */,
 				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
 				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
+				E848ABF121732A0E00055C11 /* DashboardLayout.swift in Sources */,
 				E839D894216C853A0097911F /* AvatarRepository.swift in Sources */,
+				E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
 				E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
 				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,
 				E8EB002A2163641700CD23ED /* User.swift in Sources */,
+				E848ABE521731BE900055C11 /* ProgramVC.swift in Sources */,
+				E848ABE921731C3600055C11 /* TeamVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

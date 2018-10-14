@@ -55,7 +55,7 @@ extension LoginVC: LoginDelegate {
     }
     
     func goToProgramScreen() {
-        
+        navigator.navigateToMainScreen()
     }
     
     func retry() {

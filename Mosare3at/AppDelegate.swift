@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Localize.setCurrentLanguage("ar")
         
         AppDelegate.instance = self
-        UIApplication.shared.statusBarStyle = .lightContent
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.2
         NetworkActivityIndicatorManager.shared.completionDelay = 0.5
@@ -126,6 +125,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             break
         }
         
+        // setting the font and text color for tab bar items
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.AppColors.darkGray, NSAttributedString.Key.font: AppFont.font(type: .Bold, size: 12)], for: .normal)
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.AppColors.primaryColor, NSAttributedString.Key.font: AppFont.font(type: .Bold, size: 12)], for: .selected)
+        
         let navigationController = UINavigationController()
         
         navigationController.navigationBar.setStyle(style: .solid, tintColor: UIColor.white, forgroundColor: .black)
@@ -138,7 +142,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     navigationController.pushViewController(TutorialPagerVC.buildVC(), animated: false)
                 } else {
                     self.window?.rootViewController = navigationController
-                    navigationController.pushViewController(ChooseAvatarVC.buildVC(), animated: false)
+                    navigationController.pushViewController(MainScreenVC.buildVC(), animated: false)
                     // go to main view controller that will contain the bottom tabs
                 }
                 
