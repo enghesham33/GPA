@@ -22,10 +22,11 @@ class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
         super.viewDidLoad()
         layout = DashboardLayout(superview: self.view, dashboardLayoutDelegate: self)
         layout.setupViews()
-        
-        UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
+    }
 }
 
 extension DashboardVC: SideMenuHeaderDelegate {

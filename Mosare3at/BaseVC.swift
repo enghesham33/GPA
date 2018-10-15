@@ -31,6 +31,10 @@ class BaseVC: UIViewController {
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /**
      This method is called when any child ViewController's will disappear, Removes the title of the navigation bar title .
      - Parameter animated: Indicates that the screen will disapear with animation or not.

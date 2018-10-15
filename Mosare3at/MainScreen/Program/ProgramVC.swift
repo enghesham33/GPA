@@ -23,7 +23,9 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
         
         layout = ProgramLayout(superview: self.view, programLayoutDelegate: self)
         layout.setupViews()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
     }
 }

@@ -87,7 +87,6 @@ public class SideMenuLayout: BaseLayout {
     lazy var menuTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = UIColor.white
-        tableView.isScrollEnabled = false
         tableView.register(SideMenuCell.self, forCellReuseIdentifier: SideMenuCell.identifier)
         return tableView
     }()

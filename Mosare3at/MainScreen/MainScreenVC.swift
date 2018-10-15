@@ -53,15 +53,12 @@ class MainScreenVC: UITabBarController {
         scheduleVC.tabBarItem = scheduleTabBarItem
         
         self.viewControllers = [programVC , dashboardVC , teamVC , scheduleVC]
+
         
-        self.selectedIndex = 0
-        
-        
+
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    
 }
 
 

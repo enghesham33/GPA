@@ -141,6 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.window?.rootViewController = navigationController
                     navigationController.pushViewController(TutorialPagerVC.buildVC(), animated: false)
                 } else {
+                    navigationController.navigationBar.isHidden = true
                     self.window?.rootViewController = navigationController
                     navigationController.pushViewController(MainScreenVC.buildVC(), animated: false)
                     // go to main view controller that will contain the bottom tabs

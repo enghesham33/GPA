@@ -22,7 +22,9 @@ class TeamVC: BaseVC, UISideMenuNavigationControllerDelegate {
         super.viewDidLoad()
         layout = TeamLayout(superview: self.view, teamLayoutDelegate: self)
         layout.setupViews()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
     }
     
