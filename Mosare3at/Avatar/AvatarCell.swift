@@ -42,7 +42,7 @@ public class AvatarCell: UICollectionViewCell {
     }
     
     public func populateImage(imageName: String) {
-        self.avatarImageview.af_setImage(withURL: URL(string: "\(CommonConstants.BASE_URL)media/download/\(imageName)")!, placeholderImage: UIImage(named: "placeholder"))
+        self.avatarImageview.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(imageName)")!, placeholderImage: UIImage(named: "placeholder"))
         self.imageName = imageName
     }
 }

@@ -32,4 +32,12 @@ public class Injector {
     public class func provideAvatarRepository() -> AvatarRepository {
         return AvatarRepository()
     }
+    
+    public class func provideProgramRepository() -> ProgramRepository{
+        return ProgramRepository()
+    }
+    
+    public class func provideProgramPresenter() -> ProgramPresenter {
+        return ProgramPresenter(repository: Injector.provideProgramRepository())
+    }
 }

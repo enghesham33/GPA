@@ -82,7 +82,7 @@ class ChooseAvatarVC: BaseVC {
     }
     
     func chooseImageFromAvatars(index: Int) {
-        self.layout.choosenAvatarImageview.af_setImage(withURL: URL(string: "\(CommonConstants.BASE_URL)media/download/\(self.avatars.get(at: index)!)")!, placeholderImage: UIImage(named: "placeholder"))
+        self.layout.choosenAvatarImageview.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(self.avatars.get(at: index)!)")!, placeholderImage: UIImage(named: "placeholder"))
         self.layout.choosenAvatarImageview.backgroundColor = .clear
         self.choosenAvatarName = self.avatars.get(at: index)
         avatarChoiceSource = .FROM_SERVER

@@ -11,4 +11,10 @@ class CommonConstants {
     public static let backgroundStatus = "background"
     public static let forgroundStatus = "forground"
     public static let BASE_URL = "http://accelerate.om:8080/"
+    public static let IMAGES_BASE_URL = "http://accelerate.om:8080/media/download/"
+    public static let DELIVERABLE_ACCEPTED = "accepted"
+    public static let DELIVERABLE_DELIVERED = "delivered"
+    public static let DELIVERABLE_NONE = "none"
+    public static let DELIVERABLE_DELAYED = "delayed"
+    public static let DELIVERABLE_REJECTED = "rejected"
 }

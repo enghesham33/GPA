@@ -50,7 +50,7 @@ public class SideMenuLayout: BaseLayout {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.text = "المخرجات"
         label.lineBreakMode = .byWordWrapping
         label.font = AppFont.font(type: .Bold, size: 18)
@@ -150,10 +150,10 @@ public class SideMenuLayout: BaseLayout {
         }
 
         self.outputsLabel.snp.makeConstraints { maker in
-            maker.leading.equalTo(self.menuHeaderView.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
+            maker.leading.equalTo(self.menuHeaderView.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 3))
             maker.trailing.equalTo(self.userProfilePicImageView.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 3))
            maker.centerY.equalTo(self.menuHeaderView.snp.centerY)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 10))
         }
 
         self.usernameLabel.snp.makeConstraints { maker in

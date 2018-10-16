@@ -15,8 +15,6 @@ import SwiftyUserDefaults
 class SideMenuVC : BaseVC {
     
     var layout: SideMenuLayout!
-    var doneTasksCount: Int!
-    var totalTasksCount: Int!
     var sideMenuCellDelegate: SideMenuCellDelegate!
     var sideMenuHeaderDelegate: SideMenuHeaderDelegate!
     
@@ -37,8 +35,12 @@ class SideMenuVC : BaseVC {
         layout.sideMenuHeaderDelegate = self.sideMenuHeaderDelegate
         
         setupMenuTableView()
-        showUserData()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showUserData()
     }
     
     func setupMenuTableView() {
@@ -51,10 +53,10 @@ class SideMenuVC : BaseVC {
     func showUserData() {
         let user = User.getInstance(dictionary: Defaults[.user]!)
         layout.usernameLabel.text = "\(user.firstName!) \(user.lastName!)"
-        layout.mainUserProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.BASE_URL)media/download/\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
-        layout.userProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.BASE_URL)media/download/\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
-        if doneTasksCount != nil && totalTasksCount != nil {
-            layout.outputsLabel.text = "\((doneTasksCount / totalTasksCount)) \n \("outputs".localized())"
+        layout.mainUserProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
+        layout.userProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
+        if Singleton.getInstance().sideMenuDoneTasksCount != nil && Singleton.getInstance().sideMenuTotalTasksCount != nil {
+            layout.outputsLabel.text = "\((Singleton.getInstance().sideMenuDoneTasksCount / Singleton.getInstance().sideMenuTotalTasksCount))0% \("outputs".localized())"
         }
         
     }
