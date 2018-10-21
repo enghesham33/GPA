@@ -35,6 +35,7 @@
 "startLearn" = "Start Learn";
 "share" = "";
 "program" = "Program";
+"program2" = "Program";
 "dashboard" = "Dashboard";
 "team" = "Team";
 "schedule" = "Schedule";
@@ -44,3 +45,6 @@
 "settings" = "Settings";
 "logout" = "Logout";
 "outputs" = "Outputs";
+"findProjects" = "Learn about projects";
+"startNow" = "Start Now";
+"from" = "from";

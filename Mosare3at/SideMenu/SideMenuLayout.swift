@@ -53,7 +53,7 @@ public class SideMenuLayout: BaseLayout {
         label.numberOfLines = 0
         label.text = "المخرجات"
         label.lineBreakMode = .byWordWrapping
-        label.font = AppFont.font(type: .Bold, size: 18)
+        label.font = AppFont.font(type: .Bold, size: 20)
         return label
     }()
     

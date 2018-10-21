@@ -30,6 +30,7 @@
 		E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF72173337600055C11 /* SideMenuVC.swift */; };
 		E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF92173338600055C11 /* SideMenuLayout.swift */; };
 		E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABFB2173339C00055C11 /* SideMenuCell.swift */; };
+		E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -126,6 +127,7 @@
 		E848ABF72173337600055C11 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		E848ABF92173338600055C11 /* SideMenuLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuLayout.swift; sourceTree = "<group>"; };
 		E848ABFB2173339C00055C11 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramTopCell.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				E848ABEE2173267900055C11 /* ProgramLayout.swift */,
 				E8F1A7A62175BBCC00DA0DB2 /* ProgramPresenter.swift */,
 				E8F1A7A82175BBD700DA0DB2 /* ProgramRepository.swift */,
+				E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */,
 			);
 			path = Program;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */,
 				E8F1A7B32175BD0000DA0DB2 /* Project.swift in Sources */,
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
+				E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */,
 				E848ABF521732B0000055C11 /* ScheduleLayout.swift in Sources */,

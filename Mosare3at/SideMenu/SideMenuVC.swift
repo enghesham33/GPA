@@ -56,7 +56,7 @@ class SideMenuVC : BaseVC {
         layout.mainUserProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
         layout.userProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
         if Singleton.getInstance().sideMenuDoneTasksCount != nil && Singleton.getInstance().sideMenuTotalTasksCount != nil {
-            layout.outputsLabel.text = "\((Singleton.getInstance().sideMenuDoneTasksCount / Singleton.getInstance().sideMenuTotalTasksCount))0% \("outputs".localized())"
+            layout.outputsLabel.text = "\((Singleton.getInstance().sideMenuDoneTasksCount / Singleton.getInstance().sideMenuTotalTasksCount))% \("outputs".localized())"
         }
         
     }

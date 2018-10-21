@@ -21,6 +21,14 @@ public class ProgramLayout : BaseLayout {
     
     var topView: TopView = TopView()
     
+    lazy var programsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
+        tableView.register(ProgramTopCell.self, forCellReuseIdentifier: ProgramTopCell.identifier)
+        return tableView
+    }()
+    
     init(superview: UIView, programLayoutDelegate: ProgramLayoutDelegate) {
         super.init(superview: superview, delegate: programLayoutDelegate)
         self.programLayoutDelegate = programLayoutDelegate
@@ -28,7 +36,7 @@ public class ProgramLayout : BaseLayout {
     
     public func setupViews() {
         
-        let views = [topView]
+        let views = [topView, programsTableView]
         self.superview.addSubviews(views)
         
         self.topView.snp.makeConstraints { maker in
@@ -47,6 +55,11 @@ public class ProgramLayout : BaseLayout {
         self.topView.backImageView.addTapGesture(action: nil)
         self.topView.backImageView.addTapGesture { (_) in
             self.programLayoutDelegate.openSideMenu()
+        }
+        
+        self.programsTableView.snp.makeConstraints { maker in
+            maker.leading.trailing.bottom.equalTo(superview)
+            maker.top.equalTo(self.topView.snp.bottom)
         }
     }
 }
