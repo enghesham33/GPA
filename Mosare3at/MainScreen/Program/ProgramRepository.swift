@@ -33,7 +33,7 @@ public class ProgramRepository {
             UiHelpers.hideLoader()
             if response.result.isSuccess {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         let subscriptionResponse = SubscribtionsResponse.getInstance(dictionary: json)
                         self.delegate.getSubscriptionsSuccess(subscriptionsResponse: subscriptionResponse)
                     } else {
@@ -58,7 +58,7 @@ public class ProgramRepository {
             
             if response.result.isSuccess {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         
                         let members = json["hydra:member"] as! [Dictionary<String,Any>]
                         
@@ -91,7 +91,7 @@ public class ProgramRepository {
             UiHelpers.hideLoader()
             if response.result.isSuccess {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         let team = Team.getInstance(dictionary: json)
                         self.delegate.getTeamSuccess(team: team)
                     } else {
@@ -113,7 +113,7 @@ public class ProgramRepository {
             UiHelpers.hideLoader()
             if response.result.isSuccess {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         let weekDeliverableResponse = WeekDeliverableResponse.getInstance(dictionary: json)
                         self.delegate.getWeekDeliverableSuccess(weekDeliverableResponse: weekDeliverableResponse)
                     } else {

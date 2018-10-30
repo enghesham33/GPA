@@ -58,6 +58,65 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
         Singleton.getInstance().sideMenuDoneTasksCount = doneTasksCount
         Singleton.getInstance().sideMenuTotalTasksCount = weekDeliverables.count
     }
+    
+    func getMilestoneName(weight: Int) -> String {
+        switch (weight) {
+            
+        case 1:
+            return "الخطوة الأولي"
+            
+        case 2:
+            return "الخطوة الثانية"
+            
+        case 3:
+            return "الخطوة الثالثة"
+            
+        case 4:
+            return "الخطوة الرابعة"
+            
+        case 5:
+            return "الخطوة الخامسة"
+            
+        case 6:
+            return "الخطوة السادسة"
+            
+        case 7:
+            return "الخطوة السابعة"
+            
+        case 8:
+            return "الخطوة الثامنة"
+            
+            
+        default:
+            return "الخطوة الأولي"
+            
+        }
+    }
+    
+    func getProgetTitle(weight: Int) -> String {
+        switch (weight) {
+            
+        case 1:
+            return "الاسبوع الأول"
+        case 2:
+            return "الاسبوع الثاني"
+        case 3:
+            return "الاسبوع الثالث"
+        case 4:
+            return "الاسبوع الرابع"
+        case 5:
+            return "الاسبوع الخامس"
+        case 6:
+            return "الاسبوع السادس"
+        case 7:
+            return "الاسبوع السابع"
+        case 8:
+            return "الاسبوع الثامن"
+            
+        default:
+            return "الاسبوع الأول"
+        }
+    }
 }
 
 extension ProgramVC: SideMenuHeaderDelegate {
@@ -99,6 +158,7 @@ extension ProgramVC : ProgramView {
         print("subscription.id :: \(subscription.id)")
         self.layout.programsTableView.reloadData()
         Defaults[.subscriptionId] = subscription.id
+        Defaults[.currentWeek] = subscription.week.convertToDictionary()
         presenter.getTeamId(projectId: subscription.project.requestId, userId: user.id, token: user.token)
     }
     
@@ -114,9 +174,10 @@ extension ProgramVC : ProgramView {
     func getTeamSuccess(team: Team) {
         print("team :: \(team)")
         
-        Defaults[.currentWeek] = team.currentWeek.convertToDictionary()
-        presenter.getWeekDeliverables(parameters: ["teamMember":"\(Defaults[.teamMemberId]!)", "week":"\(team.currentWeek.id!)"], token: user.token)
-        presenter.getWeekDeliverables(parameters: ["team":"\(Defaults[.teamId]!)", "week":"\(team.currentWeek.id!)"], token: user.token)
+        
+        presenter.getWeekDeliverables(parameters: ["teamMember":"\(Defaults[.teamMemberId]!)", "week":"\(subscription.week.id!)"], token: user.token)
+        
+        presenter.getWeekDeliverables(parameters: ["team":"\(Defaults[.teamId]!)", "week":"\(subscription.week.id!)"], token: user.token)
     }
     
     func getWeekDeliverableSuccess(weekDeliverableResponse: WeekDeliverableResponse) {
@@ -130,7 +191,7 @@ extension ProgramVC : ProgramView {
 extension ProgramVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.subscription != nil {
-            return 1
+            return 2
         }
         return 0
     }
@@ -142,83 +203,27 @@ extension ProgramVC: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             cell.setupViews()
             cell.delegate = self
-            var milestoneName = ""
+            let milestoneName = self.getMilestoneName(weight: self.subscription.milestone.weight)
             let milestoneNumber = "\(self.subscription.week.weight!).\(self.subscription.milestone.weight!)"
             
-            switch (self.subscription.milestone.weight) {
-                
-            case 1:
-                milestoneName = "الخطوة الأولي"
-                break
-                
-            case 2:
-                milestoneName = "الخطوة الثانية"
-                break
-            case 3:
-                milestoneName = "الخطوة الثالثة"
-                break
-            case 4:
-                milestoneName = "الخطوة الرابعة"
-                break
-            case 5:
-                milestoneName = "الخطوة الخامسة"
-                break
-            case 6:
-                milestoneName = "الخطوة السادسة"
-                break
-            case 7:
-                milestoneName = "الخطوة السابعة"
-                break
-            case 8:
-                milestoneName = "الخطوة الثامنة"
-                break
-                
-            default:
-                milestoneName = "الخطوة الأولي"
-                break
-            }
-            
-            var projectTitle = ""
-            
-            switch (self.subscription.week.weight) {
-                
-            case 1:
-                projectTitle = "الاسبوع الأول"
-                break
-                
-            case 2:
-                projectTitle = "الاسبوع الثاني"
-                break
-            case 3:
-                projectTitle = "الاسبوع الثالث"
-                break
-            case 4:
-                projectTitle = "الاسبوع الرابع"
-                break
-            case 5:
-                projectTitle = "الاسبوع الخامس"
-                break
-            case 6:
-                projectTitle = "الاسبوع السادس"
-                break
-            case 7:
-                projectTitle = "الاسبوع السابع"
-                break
-            case 8:
-                projectTitle = "الاسبوع الثامن"
-                break
-                
-            default:
-                break
-            }
-            
-            projectTitle = "\(projectTitle) \("from".localized()) \(self.subscription.project.title!)"
+            let projectTitle = "\(self.getProgetTitle(weight: self.subscription.week.weight)) \("from".localized()) \(self.subscription.project.title!)"
             
             cell.populateData(programName: self.subscription.program.title, programPhotoUrl: self.subscription.program.bgImage, milestoneName: milestoneName, projectTitle: projectTitle, milestoneNumber: milestoneNumber, taskName: self.subscription.milestone.title)
             return cell
         } else {
-            return UITableViewCell()
+//            return UITableViewCell()
+            let cell:ProgramBottomCell = self.layout.programsTableView.dequeueReusableCell(withIdentifier: ProgramBottomCell.identifier, for: indexPath) as! ProgramBottomCell
+            let programId = self.subscription.program.requestId.components(separatedBy: "/").get(at: self.subscription.program.requestId.components(separatedBy: "/").count - 1)
+            cell.programId = Int(programId!)
+            cell.selectionStyle = .none
+            addChild(cell.vc)
+            cell.setupViews()
+            return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 90)
     }
 }
 
@@ -228,8 +233,7 @@ extension ProgramVC : TopCellDelegate {
     }
     
     func scrollToBottom() {
-        
+        let indexPath = IndexPath(row: 1, section: 0)
+        self.layout.programsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
-    
-    
 }

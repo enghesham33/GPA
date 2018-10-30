@@ -14,10 +14,12 @@ public class Week {
     var id: Int!
     var requestId: String!
     var title: String!
+    var summary: String!
     var weight: Int!
     var startDate: String!
+    var endDate: String!
     var weekMaterial: WeekMaterial!
-    
+    var approved: Bool!
     init() {
         
     }
@@ -32,6 +34,9 @@ public class Week {
         dictionary["title"] = title
         dictionary["weight"] = weight
         dictionary["startDate"] = startDate
+        dictionary["endDate"] = endDate
+        dictionary["summary"] = summary
+        dictionary["approved"] = approved
         if weekMaterial != nil {
             dictionary["weekMaterial"] = weekMaterial.convertToDictionary()
         }
@@ -47,6 +52,9 @@ public class Week {
         week.title =  dictionary["title"] as? String
         week.weight =  dictionary["weight"] as? Int
         week.startDate =  dictionary["startDate"] as? String
+        week.endDate =  dictionary["endDate"] as? String
+        week.summary =  dictionary["summary"] as? String
+        week.approved =  dictionary["approved"] as? Bool
         if let weekMaterialDic = dictionary["weekMaterial"] {
             week.weekMaterial =  WeekMaterial.getInstance(dictionary: weekMaterialDic as! Dictionary<String, Any>)
         }

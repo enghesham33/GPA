@@ -24,8 +24,9 @@ public class ProgramLayout : BaseLayout {
     lazy var programsTableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.allowsSelection = false
+        tableView.isScrollEnabled = true
         tableView.register(ProgramTopCell.self, forCellReuseIdentifier: ProgramTopCell.identifier)
+        tableView.register(ProgramBottomCell.self, forCellReuseIdentifier: ProgramBottomCell.identifier)
         return tableView
     }()
     

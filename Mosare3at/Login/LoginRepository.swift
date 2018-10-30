@@ -53,7 +53,7 @@ public class LoginRepository {
             UiHelpers.hideLoader()
             if response.result.isSuccess {
                 if let _ = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         Defaults[.fcmToken] = token
                     }
                 }
@@ -70,7 +70,7 @@ public class LoginRepository {
             UiHelpers.hideLoader()
             if response.result.isSuccess {
                 if let _ = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         Defaults[.fcmToken] = newToken
                     }
                 }

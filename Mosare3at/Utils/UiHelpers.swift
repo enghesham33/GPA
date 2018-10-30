@@ -117,6 +117,22 @@ class UiHelpers {
         SideMenuManager.default.menuAddPanGestureToPresent(toView: viewToPresent)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: viewToEdge)
     }
+    
+    public class func convertStringToDate(dateString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFormatter.date(from: dateString)!
+    }
+    
+    public class func compareDates(date1: Date, date2: Date) -> DateComparisonResult {
+        if date1 > date2 {
+            return .FIRST_GREATER
+        } else if date2 > date1 {
+            return .SECOND_GREATER
+        } else {
+            return .EQUAL
+        }
+    }
 }
 
 public enum LengthRelation: Int {
@@ -124,6 +140,12 @@ public enum LengthRelation: Int {
     case SCREEN_HEIGHT = 1
     case VIEW_WIDTH = 2
     case VIEW_HEIGHT = 3
+}
+
+public enum DateComparisonResult: Int {
+    case FIRST_GREATER = 0
+    case SECOND_GREATER = 1
+    case EQUAL = 2
 }
 
 extension String {

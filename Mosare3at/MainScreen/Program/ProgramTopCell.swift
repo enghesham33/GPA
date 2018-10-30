@@ -120,6 +120,10 @@ class ProgramTopCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "arrow_up")
         imageView.contentMode = .scaleToFill
+        imageView.isUserInteractionEnabled = true
+        imageView.addTapGesture(action: { (recognizer) in
+            self.delegate.scrollToBottom()
+        })
         return imageView
     }()
     
@@ -127,6 +131,10 @@ class ProgramTopCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "arrow_up")
         imageView.contentMode = .scaleToFill
+        imageView.isUserInteractionEnabled = true
+        imageView.addTapGesture(action: { (recognizer) in
+            self.delegate.scrollToBottom()
+        })
         return imageView
     }()
     

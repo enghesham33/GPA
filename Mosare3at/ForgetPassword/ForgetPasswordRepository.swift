@@ -31,7 +31,7 @@ public class ForgetPasswordRepository {
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "forget-password")!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
             if response.result.isSuccess {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         self.delegate.forgetPasswordSuccess()
                     } else {
                         self.delegate.forgetPasswordFailed(errorMessage: json["email"] as! String)

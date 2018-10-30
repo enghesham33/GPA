@@ -14,6 +14,8 @@ public class Project {
     var id: Int!
     var requestId: String!
     var title: String!
+    var summary: String!
+    var bgImage: String!
     var weight: Int!
     var image: String!
     var supervisor: String!
@@ -27,6 +29,8 @@ public class Project {
         dictionary["id"] = id
         dictionary["@id"] = requestId
         dictionary["title"] = title
+        dictionary["summary"] = summary
+        dictionary["bgImage"] = bgImage
         dictionary["weight"] = weight
         dictionary["image"] = image
         dictionary["supervisor"] = supervisor
@@ -38,6 +42,8 @@ public class Project {
         project.id =  dictionary["id"] as? Int
         project.requestId =  dictionary["@id"] as? String
         project.title =  dictionary["title"] as? String
+        project.summary =  dictionary["summary"] as? String
+        project.bgImage =  dictionary["bgImage"] as? String
         project.weight =  dictionary["weight"] as? Int
         project.image =  dictionary["image"] as? String
         project.supervisor =  dictionary["supervisor"] as? String

@@ -15,7 +15,10 @@ public class Milestone {
     var title: String!
     var weight: Int!
     var requestId: String!
-    
+    var estimated: Int!
+    var tasks: [String]!
+    var questions: [String]!
+    var userAnswers: [UserAnswer]! // for using to get value of answered only
     init() {
         
     }
@@ -26,6 +29,9 @@ public class Milestone {
         dictionary["@id"] = requestId
         dictionary["title"] = title
         dictionary["weight"] = weight
+        dictionary["estimated"] = estimated
+        dictionary["tasks"] = tasks
+        dictionary["questions"] = questions
         return dictionary
     }
     
@@ -36,6 +42,9 @@ public class Milestone {
         mileStone.requestId =  dictionary["@id"] as? String
         mileStone.title =  dictionary["title"] as? String
         mileStone.weight =  dictionary["weight"] as? Int
+        mileStone.estimated =  dictionary["estimated"] as? Int
+        mileStone.tasks =  dictionary["tasks"] as? [String]
+        mileStone.questions =  dictionary["questions"] as? [String]
         return mileStone
     }
 }

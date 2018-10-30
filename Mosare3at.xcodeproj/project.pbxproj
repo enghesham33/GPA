@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		1BB4269DE14B2DE73A7C6DD7 /* Pods_Mosare3at.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BDD68F1940C095EC3E5E0B /* Pods_Mosare3at.framework */; };
 		35324D8EE88E6580193639B3 /* Pods_Mosare3atUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3080792DFD337125B8A439B /* Pods_Mosare3atUITests.framework */; };
+		E80615C6217E362000DAFB5A /* ProgramBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615C5217E362000DAFB5A /* ProgramBottomCell.swift */; };
+		E80615C9217E378A00DAFB5A /* ProjectsPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615C8217E378A00DAFB5A /* ProjectsPagerVC.swift */; };
+		E80615CB217E37BE00DAFB5A /* ProjectPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615CA217E37BE00DAFB5A /* ProjectPageVC.swift */; };
+		E80615CD217E37D800DAFB5A /* ProjectPageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615CC217E37D800DAFB5A /* ProjectPageLayout.swift */; };
+		E80615CF217E38AE00DAFB5A /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615CE217E38AE00DAFB5A /* WeekCell.swift */; };
+		E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615D0217E3ED500DAFB5A /* ProjectPagerPresenter.swift */; };
+		E80615D3217E3F0600DAFB5A /* ProjectPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615D2217E3F0600DAFB5A /* ProjectPageRepository.swift */; };
+		E80615D5217F124E00DAFB5A /* UserAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615D4217F124E00DAFB5A /* UserAnswer.swift */; };
+		E80615D7217F275F00DAFB5A /* CurrentWeekStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80615D6217F275F00DAFB5A /* CurrentWeekStatus.swift */; };
 		E812F6B6216520AA00A02952 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B5216520AA00A02952 /* TopView.swift */; };
 		E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */; };
 		E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */; };
@@ -106,6 +115,15 @@
 		75A75B1B663BE8204DA48F89 /* Pods-Mosare3at.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosare3at.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mosare3at/Pods-Mosare3at.release.xcconfig"; sourceTree = "<group>"; };
 		941078E8AE0278871A36E9D2 /* Pods-Mosare3atUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosare3atUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mosare3atUITests/Pods-Mosare3atUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3080792DFD337125B8A439B /* Pods_Mosare3atUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mosare3atUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80615C5217E362000DAFB5A /* ProgramBottomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramBottomCell.swift; sourceTree = "<group>"; };
+		E80615C8217E378A00DAFB5A /* ProjectsPagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsPagerVC.swift; sourceTree = "<group>"; };
+		E80615CA217E37BE00DAFB5A /* ProjectPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPageVC.swift; sourceTree = "<group>"; };
+		E80615CC217E37D800DAFB5A /* ProjectPageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPageLayout.swift; sourceTree = "<group>"; };
+		E80615CE217E38AE00DAFB5A /* WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCell.swift; sourceTree = "<group>"; };
+		E80615D0217E3ED500DAFB5A /* ProjectPagerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPagerPresenter.swift; sourceTree = "<group>"; };
+		E80615D2217E3F0600DAFB5A /* ProjectPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPageRepository.swift; sourceTree = "<group>"; };
+		E80615D4217F124E00DAFB5A /* UserAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnswer.swift; sourceTree = "<group>"; };
+		E80615D6217F275F00DAFB5A /* CurrentWeekStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeekStatus.swift; sourceTree = "<group>"; };
 		E812F6B5216520AA00A02952 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		E812F6B72165391700A02952 /* ForgetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPresenter.swift; sourceTree = "<group>"; };
 		E812F6B92165392500A02952 /* ForgetPasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRepository.swift; sourceTree = "<group>"; };
@@ -235,6 +253,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E80615C7217E374800DAFB5A /* BottomCellContent */ = {
+			isa = PBXGroup;
+			children = (
+				E80615C8217E378A00DAFB5A /* ProjectsPagerVC.swift */,
+				E80615D0217E3ED500DAFB5A /* ProjectPagerPresenter.swift */,
+				E80615CA217E37BE00DAFB5A /* ProjectPageVC.swift */,
+				E80615CC217E37D800DAFB5A /* ProjectPageLayout.swift */,
+				E80615CE217E38AE00DAFB5A /* WeekCell.swift */,
+				E80615D2217E3F0600DAFB5A /* ProjectPageRepository.swift */,
+			);
+			path = BottomCellContent;
+			sourceTree = "<group>";
+		};
 		E839D895216CC1A90097911F /* JoinSuccess */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +297,8 @@
 				E8F1A7A62175BBCC00DA0DB2 /* ProgramPresenter.swift */,
 				E8F1A7A82175BBD700DA0DB2 /* ProgramRepository.swift */,
 				E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */,
+				E80615C5217E362000DAFB5A /* ProgramBottomCell.swift */,
+				E80615C7217E374800DAFB5A /* BottomCellContent */,
 			);
 			path = Program;
 			sourceTree = "<group>";
@@ -465,6 +498,8 @@
 				E8CEFE5D2175DCA2009488C6 /* Description.swift */,
 				E8CEFE5F2175DFA8009488C6 /* Video.swift */,
 				E8CEFE612175DFC6009488C6 /* Thumbnail.swift */,
+				E80615D4217F124E00DAFB5A /* UserAnswer.swift */,
+				E80615D6217F275F00DAFB5A /* CurrentWeekStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -681,18 +716,21 @@
 				E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */,
 				E848ABE721731C1E00055C11 /* DashboardVC.swift in Sources */,
 				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
+				E80615CB217E37BE00DAFB5A /* ProjectPageVC.swift in Sources */,
 				E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */,
 				E8F1A7BF2175D1AB00DA0DB2 /* Member.swift in Sources */,
 				E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */,
 				E8F1A7C12175D28F00DA0DB2 /* Team.swift in Sources */,
 				E8CEFE602175DFA8009488C6 /* Video.swift in Sources */,
 				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
+				E80615D3217E3F0600DAFB5A /* ProjectPageRepository.swift in Sources */,
 				E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */,
 				E848ABED217323F700055C11 /* MainScreenLayout.swift in Sources */,
 				E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */,
 				E8CEFE5C2175DB4C009488C6 /* Deliverable.swift in Sources */,
 				E8F1A7B72175BD1A00DA0DB2 /* Milestone.swift in Sources */,
 				E8F1A7B52175BD0C00DA0DB2 /* Week.swift in Sources */,
+				E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */,
 				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
 				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
 				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
@@ -713,6 +751,8 @@
 				E8F1A7A72175BBCC00DA0DB2 /* ProgramPresenter.swift in Sources */,
 				E8CEFE622175DFC6009488C6 /* Thumbnail.swift in Sources */,
 				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
+				E80615C6217E362000DAFB5A /* ProgramBottomCell.swift in Sources */,
+				E80615CF217E38AE00DAFB5A /* WeekCell.swift in Sources */,
 				E8CEFE5E2175DCA2009488C6 /* Description.swift in Sources */,
 				E848ABF321732A4200055C11 /* TeamLayout.swift in Sources */,
 				E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */,
@@ -727,6 +767,7 @@
 				E8F1A7BD2175D16E00DA0DB2 /* TeamMember.swift in Sources */,
 				E8F1A7AD2175BC8600DA0DB2 /* SubscribtionsResponse.swift in Sources */,
 				E8F1A7B92175BD8F00DA0DB2 /* WeekMaterial.swift in Sources */,
+				E80615D5217F124E00DAFB5A /* UserAnswer.swift in Sources */,
 				E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */,
 				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
 				E848ABEF2173267900055C11 /* ProgramLayout.swift in Sources */,
@@ -734,15 +775,18 @@
 				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
 				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
+				E80615CD217E37D800DAFB5A /* ProjectPageLayout.swift in Sources */,
 				E8CEFE642176046E009488C6 /* WeekDeliverablesResponse.swift in Sources */,
 				E848ABF121732A0E00055C11 /* DashboardLayout.swift in Sources */,
 				E839D894216C853A0097911F /* AvatarRepository.swift in Sources */,
+				E80615D7217F275F00DAFB5A /* CurrentWeekStatus.swift in Sources */,
 				E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
 				E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
 				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,
+				E80615C9217E378A00DAFB5A /* ProjectsPagerVC.swift in Sources */,
 				E8EB002A2163641700CD23ED /* User.swift in Sources */,
 				E848ABE521731BE900055C11 /* ProgramVC.swift in Sources */,
 				E848ABE921731C3600055C11 /* TeamVC.swift in Sources */,

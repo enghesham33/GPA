@@ -29,7 +29,7 @@ public class AvatarRepository {
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "media/avatar-list")!).responseJSON { (response) in
             if response.result.isSuccess {
                 if let json = response.result.value as? [String] {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         self.delegate.avatarsRetrieved(avatars: json)
                     } else {
                         self.delegate.avatarsRetrieved(avatars: [])
@@ -49,7 +49,7 @@ public class AvatarRepository {
         
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "users/\(userId)")!, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             if response.result.isSuccess {
-                if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 {
+                if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                     self.delegate.updateAvatarSuccess(message: "updateAvatarSuccess".localized())
                     // update the user's profile image using the uploaded one
                     let user = User.getInstance(dictionary: Defaults[.user]!)

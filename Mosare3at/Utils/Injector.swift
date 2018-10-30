@@ -40,4 +40,12 @@ public class Injector {
     public class func provideProgramPresenter() -> ProgramPresenter {
         return ProgramPresenter(repository: Injector.provideProgramRepository())
     }
+    
+    public class func provideProjectPagerPresenter() -> ProjectPagerPresenter {
+        return ProjectPagerPresenter(repository: Injector.provideProjectPageRepository())
+    }
+    
+    public class func provideProjectPageRepository() -> ProjectPageRepository {
+        return ProjectPageRepository()
+    }
 }
