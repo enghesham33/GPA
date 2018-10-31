@@ -158,6 +158,7 @@ extension ProgramVC : ProgramView {
         print("subscription.id :: \(subscription.id)")
         self.layout.programsTableView.reloadData()
         Defaults[.subscriptionId] = subscription.id
+        Defaults[.subscription] = subscription.convertToDictionary()
         Defaults[.currentWeek] = subscription.week.convertToDictionary()
         presenter.getTeamId(projectId: subscription.project.requestId, userId: user.id, token: user.token)
     }

@@ -15,6 +15,7 @@ extension DefaultsKeys {
     static let token = DefaultsKey<String?>("token")
     static let isLoggedIn = DefaultsKey<Bool?>("isLoggedIn")
     static let subscriptionId = DefaultsKey<Int?>("subscriptionId")
+    static let subscription = DefaultsKey<Dictionary<String, Any>?>("subscription")
     static let teamId = DefaultsKey<String?>("teamId")
     static let teamMemberId = DefaultsKey<String?>("teamMemberId")
     static let currentWeek = DefaultsKey<Dictionary<String, Any>?>("currentWeek")

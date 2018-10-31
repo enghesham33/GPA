@@ -51,6 +51,10 @@ class ProjectsPagerVC: UIPageViewController {
 }
 
 extension ProjectsPagerVC : ProjectPageView {
+    func updateFirstTimeWeekSuccess() {
+        
+    }
+    
     func getWeeksSuccess(weeks: [Week]) {
         
     }

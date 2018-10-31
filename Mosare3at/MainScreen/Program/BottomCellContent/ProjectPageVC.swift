@@ -99,9 +99,25 @@ class ProjectPageVC: BaseVC {
             }
         }
     }
+    
+    func goToWeekVisionScreen() {
+        print("go to week vision screen")
+    }
+    
+    func goToWeekDetailsScreen() {
+        print("go to week details screen")
+    }
 }
 
 extension ProjectPageVC : ProjectPageView {
+    func updateFirstTimeWeekSuccess() {
+        print("updating first week done")
+        goToWeekVisionScreen()
+        // on success of calling api, open week vision screen
+        // in week vision screen, change the X icon to drawn icon in Kashkool
+        // when click on new icon, open week details screen
+    }
+    
     
     func opetaionFailed(message: String) {
         self.view.makeToast(message)
@@ -157,7 +173,22 @@ extension ProjectPageVC : UITableViewDataSource, UITableViewDelegate {
 }
 
 extension ProjectPageVC: WeekCellDelegate {
-    func weekCellClicked(index: Int) {
-        
+    func weekCellClicked(index: Int, isOpened: Bool) {
+        let subscribtion = Subscribtion.getInstance(dictionary: Defaults[.subscription]!)
+        if let weekId = self.weeks.get(at: index)?.id, isOpened {
+            if subscribtion.firstTimeWeek.contains(weekId){
+                 // open week details
+                goToWeekDetailsScreen()
+            } else {
+                // update firstTimeWeek array
+                subscribtion.firstTimeWeek.append(weekId)
+                
+                // save the subscribtion object to local
+                Defaults[.subscription] = subscribtion.convertToDictionary()
+                
+                // call subscrition api and set firstTimeWeek data only
+                self.presenter.updateFirstTimeWeek()
+            }
+        }
     }
 }

@@ -49,7 +49,6 @@ public class ProjectPageLayout: BaseLayout {
     lazy var weeksTableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .yellow
         tableView.register(WeekCell.self, forCellReuseIdentifier: WeekCell.identifier)
         return tableView
     }()

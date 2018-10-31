@@ -17,6 +17,12 @@ public class Subscribtion {
     var project: Project!
     var week: Week!
     var milestone: Milestone!
+    var firstTimeWeek: [Int]!
+    var finishedMilestones: [Int]!
+    var tutorialBadge: Bool!
+    var tutorialPoint: Bool!
+    var finishedRatedWeeks: [Int]!
+    var sharedBadgesArr: [Int]!
     
     init() {
         
@@ -29,6 +35,13 @@ public class Subscribtion {
         dictionary["project"] = project.convertToDictionary()
         dictionary["week"] = week.convertToDictionary()
         dictionary["milestone"] = milestone.convertToDictionary()
+        dictionary["firstTimeWeek"] = firstTimeWeek
+        dictionary["finishedMilestones"] = finishedMilestones
+        dictionary["tutorialBadge"] = tutorialBadge
+        dictionary["tutorialPoint"] = tutorialPoint
+        dictionary["finishedRatedWeeks"] = finishedRatedWeeks
+        dictionary["sharedBadgesArr"] = sharedBadgesArr
+        
         return dictionary
     }
     
@@ -39,6 +52,12 @@ public class Subscribtion {
         subscribtion.project =  Project.getInstance(dictionary: dictionary["project"] as! Dictionary)
         subscribtion.week =  Week.getInstance(dictionary: dictionary["week"] as! Dictionary)
         subscribtion.milestone =  Milestone.getInstance(dictionary: dictionary["milestone"] as! Dictionary)
+        subscribtion.firstTimeWeek =  dictionary["firstTimeWeek"] as? [Int]
+        subscribtion.finishedMilestones =  dictionary["finishedMilestones"] as? [Int]
+        subscribtion.tutorialBadge =  dictionary["tutorialBadge"] as? Bool
+        subscribtion.tutorialPoint =  dictionary["tutorialPoint"] as? Bool
+        subscribtion.finishedRatedWeeks =  dictionary["finishedRatedWeeks"] as? [Int]
+        subscribtion.sharedBadgesArr =  dictionary["sharedBadgesArr"] as? [Int]
         return subscribtion
     }
 }

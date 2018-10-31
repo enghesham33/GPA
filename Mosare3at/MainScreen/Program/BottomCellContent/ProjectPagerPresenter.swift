@@ -13,6 +13,7 @@ public protocol ProjectPageView : class {
     func getProjectsSuccess(projects: [Project])
     func getWeeksSuccess(weeks: [Week])
     func getCurrentWeekStatusSuccess(currentWeekStatus: CurrentWeekStatus)
+    func updateFirstTimeWeekSuccess()
 }
 
 public class ProjectPagerPresenter {
@@ -58,6 +59,15 @@ extension ProjectPagerPresenter {
             self.projectPageView?.opetaionFailed(message: "noInternetConnection".localized())
         }
     }
+    
+    public func updateFirstTimeWeek() {
+        if UiHelpers.isInternetAvailable() {
+            UiHelpers.showLoader()
+            self.projectPageRepository.updateFirstTimeWeek()
+        } else {
+            self.projectPageView?.opetaionFailed(message: "noInternetConnection".localized())
+        }
+    }
 }
 
 extension ProjectPagerPresenter : ProjectPagePresenterDelegate {
@@ -80,5 +90,10 @@ extension ProjectPagerPresenter : ProjectPagePresenterDelegate {
     public func getCurrentWeekStatusSuccess(currentWeekStatus: CurrentWeekStatus) {
         UiHelpers.hideLoader()
         self.projectPageView?.getCurrentWeekStatusSuccess(currentWeekStatus: currentWeekStatus)
+    }
+    
+    public func updateFirstTimeWeekSuccess() {
+        UiHelpers.hideLoader()
+        self.projectPageView?.updateFirstTimeWeekSuccess()
     }
 }

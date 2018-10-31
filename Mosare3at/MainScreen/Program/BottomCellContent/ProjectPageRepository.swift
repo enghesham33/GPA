@@ -15,6 +15,7 @@ public protocol ProjectPagePresenterDelegate {
     func getProjectsSuccess(projects: [Project])
     func getWeeksSuccess(weeks: [Week])
     func getCurrentWeekStatusSuccess(currentWeekStatus: CurrentWeekStatus)
+    func updateFirstTimeWeekSuccess()
 }
 
 public class ProjectPageRepository {
@@ -95,6 +96,36 @@ public class ProjectPageRepository {
                     if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         let currentWeekStatus: CurrentWeekStatus = CurrentWeekStatus.getInstance(dictionary: json)
                         self.delegate.getCurrentWeekStatusSuccess(currentWeekStatus: currentWeekStatus)
+                    } else {
+                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+                    }
+                } else {
+                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+                }
+            } else {
+                self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+            }
+        }
+    }
+    
+    public func updateFirstTimeWeek() {
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        let subscriptionId = Defaults[.subscriptionId]!
+        
+        let url = CommonConstants.BASE_URL + "subscriptions/\(subscriptionId)"
+        
+        let firstTimeWeek = Subscribtion.getInstance(dictionary: Defaults[.subscription]!).firstTimeWeek
+        
+        let parameters = ["firstTimeWeek" : firstTimeWeek]
+        
+        Alamofire.request(URL(string: url)!, method: .put, parameters: parameters as [String: Any], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            UiHelpers.hideLoader()
+            if response.result.isSuccess {
+                if let _ = response.result.value as? Dictionary<String,AnyObject> {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                        self.delegate.updateFirstTimeWeekSuccess()
                     } else {
                         let jsonObj = response.result.value as? Dictionary<String,AnyObject>
                         self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)

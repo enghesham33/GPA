@@ -10,7 +10,7 @@ import UIKit
 import Localize_Swift
 
 public protocol WeekCellDelegate: class {
-    func weekCellClicked(index: Int)
+    func weekCellClicked(index: Int, isOpened: Bool)
 }
 
 class WeekCell: UITableViewCell {
@@ -218,7 +218,7 @@ class WeekCell: UITableViewCell {
         
         if isOpened {
             self.superView.addTapGesture { (_) in
-                self.delegate.weekCellClicked(index: self.index)
+                self.delegate.weekCellClicked(index: self.index, isOpened: self.isOpened)
             }
         } else {
             self.superView.addTapGesture(action: nil)
