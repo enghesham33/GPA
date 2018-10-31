@@ -212,7 +212,6 @@ extension ProgramVC: UITableViewDelegate, UITableViewDataSource {
             cell.populateData(programName: self.subscription.program.title, programPhotoUrl: self.subscription.program.bgImage, milestoneName: milestoneName, projectTitle: projectTitle, milestoneNumber: milestoneNumber, taskName: self.subscription.milestone.title)
             return cell
         } else {
-//            return UITableViewCell()
             let cell:ProgramBottomCell = self.layout.programsTableView.dequeueReusableCell(withIdentifier: ProgramBottomCell.identifier, for: indexPath) as! ProgramBottomCell
             let programId = self.subscription.program.requestId.components(separatedBy: "/").get(at: self.subscription.program.requestId.components(separatedBy: "/").count - 1)
             cell.programId = Int(programId!)

@@ -100,6 +100,10 @@ public class ForgetPasswordLayout: BaseLayout {
 }
 
 extension ForgetPasswordLayout: TopViewDelegate {
+    public func goToNotifications() {
+        // go to notifications screen
+    }
+    
     public func goBack() {
         self.forgetPasswordDelegate.goBack()
     }

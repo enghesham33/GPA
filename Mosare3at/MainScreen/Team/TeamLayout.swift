@@ -54,5 +54,7 @@ extension TeamLayout : TopViewDelegate {
         // open side menu here
     }
     
-    
+    public func goToNotifications() {
+        // go to notifications screen
+    }
 }

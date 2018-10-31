@@ -159,4 +159,8 @@ extension ForgetPasswordDoneLayout: TopViewDelegate {
     public func goBack() {
         self.forgetPasswordDelegate.goBack()
     }
+    
+    public func goToNotifications() {
+        // go to notifications screen
+    }
 }

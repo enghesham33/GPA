@@ -50,6 +50,10 @@ public class ScheduleLayout : BaseLayout {
 }
 
 extension ScheduleLayout : TopViewDelegate {
+    public func goToNotifications() {
+        // go to notifications screen
+    }
+    
     public func goBack() {
         // open side menu here
     }

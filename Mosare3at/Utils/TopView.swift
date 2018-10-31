@@ -13,6 +13,7 @@ import Localize_Swift
 
 public protocol TopViewDelegate {
     func goBack()
+    func goToNotifications()
 }
 
 public class TopView: UIView {
@@ -36,12 +37,35 @@ public class TopView: UIView {
         return imageView
     }()
     
+    lazy var notificationsImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_notifications")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        imageView.isHidden = true
+        imageView.addTapGesture(action: { (recognizer) in
+            self.delegate.goToNotifications()
+        })
+        return imageView
+    }()
+    
     lazy var screenTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "forgetPassword".localized()
         label.textColor = .white
         label.textAlignment = .center
         label.font = AppFont.font(type: .Bold, size: 20)
+        return label
+    }()
+    
+    lazy var notificationsNumberLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.backgroundColor = UIColor.AppColors.red
+        label.isHidden = true
+        label.font = AppFont.font(type: .Regular, size: 12)
         return label
     }()
     
@@ -62,7 +86,7 @@ public class TopView: UIView {
     }
     
     public func setupViews(screenTitle: String) {
-        let views = [backImageView, screenTitleLabel, logoImageView]
+        let views = [backImageView, screenTitleLabel, logoImageView, notificationsImageView, notificationsNumberLabel]
         self.backgroundColor = .black
         
         self.addSubviews(views)
@@ -75,6 +99,23 @@ public class TopView: UIView {
             maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
             
             maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+        }
+        
+        self.notificationsImageView.snp.makeConstraints { maker in
+            maker.trailing.equalTo(self.snp.trailing).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2) * -1)
+            
+            maker.top.equalTo(self.snp.top).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
+            
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
+            
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
+        }
+        
+        notificationsImageView.addSubview(notificationsNumberLabel)
+        
+        self.notificationsNumberLabel.snp.makeConstraints { (maker) in
+            maker.leading.top.equalTo(notificationsImageView)
+            maker.height.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
         }
         
         self.screenTitleLabel.snp.makeConstraints { maker in
