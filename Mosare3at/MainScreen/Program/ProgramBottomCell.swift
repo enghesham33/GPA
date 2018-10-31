@@ -21,13 +21,30 @@ class ProgramBottomCell: UITableViewCell {
     
     static let identifier = "ProgramBottomCell"
     var superView: UIView!
-
+    
     var vc: ProjectsPagerVC = ProjectsPagerVC.buildVC()
     
     public func setupViews() {
         vc.programId = programId
         self.superView = self.contentView
         self.superView.addSubview(vc.view)
+        self.vc.view.snp.makeConstraints { (maker) in
+            maker.leading.top.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
+            
+            maker.trailing.bottom.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
+        }
+    }
+    
+    func dropShadow(scale: Bool = true, view: UIView) {
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: -1, height: 1)
+        view.layer.shadowRadius = 1
+        
+        view.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        view.layer.shouldRasterize = true
+        view.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
 }

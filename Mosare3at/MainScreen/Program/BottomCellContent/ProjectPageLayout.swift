@@ -77,9 +77,9 @@ public class ProjectPageLayout: BaseLayout {
         }
         
         weeksTableView.snp.makeConstraints { (maker) in
-            maker.leading.trailing.equalTo(superview)
+            maker.leading.trailing.equalTo(mainImageView)
             maker.top.equalTo(mainImageView.snp.bottom)
-            maker.bottom.equalTo(superview.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4) * -1)
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 60))
         }
     }
 }
