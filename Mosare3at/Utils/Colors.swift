@@ -21,6 +21,7 @@ extension UIColor {
         static let darkRed = UIColor(hexString: "#7c000b")!
         static let green = UIColor(hexString: "#007b06")!
         static let yellow = UIColor(hexString: "#FAC900")!
+        static let offWhite = UIColor(hexString: "#FAEBD7")
 
     }
 }

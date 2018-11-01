@@ -51,6 +51,13 @@
 "from" = "من";
 "tasks" = "الخطوات";
 "estimatedTime" = "وقت مقدر";
+"congratToStart" = "مبروك بدأكم أسبوعكم";
+"fromProject" = "من مشروعكم";
+"teamOutputs" = "مخرجات الفريق";
+"individualsOutputs" = "مخرجات الافراد";
+"startWeek" = "ابدأ الأسبوع";
+"neededThisWeek" = "المطلوب منكم خلال هذا الاسبوع";
+
 
 
 "page0Title" = "منهجية التعلم";

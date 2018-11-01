@@ -19,16 +19,18 @@ class WeekDetailsVC: BaseVC {
     var projectImageUrl: String!
     var isWorkingOn: Bool!
     var weekMaterial: WeekMaterial!
+    var project: Project!
     
     var presenter: WeekDetailsPresenter!
     
-    static func buildVC(screenTitle: String, weekTitle: String, week: Week, projectImageUrl: String, isWorkingOn: Bool) -> WeekDetailsVC {
+    static func buildVC(screenTitle: String, weekTitle: String, week: Week, project: Project, isWorkingOn: Bool) -> WeekDetailsVC {
         let vc = WeekDetailsVC()
         vc.screenTitle = screenTitle
         vc.weekTitle = weekTitle
         vc.week = week
-        vc.projectImageUrl = projectImageUrl
+        vc.projectImageUrl = "\(CommonConstants.IMAGES_BASE_URL)\(project.bgImage!)"
         vc.isWorkingOn = isWorkingOn
+        vc.project = project
         return vc
     }
     
@@ -55,6 +57,7 @@ class WeekDetailsVC: BaseVC {
 
 extension WeekDetailsVC: WeekDetailsLayoutDelegate {
     func goToWeekVisionScreen() {
+        self.navigator.navigateToWeekVisionScreen(weekMaterial: self.weekMaterial, project: self.project, week: self.week)
         print("go to week vision screen")
     }
     

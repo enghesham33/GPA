@@ -47,8 +47,13 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
-    public func navigateToWeekDetailsScreen(screenTitle: String, weekTitle: String, week: Week, projectImageUrl: String, isWorkingOn: Bool) {
-        let vc = WeekDetailsVC.buildVC(screenTitle: screenTitle, weekTitle: weekTitle, week: week, projectImageUrl: "\(CommonConstants.IMAGES_BASE_URL)\(projectImageUrl)", isWorkingOn: isWorkingOn)
+    public func navigateToWeekDetailsScreen(screenTitle: String, weekTitle: String, week: Week, project: Project, isWorkingOn: Bool) {
+        let vc = WeekDetailsVC.buildVC(screenTitle: screenTitle, weekTitle: weekTitle, week: week, project: project, isWorkingOn: isWorkingOn)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    public func navigateToWeekVisionScreen(weekMaterial: WeekMaterial, project: Project, week: Week) {
+        let vc = WeekVisionVC.buildVC(weekMaterial: weekMaterial, project: project, week: week)
         self.navigationController.pushViewController(vc, animated: true)
     }
     
