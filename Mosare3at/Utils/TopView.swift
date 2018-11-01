@@ -51,7 +51,7 @@ public class TopView: UIView {
     
     lazy var screenTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "forgetPassword".localized()
+        //label.text = "forgetPassword".localized()
         label.textColor = .white
         label.textAlignment = .center
         label.font = AppFont.font(type: .Bold, size: 20)
@@ -125,7 +125,7 @@ public class TopView: UIView {
             
             maker.width.equalTo(screenTitle.widthOfString(usingFont: screenTitleLabel.font) + 15)
         }
-        
+        self.screenTitleLabel.text = screenTitle
         self.logoImageView.snp.makeConstraints { maker in
             maker.centerX.equalTo(self.snp.centerX)
             maker.top.height.equalTo(backImageView)

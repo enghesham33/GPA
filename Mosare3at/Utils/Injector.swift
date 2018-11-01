@@ -48,4 +48,12 @@ public class Injector {
     public class func provideProjectPageRepository() -> ProjectPageRepository {
         return ProjectPageRepository()
     }
+    
+    public class func provideWeekDetailsPresenter() -> WeekDetailsPresenter {
+        return WeekDetailsPresenter(repository: Injector.provideWeekDetailsRepository())
+    }
+    
+    public class func provideWeekDetailsRepository() -> WeekDetailsRepository {
+        return WeekDetailsRepository()
+    }
 }

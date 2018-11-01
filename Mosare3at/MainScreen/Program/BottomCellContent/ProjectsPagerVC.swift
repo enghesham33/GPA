@@ -38,7 +38,7 @@ class ProjectsPagerVC: UIPageViewController {
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.black
+        self.pageControl.pageIndicatorTintColor = UIColor.gray
         self.pageControl.currentPageIndicatorTintColor = UIColor.AppColors.darkRed
         self.view.addSubviews([pageControl])
         pageControl.snp.makeConstraints { (maker) in

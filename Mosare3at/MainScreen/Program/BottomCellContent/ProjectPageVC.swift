@@ -29,6 +29,7 @@ class ProjectPageVC: BaseVC {
         layout.setupViews()
         self.layout.weeksTableView.dataSource = self
         self.layout.weeksTableView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,8 +105,9 @@ class ProjectPageVC: BaseVC {
         print("go to week vision screen")
     }
     
-    func goToWeekDetailsScreen() {
+    func goToWeekDetailsScreen(screenTitle: String, weekTitle: String, week: Week, projectImageUrl: String, isWorkingOn: Bool) {
         print("go to week details screen")
+        self.navigator.navigateToWeekDetailsScreen(screenTitle: screenTitle, weekTitle: weekTitle, week: week, projectImageUrl: projectImageUrl, isWorkingOn: isWorkingOn)
     }
 }
 
@@ -164,6 +166,7 @@ extension ProjectPageVC : UITableViewDataSource, UITableViewDelegate {
         cell.isOpened = getIsOpened(week: weeks.get(at: indexPath.row)!)
         cell.setupViews()
         cell.populateCellData()
+        cell.projectImageUrl = self.project.bgImage
         return cell
     }
     
@@ -173,12 +176,12 @@ extension ProjectPageVC : UITableViewDataSource, UITableViewDelegate {
 }
 
 extension ProjectPageVC: WeekCellDelegate {
-    func weekCellClicked(index: Int, isOpened: Bool) {
+    func weekCellClicked(index: Int, isOpened: Bool, screenTitle: String, weekTitle: String, week: Week, projectImageUrl: String, isWorkingOn: Bool) {
         let subscribtion = Subscribtion.getInstance(dictionary: Defaults[.subscription]!)
         if let weekId = self.weeks.get(at: index)?.id, isOpened {
             if subscribtion.firstTimeWeek.contains(weekId){
                  // open week details
-                goToWeekDetailsScreen()
+                goToWeekDetailsScreen(screenTitle: screenTitle, weekTitle: weekTitle, week: week, projectImageUrl: projectImageUrl, isWorkingOn: isWorkingOn)
             } else {
                 // update firstTimeWeek array
                 subscribtion.firstTimeWeek.append(weekId)

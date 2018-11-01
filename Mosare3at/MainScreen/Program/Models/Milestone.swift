@@ -19,6 +19,8 @@ public class Milestone {
     var tasks: [String]!
     var questions: [String]!
     var userAnswers: [UserAnswer]! // for using to get value of answered only
+    var isWorkingOn: Bool! // for using in populate week details screen
+    var isDone: Bool! // for using in populate week details screen
     init() {
         
     }

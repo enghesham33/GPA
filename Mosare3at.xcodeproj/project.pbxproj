@@ -39,6 +39,11 @@
 		E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF72173337600055C11 /* SideMenuVC.swift */; };
 		E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABF92173338600055C11 /* SideMenuLayout.swift */; };
 		E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848ABFB2173339C00055C11 /* SideMenuCell.swift */; };
+		E84D8853218A5EC1009147CC /* WeekDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D8852218A5EC1009147CC /* WeekDetailsVC.swift */; };
+		E84D8855218A5ECE009147CC /* WeekDetailsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D8854218A5ECE009147CC /* WeekDetailsLayout.swift */; };
+		E84D8857218A6109009147CC /* MilestoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D8856218A6109009147CC /* MilestoneCell.swift */; };
+		E84D8859218A7EEE009147CC /* WeekDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D8858218A7EEE009147CC /* WeekDetailsPresenter.swift */; };
+		E84D885B218A7EFA009147CC /* WeekDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D885A218A7EFA009147CC /* WeekDetailsRepository.swift */; };
 		E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
@@ -145,6 +150,11 @@
 		E848ABF72173337600055C11 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		E848ABF92173338600055C11 /* SideMenuLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuLayout.swift; sourceTree = "<group>"; };
 		E848ABFB2173339C00055C11 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		E84D8852218A5EC1009147CC /* WeekDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDetailsVC.swift; sourceTree = "<group>"; };
+		E84D8854218A5ECE009147CC /* WeekDetailsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDetailsLayout.swift; sourceTree = "<group>"; };
+		E84D8856218A6109009147CC /* MilestoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCell.swift; sourceTree = "<group>"; };
+		E84D8858218A7EEE009147CC /* WeekDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDetailsPresenter.swift; sourceTree = "<group>"; };
+		E84D885A218A7EFA009147CC /* WeekDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDetailsRepository.swift; sourceTree = "<group>"; };
 		E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramTopCell.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
@@ -340,6 +350,18 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		E84D8851218A5E9D009147CC /* WeekDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E84D8852218A5EC1009147CC /* WeekDetailsVC.swift */,
+				E84D8854218A5ECE009147CC /* WeekDetailsLayout.swift */,
+				E84D8856218A6109009147CC /* MilestoneCell.swift */,
+				E84D8858218A7EEE009147CC /* WeekDetailsPresenter.swift */,
+				E84D885A218A7EFA009147CC /* WeekDetailsRepository.swift */,
+			);
+			path = WeekDetails;
+			sourceTree = "<group>";
+		};
 		E8C75929216BB4080075B0E9 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +424,7 @@
 				E839D895216CC1A90097911F /* JoinSuccess */,
 				E848ABF62173334700055C11 /* SideMenu */,
 				E848ABDB217316D400055C11 /* MainScreen */,
+				E84D8851218A5E9D009147CC /* WeekDetails */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -723,6 +746,7 @@
 				E8F1A7C12175D28F00DA0DB2 /* Team.swift in Sources */,
 				E8CEFE602175DFA8009488C6 /* Video.swift in Sources */,
 				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
+				E84D8855218A5ECE009147CC /* WeekDetailsLayout.swift in Sources */,
 				E80615D3217E3F0600DAFB5A /* ProjectPageRepository.swift in Sources */,
 				E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */,
 				E848ABED217323F700055C11 /* MainScreenLayout.swift in Sources */,
@@ -730,14 +754,17 @@
 				E8CEFE5C2175DB4C009488C6 /* Deliverable.swift in Sources */,
 				E8F1A7B72175BD1A00DA0DB2 /* Milestone.swift in Sources */,
 				E8F1A7B52175BD0C00DA0DB2 /* Week.swift in Sources */,
+				E84D8857218A6109009147CC /* MilestoneCell.swift in Sources */,
 				E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */,
 				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
 				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
 				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
+				E84D8859218A7EEE009147CC /* WeekDetailsPresenter.swift in Sources */,
 				E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */,
 				E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */,
 				E8F1A7AF2175BCEC00DA0DB2 /* Subscription.swift in Sources */,
 				E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */,
+				E84D8853218A5EC1009147CC /* WeekDetailsVC.swift in Sources */,
 				E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */,
 				E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */,
 				E8F1A7B32175BD0000DA0DB2 /* Project.swift in Sources */,
@@ -769,6 +796,7 @@
 				E8F1A7B92175BD8F00DA0DB2 /* WeekMaterial.swift in Sources */,
 				E80615D5217F124E00DAFB5A /* UserAnswer.swift in Sources */,
 				E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */,
+				E84D885B218A7EFA009147CC /* WeekDetailsRepository.swift in Sources */,
 				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
 				E848ABEF2173267900055C11 /* ProgramLayout.swift in Sources */,
 				E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */,
