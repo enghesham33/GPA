@@ -64,4 +64,12 @@ public class Injector {
     public class func provideWeekVisionPresenter() -> WeekVisionPresenter {
         return WeekVisionPresenter(repository: Injector.provideWeekVisionRepository())
     }
+    
+    public class func provideMilestonesRepository() -> MilestonesRepository {
+        return MilestonesRepository()
+    }
+    
+    public class func provideMilestonesPresenter() -> MilestonePresenter {
+        return MilestonePresenter(repository: Injector.provideMilestonesRepository())
+    }
 }

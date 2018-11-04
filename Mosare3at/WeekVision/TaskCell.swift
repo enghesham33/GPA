@@ -55,5 +55,12 @@ class TaskCell: UITableViewCell {
     public func populateData() {
         taskLabel.text = task
     }
+    
+    public func populateCustomData(index: Int, taskString: String) {
+        dotLabel.addBorder(width: 1, color: .gray)
+        dotLabel.text = "\(index)"
+        dotLabel.layer.cornerRadius = 8
+        taskLabel.text = taskString
+    }
 
 }

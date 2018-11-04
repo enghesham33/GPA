@@ -17,7 +17,8 @@ public class Milestone {
     var requestId: String!
     var estimated: Int!
     var tasks: [String]!
-    var questions: [String]!
+    var questions: [Question]!
+    var questionsStrings: [String]!
     var userAnswers: [UserAnswer]! // for using to get value of answered only
     var isWorkingOn: Bool! // for using in populate week details screen
     var isDone: Bool! // for using in populate week details screen
@@ -33,7 +34,12 @@ public class Milestone {
         dictionary["weight"] = weight
         dictionary["estimated"] = estimated
         dictionary["tasks"] = tasks
-        dictionary["questions"] = questions
+        if questions != nil {
+            dictionary["questions"] = questions
+        } else {
+            dictionary["questions"] = questionsStrings
+        }
+        
         return dictionary
     }
     
@@ -46,7 +52,18 @@ public class Milestone {
         mileStone.weight =  dictionary["weight"] as? Int
         mileStone.estimated =  dictionary["estimated"] as? Int
         mileStone.tasks =  dictionary["tasks"] as? [String]
-        mileStone.questions =  dictionary["questions"] as? [String]
+        
+        if let questionsArrayDic = dictionary["questions"] {
+            if questionsArrayDic is [Dictionary<String, Any>] {
+                var questions: [Question] = []
+                for dic in questionsArrayDic as! [Dictionary<String, Any>] {
+                    questions.append(Question.getInstance(dictionary: dic))
+                }
+                mileStone.questions = questions
+            } else {
+                mileStone.questionsStrings =  dictionary["questions"] as? [String]
+            }
+        }
         return mileStone
     }
 }

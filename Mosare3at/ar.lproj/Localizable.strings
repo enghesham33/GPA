@@ -37,7 +37,7 @@
 "share" = "شارك الانجاز +50";
 "program" = "البرنامج";
 "program2" = "برنامج";
-"dashboard" = "لوحة القيادة";
+"dashboard" = "لوحة القادة";
 "team" = "الفريق";
 "schedule" = "الجدول الزمني";
 "copyRights" = "طور و مشغل بواسطة Kwn Digital";
@@ -57,6 +57,13 @@
 "individualsOutputs" = "مخرجات الافراد";
 "startWeek" = "ابدأ الأسبوع";
 "neededThisWeek" = "المطلوب منكم خلال هذا الاسبوع";
+"nextMilestone" = "الخطوة التاليه";
+"previousMilestone" = "الخطوة السابقة";
+"milestone" = "الخطوة";
+"tasksNeeded" = "المهام المطلوبة";
+"answerThefollowing" = "الرجاء الإجابة علي الاسئلة التالية";
+"answerTheQuestion" = "تقديم الاجابة";
+
 
 
 
