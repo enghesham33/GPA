@@ -57,7 +57,10 @@ class WeekDetailsVC: BaseVC {
 
 extension WeekDetailsVC: WeekDetailsLayoutDelegate {
     func goToWeekVisionScreen() {
-        self.navigator.navigateToWeekVisionScreen(weekMaterial: self.weekMaterial, project: self.project, week: self.week)
+        if self.weekMaterial != nil {
+            self.navigator.navigateToWeekVisionScreen(weekMaterial: self.weekMaterial, project: self.project, week: self.week)
+        }
+        
         print("go to week vision screen")
     }
     

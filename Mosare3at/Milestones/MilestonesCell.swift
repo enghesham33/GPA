@@ -170,6 +170,8 @@ extension MilestonesCell: UITableViewDataSource, UITableViewDelegate {
             let cell:QuestionCell = questionsTableView.dequeueReusableCell(withIdentifier: QuestionCell.identifier, for: indexPath) as! QuestionCell
             cell.selectionStyle = .none
             cell.question = self.milestone.questions.get(at: indexPath.row)
+            cell.index = indexPath.row
+            cell.delegate = self
             cell.setupViews()
             cell.populateData()
             return cell

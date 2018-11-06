@@ -66,7 +66,7 @@ class QuestionCell: UITableViewCell {
         button.addTapGesture { recognizer in
             var answerIndex: Int = 0
             for count in 0...self.question.choices.count {
-                if self.question.choices.get(at: count)!.isSelected {
+                if self.question.choices.get(at: count)!.choiceType == .SELECTED {
                     answerIndex = count
                 }
             }
@@ -112,7 +112,7 @@ class QuestionCell: UITableViewCell {
             maker.width.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 25))
         }
         
-        answersTableView.snp.makeConstraints { (maker) in
+        answersTableView.snp.remakeConstraints { (maker) in
             maker.leading.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1) * -1)
             if self.question.question.heightOfString(usingFont: questionLabel.font) > UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 25) {
@@ -188,7 +188,7 @@ class QuestionCell: UITableViewCell {
                 answerTheQuestionButton.addTapGesture { (_) in
                     var answerIndex: Int = 0
                     for count in 0...self.question.choices.count - 1 {
-                        if self.question.choices.get(at: count)!.isSelected {
+                        if self.question.choices.get(at: count)!.choiceType == .SELECTED {
                             answerIndex = count
                         }
                     }

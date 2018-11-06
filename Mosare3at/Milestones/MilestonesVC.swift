@@ -156,7 +156,7 @@ extension MilestonesVC: MilestonesLayoutDelegate {
 extension MilestonesVC: MilestoneView {
     func updateUserAnswerSuccess(userAnswer: UserAnswer) {
         for question in currentMilestone.questions {
-            if "\(question.id!)" == userAnswer.question {
+            if "/questions/\(question.id!)" == userAnswer.question {
                 if question.rightChoice == userAnswer.userChoice {
                     // right answer
                     question.questionType = QuestionType.RIGHT_ANSWER
@@ -182,10 +182,11 @@ extension MilestonesVC: MilestoneView {
                         }
                     }
                 }
-                self.layout.milestonesTableView.reloadData()
+                
                 break
             }
         }
+        self.layout.milestonesTableView.reloadData()
     }
     
     func opetaionFailed(message: String) {

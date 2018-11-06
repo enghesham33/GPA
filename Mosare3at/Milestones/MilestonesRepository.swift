@@ -85,10 +85,11 @@ public class MilestonesRepository {
     }
     
     public func updateUserAnswers(userId: Int, projectId: Int, weekId: Int, milestoneId: Int, questionId: Int, userChoice: Int) {
-        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
-        let params = ["user":userId, "project": projectId, "week": weekId, "milestone": milestoneId, "question": questionId, "userChoice": userChoice]
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!, "Content-Type" : "application/json"]
+        let params = ["user":"/users/\(userId)", "project": "/projects/\(projectId)", "week": "/weeks/\(weekId)", "milestone": "/milestones/\(milestoneId)", "question": "/questions/\(questionId)", "userChoice": userChoice] as [String : Any]
+       
         
-        Alamofire.request(URL(string: CommonConstants.BASE_URL + "user_answers")!, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + "user_answers")!, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             UiHelpers.hideLoader()
             if response.result.isSuccess {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
