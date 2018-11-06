@@ -19,6 +19,7 @@ class AnswerCell: UITableViewCell {
     
     var delegate: AnswerCellDelegate!
     var answer: String!
+    var questionType: QuestionType!
     var index: Int!
     
     lazy var choiceImageView: UIImageView = {
@@ -43,15 +44,16 @@ class AnswerCell: UITableViewCell {
         let views = [answerLabel, choiceImageView]
         superView = self.contentView
         superView.addSubviews(views)
-        
         superView.addTapGesture { (_) in
-            self.delegate.answerSelected(index: self.index)
+            if self.questionType == QuestionType.NOT_ANSWERED || self.questionType == QuestionType.READY_TO_ANSWER {
+                self.delegate.answerSelected(index: self.index)
+            }
         }
         
         choiceImageView.snp.makeConstraints { (maker) in
             maker.leading.equalTo(superView).offset(8)
-            maker.width.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 10))
-            maker.top.equalTo(superView)
+            maker.width.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5))
+            maker.centerY.equalTo(superView)
         }
         
         answerLabel.snp.makeConstraints { (maker) in
@@ -61,7 +63,7 @@ class AnswerCell: UITableViewCell {
         }
     }
     
-    public func populateData(choiceType: ChoiceType, answer: String) {
+    public func populateData(choiceType: ChoiceType) {
         answerLabel.text = answer
         switch choiceType {
         case .NOT_SELECTED:
@@ -90,13 +92,5 @@ class AnswerCell: UITableViewCell {
             answerLabel.textColor = UIColor.AppColors.green
             break
         }
-    }
-
-    public enum ChoiceType: Int {
-        case NOT_SELECTED = 1
-        case RIGHT_CHOICE = 2
-        case WRONG_CHOICE = 3
-        case SELECTED = 4
-        case RIGHT_CHOICE_IN_WRONG_QUESTION = 5
     }
 }

@@ -12,7 +12,7 @@ import Localize_Swift
 
 
 public protocol WeekVisionCellDelegate: class {
-    func goToMilestonesScreen()
+    func goToMilestonesScreen(index: Int)
     func playVideo()
 }
 
@@ -22,6 +22,7 @@ class WeekVisionCell: UITableViewCell {
     public static let identifier = "WeekVisionCell"
     var tasks: [String]!
     var delegate:WeekVisionCellDelegate!
+    var index: Int!
     var superView: UIView!
     var startWeekButtonText: String!
     var teamDeliverables: [Deliverable]!
@@ -146,7 +147,7 @@ class WeekVisionCell: UITableViewCell {
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
         button.addShadow(offset: CGSize.zero, radius: 2.0, color: .black, opacity: 1)
         button.addTapGesture { recognizer in
-            self.delegate.goToMilestonesScreen()
+            self.delegate.goToMilestonesScreen(index: self.index)
         }
         return button
     }()

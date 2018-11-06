@@ -60,21 +60,25 @@ extension MilestonePresenter {
 }
 
 extension MilestonePresenter: MilestonesPresenterDelegate {
-    public func updateUserAnswerSuccess(userAnswer: UserAnswer) {
-        self.milestoneView?.updateUserAnswerSuccess(userAnswer: userAnswer)
-    }
     
     public func opetaionFailed(message: String) {
+        UiHelpers.hideLoader()
         self.milestoneView?.opetaionFailed(message: message)
     }
     
     public func getMilestonesSuccess(milestones: [Milestone]) {
+        UiHelpers.hideLoader()
         self.milestoneView?.getMilestonesSuccess(milestones: milestones)
     }
     
     public func getUserAnswersSuccess(userAnswers: [UserAnswer]) {
+        UiHelpers.hideLoader()
         self.milestoneView?.getUserAnswersSuccess(userAnswers: userAnswers)
     }
     
+    public func updateUserAnswerSuccess(userAnswer: UserAnswer) {
+        UiHelpers.hideLoader()
+        self.milestoneView?.updateUserAnswerSuccess(userAnswer: userAnswer)
+    }
     
 }

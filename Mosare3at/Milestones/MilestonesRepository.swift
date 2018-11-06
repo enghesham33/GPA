@@ -60,10 +60,11 @@ public class MilestonesRepository {
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "user_answers")!, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
             UiHelpers.hideLoader()
             if response.result.isSuccess {
-                if let json = response.result.value as? [Dictionary<String,AnyObject>] {
+                if let json = response.result.value as? Dictionary<String,AnyObject> {
                     if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                        let jsonArray = json["hydra:member"] as? [Dictionary<String,AnyObject>]
                         var userAnswers = [UserAnswer]()
-                        for dic in json {
+                        for dic in jsonArray! {
                             let userAnswer = UserAnswer.getInstance(dictionary: dic)
                             userAnswers.append(userAnswer)
                         }

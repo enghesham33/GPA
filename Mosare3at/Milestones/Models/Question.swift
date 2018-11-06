@@ -15,6 +15,8 @@ public class Question {
     var weight: Int!
     var rightChoice: Int!
     var points: Int!
+    var questionType: QuestionType = .NOT_ANSWERED // for internal usage not from API
+    
     init() {
         
     }
@@ -48,7 +50,7 @@ public class Question {
         question.rightChoice =  dictionary["rightChoice"] as? Int
         question.points =  dictionary["points"] as? Int
         
-        if let choicesArrayDic = dictionary["milestones"], choicesArrayDic is [Dictionary<String, Any>] {
+        if let choicesArrayDic = dictionary["choices"], choicesArrayDic is [Dictionary<String, Any>] {
             var choices: [Answer] = []
             for dic in choicesArrayDic as! [Dictionary<String, Any>] {
                 choices.append(Answer.getInstance(dictionary: dic))
@@ -57,4 +59,11 @@ public class Question {
         }        
         return question
     }
+}
+
+public enum QuestionType: Int {
+    case NOT_ANSWERED = 1
+    case RIGHT_ANSWER = 2
+    case WRONG_ANSWER = 3
+    case READY_TO_ANSWER = 4
 }

@@ -59,8 +59,20 @@ class TaskCell: UITableViewCell {
     public func populateCustomData(index: Int, taskString: String) {
         dotLabel.addBorder(width: 1, color: .gray)
         dotLabel.text = "\(index)"
-        dotLabel.layer.cornerRadius = 8
+        dotLabel.layer.cornerRadius = 4
         taskLabel.text = taskString
+        
+        
+        taskLabel.numberOfLines = 0
+        taskLabel.lineBreakMode = .byWordWrapping
+        dotLabel.textAlignment = .center
+        dotLabel.textColor = .black
+        
+        dotLabel.snp.remakeConstraints { (maker) in
+            maker.leading.equalTo(superView).offset(8)
+            maker.width.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.centerY.equalTo(superView)
+        }
     }
 
 }

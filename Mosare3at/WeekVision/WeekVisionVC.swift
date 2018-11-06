@@ -162,6 +162,7 @@ extension WeekVisionVC: UITableViewDataSource, UITableViewDelegate {
         cell.tasks = weekMaterial.expectations
         cell.setupViews()
         cell.delegate = self
+        cell.index = indexPath.row
         cell.teamDeliverables = getTeamDeliverables()
         cell.individualsDeliverables = getIndividualsDeliverables()
         cell.populateData(congratulationsText: "\("congratToStart".localized()) \(getWeekIndexName()) \("fromProject".localized()) \(getProjectIndexName())", videoThumbUrl: (self.weekMaterial.video.thumbnails.get(at: 0)?.thumb)!)
@@ -176,8 +177,8 @@ extension WeekVisionVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension WeekVisionVC: WeekVisionCellDelegate {
-    func goToMilestonesScreen() {
-        
+    func goToMilestonesScreen(index: Int) {
+        self.navigator.navigateToMilestonesScreen(weekMaterial: self.weekMaterial, project: self.project, week: self.week, clickedMilestone: self.weekMaterial.milestones.get(at: index)!, currentMilestoneIndex: index)
     }
     
     func playVideo() {

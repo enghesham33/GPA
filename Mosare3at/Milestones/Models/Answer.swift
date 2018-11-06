@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
 public class Answer {
     var answer: String!
     var isSelected: Bool = false // for internal usage not from the api
+    var choiceType: ChoiceType = .NOT_SELECTED // for internal usage not from the api
     init() {
         
     }
@@ -27,4 +29,12 @@ public class Answer {
         answer.answer =  dictionary["answer"] as? String
         return answer
     }
+}
+
+public enum ChoiceType: Int {
+    case NOT_SELECTED = 1
+    case RIGHT_CHOICE = 2
+    case WRONG_CHOICE = 3
+    case SELECTED = 4
+    case RIGHT_CHOICE_IN_WRONG_QUESTION = 5
 }

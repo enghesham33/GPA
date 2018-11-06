@@ -8,6 +8,7 @@
 
 import Foundation
 import Material
+import Localize_Swift
 
 public protocol MilestonesLayoutDelegate: BaseLayoutDelegate {
     func goBack()
@@ -49,7 +50,8 @@ public class MilestonesLayout: BaseLayout {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .center
-        label.clipsToBounds = true
+        label.layer.masksToBounds = true
+        label.addBorder(width: 2, color: UIColor.AppColors.darkRed)
         label.font = AppFont.font(type: .Bold, size: 16)
         return label
     }()
@@ -57,15 +59,19 @@ public class MilestonesLayout: BaseLayout {
     lazy var previousLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.textAlignment = .center
+        if Localize.currentLanguage() == "en" {
+            label.textAlignment = .left
+        } else {
+            label.textAlignment = .right
+        }
         label.text = "previousMilestone".localized()
-        label.font = AppFont.font(type: .Bold, size: 15)
+        label.font = AppFont.font(type: .Bold, size: 12)
         return label
     }()
     
     lazy var previousArrowsImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "right_arrows")?.withRenderingMode(.alwaysOriginal)
+        imageView.image = UIImage(named: "right_arrows")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = UIColor.AppColors.darkRed
         imageView.contentMode = .scaleToFill
         return imageView
@@ -90,9 +96,9 @@ public class MilestonesLayout: BaseLayout {
     lazy var nextWeightLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
+        label.layer.masksToBounds = true
         label.textAlignment = .center
-        label.clipsToBounds = true
-        label.text = "nextMilestone".localized()
+        label.addBorder(width: 2, color: UIColor.AppColors.darkRed)
         label.font = AppFont.font(type: .Bold, size: 16)
         return label
     }()
@@ -100,14 +106,19 @@ public class MilestonesLayout: BaseLayout {
     lazy var nextLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.textAlignment = .center
-        label.font = AppFont.font(type: .Bold, size: 15)
+        if Localize.currentLanguage() == "en" {
+            label.textAlignment = .right
+        } else {
+            label.textAlignment = .left
+        }
+        label.text = "nextMilestone".localized()
+        label.font = AppFont.font(type: .Bold, size: 12)
         return label
     }()
     
     lazy var nextArrowsImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "left_arrows")?.withRenderingMode(.alwaysOriginal)
+        imageView.image = UIImage(named: "left_arrows")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = UIColor.AppColors.darkRed
         imageView.contentMode = .scaleToFill
         return imageView
@@ -115,7 +126,7 @@ public class MilestonesLayout: BaseLayout {
     
     func setupViews() {
         
-        let views = [topView, milestonesTableView, previousView, previousLabel, previousWeightLabel, previousArrowsImageView, nextView, nextLabel, nextWeightLabel, nextArrowsImageView]
+        let views = [topView, milestonesTableView, previousView, previousLabel, previousWeightLabel, previousArrowsImageView, nextView, nextLabel, nextWeightLabel, nextArrowsImageView, verticalView]
         
         self.superview.addSubviews(views)
         
@@ -127,32 +138,30 @@ public class MilestonesLayout: BaseLayout {
             maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9))
         }
         
-        self.topView.setupViews(screenTitle: screenTitle)
-        self.topView.screenTitleLabel.isHidden = false
-        self.topView.backImageView.image = UIImage(named: "close")
-        self.topView.delegate = self
+        setupTopView(screenTitle: screenTitle)
         
         self.previousView.snp.makeConstraints { (maker) in
             maker.leading.bottom.equalTo(superview)
             maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 50) - 1)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 15))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 8))
         }
         
         self.previousView.addSubviews([previousLabel, previousWeightLabel, previousArrowsImageView])
         
         self.previousArrowsImageView.snp.makeConstraints { (maker) in
-            maker.bottom.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
+            maker.bottom.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3) * -1)
             maker.leading.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2))
-            maker.top.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 10))
+            maker.top.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5))
         }
 
         self.previousWeightLabel.snp.makeConstraints { (maker) in
             maker.trailing.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2) * -1)
-            maker.top.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
-            maker.bottom.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 13))
+            maker.centerY.equalTo(previousView)
+            maker.width.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 6))
         }
+        
+         self.previousWeightLabel.layer.cornerRadius = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3)
         
         self.previousLabel.snp.makeConstraints { (maker) in
             maker.bottom.equalTo(previousView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
@@ -162,39 +171,39 @@ public class MilestonesLayout: BaseLayout {
         }
         
         self.verticalView.snp.makeConstraints { (maker) in
-            maker.bottom.equalTo(superview)
+            maker.bottom.top.equalTo(previousView)
             maker.leading.equalTo(previousView.snp.trailing)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 15))
             maker.width.equalTo(1)
         }
         
         self.nextView.snp.makeConstraints { (maker) in
             maker.trailing.bottom.equalTo(superview)
             maker.leading.equalTo(verticalView.snp.trailing)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 15))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 8))
         }
         
         self.nextView.addSubviews([nextLabel, nextWeightLabel, nextArrowsImageView])
         
         self.nextArrowsImageView.snp.makeConstraints { (maker) in
-            maker.bottom.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
-            maker.leading.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2))
-            maker.top.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 10))
+            maker.bottom.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3) * -1)
+            maker.trailing.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2) * -1)
+            maker.top.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5))
         }
         
         self.nextWeightLabel.snp.makeConstraints { (maker) in
-            maker.trailing.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2) * -1)
-            maker.top.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
-            maker.bottom.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 13))
+            maker.leading.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2))
+            maker.centerY.equalTo(nextView)
+            maker.width.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 6))
         }
+        
+        self.nextWeightLabel.layer.cornerRadius = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3)
         
         self.nextLabel.snp.makeConstraints { (maker) in
             maker.bottom.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2) * -1)
-            maker.leading.equalTo(nextArrowsImageView.snp.trailing).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
+            maker.leading.equalTo(nextWeightLabel.snp.trailing).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
             maker.top.equalTo(nextView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
-            maker.trailing.equalTo(nextWeightLabel.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1) * -1)
+            maker.trailing.equalTo(nextArrowsImageView.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1) * -1)
         }
         
         self.milestonesTableView.snp.makeConstraints { (maker) in
@@ -202,6 +211,13 @@ public class MilestonesLayout: BaseLayout {
             maker.leading.trailing.equalTo(superview)
             maker.bottom.equalTo(nextView.snp.bottom)
         }
+    }
+    
+    public func setupTopView(screenTitle: String) {
+        self.topView.setupViews(screenTitle: screenTitle)
+        self.topView.screenTitleLabel.isHidden = false
+        self.topView.backImageView.image = UIImage(named: "close")
+        self.topView.delegate = self
     }
 }
 

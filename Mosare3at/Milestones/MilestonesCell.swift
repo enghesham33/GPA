@@ -25,8 +25,13 @@ class MilestonesCell: UITableViewCell {
     lazy var milestoneNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.textAlignment = .center
-        label.font = AppFont.font(type: .Bold, size: 15)
+        
+        if Localize.currentLanguage() == "en" {
+          label.textAlignment = .left
+        } else {
+            label.textAlignment = .right
+        }
+        label.font = AppFont.font(type: .Bold, size: 20)
         return label
     }()
     
@@ -72,46 +77,55 @@ class MilestonesCell: UITableViewCell {
         milestoneNameLabel.snp.makeConstraints { (maker) in
             maker.leading.top.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 5))
         }
         
-        tasksView.snp.makeConstraints { (maker) in
+        tasksView.snp.remakeConstraints { (maker) in
             maker.top.equalTo(milestoneNameLabel.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.leading.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3) * CGFloat(tasksNumber) + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 8) * CGFloat(tasksNumber) + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9))
         }
         
         tasksView.addSubview(tasksTableView)
-        tasksTableView.snp.makeConstraints { (maker) in
+        tasksTableView.snp.remakeConstraints { (maker) in
             maker.top.equalTo(tasksView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.leading.equalTo(tasksView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(tasksView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3) * CGFloat(tasksNumber))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9) * CGFloat(tasksNumber))
         }
         
-        questionsView.snp.makeConstraints { (maker) in
+        questionsView.snp.remakeConstraints { (maker) in
             maker.top.equalTo(tasksView.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.leading.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
-            maker.height.equalTo(calculateQuestionsTableHeight() + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9))
+            if milestone.questions != nil {
+                maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 61) * CGFloat(milestone.questions.count))
+            }
         }
         
         self.questionsView.addSubview(questionsTableView)
-        questionsTableView.snp.makeConstraints { (maker) in
+        questionsTableView.snp.remakeConstraints { (maker) in
             maker.top.equalTo(questionsView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
-            maker.leading.equalTo(questionsView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
-            maker.trailing.equalTo(questionsView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
-            maker.height.equalTo(calculateQuestionsTableHeight())
+            maker.leading.equalTo(questionsView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
+            maker.trailing.equalTo(questionsView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1) * -1)
+            if milestone.questions != nil {
+                 maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 60) * CGFloat(milestone.questions.count))
+            }
+           
         }
     }
     
     func calculateQuestionsTableHeight() -> CGFloat {
         var height: CGFloat = 0.0
-        for question in milestone.questions {
-            height = height + question.question.heightOfString(usingFont: AppFont.font(type: .Bold, size: 18))
-            for answer in question.choices {
-                height = height + answer.answer.heightOfString(usingFont: AppFont.font(type: .Regular, size: 18))
+        if milestone.questions != nil {
+            for question in milestone.questions {
+                height = height + question.question.heightOfString(usingFont: AppFont.font(type: .Bold, size: 18))
+                if question.choices != nil {
+                    for answer in question.choices {
+                        height = height + answer.answer.heightOfString(usingFont: AppFont.font(type: .Regular, size: 18))
+                    }
+                }
             }
         }
         
@@ -121,6 +135,15 @@ class MilestonesCell: UITableViewCell {
     
     public func populateData() {
         
+        milestoneNameLabel.text = milestone.title
+        
+        self.tasksTableView.dataSource = self
+        self.tasksTableView.delegate = self
+        self.tasksTableView.reloadData()
+        
+        self.questionsTableView.dataSource = self
+        self.questionsTableView.delegate = self
+        self.questionsTableView.reloadData()
     }
 }
 
@@ -129,7 +152,10 @@ extension MilestonesCell: UITableViewDataSource, UITableViewDelegate {
         if tableView == tasksTableView {
             return tasksNumber
         } else {
-            return milestone.questions.count
+            if milestone.questions != nil {
+                return milestone.questions.count
+            }
+            return 0
         }
     }
     
@@ -137,12 +163,15 @@ extension MilestonesCell: UITableViewDataSource, UITableViewDelegate {
         if tableView == tasksTableView {
             let cell:TaskCell = tasksTableView.dequeueReusableCell(withIdentifier: TaskCell.identifier, for: indexPath) as! TaskCell
             cell.selectionStyle = .none
+            cell.setupViews()
             cell.populateCustomData(index: indexPath.row + 1, taskString: milestone.tasks.get(at: indexPath.row)!)
             return cell
         } else {
             let cell:QuestionCell = questionsTableView.dequeueReusableCell(withIdentifier: QuestionCell.identifier, for: indexPath) as! QuestionCell
             cell.selectionStyle = .none
-            
+            cell.question = self.milestone.questions.get(at: indexPath.row)
+            cell.setupViews()
+            cell.populateData()
             return cell
         }
     }
@@ -176,6 +205,15 @@ extension MilestonesCell: UITableViewDataSource, UITableViewDelegate {
             maker.top.bottom.equalTo(view)
         }
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if tableView == self.tasksTableView {
+            return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 8)
+        } else {
+            return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 60)// + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9) + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3) * CGFloat(tasksNumber) + calculateQuestionsTableHeight() + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9) + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 10) // last 10% is for spacing not for components
+        }
     }
 }
 

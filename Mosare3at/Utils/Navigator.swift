@@ -57,6 +57,11 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
+    public func navigateToMilestonesScreen(weekMaterial: WeekMaterial, project: Project, week: Week, clickedMilestone: Milestone, currentMilestoneIndex: Int) {
+        let vc = MilestonesVC.buildVC(weekMaterial: weekMaterial, project: project, week: week, currentMilestone: clickedMilestone, currentMilestoneIndex: currentMilestoneIndex)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
 //    public func navigateToProjectsPagerVC(programId: Int) {
 //        let vc = ProjectsPagerVC.buildVC()
 //        vc.programId = programId
