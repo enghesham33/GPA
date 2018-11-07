@@ -147,6 +147,22 @@ extension ProgramVC : ProgramLayoutDelegate {
 }
 
 extension ProgramVC : ProgramView {
+    func getWeekMaterialSuccess(weekMaterials: [WeekMaterial]) {
+        let weekMaterial = weekMaterials.get(at: 0)
+        
+        var index = 0
+        
+        for counter in 0...(weekMaterial?.milestones)!.count {
+            if weekMaterial?.milestones.get(at: counter)?.weight == self.subscription.milestone.weight {
+                index = counter
+                break
+            }
+        }
+        
+        let vc = MilestonesVC.buildVC(weekMaterial: weekMaterial!, project: self.subscription.project, week: self.subscription.week, currentMilestone: weekMaterial!.milestones.get(at: index)!, currentMilestoneIndex: index)
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
     func opetaionFailed(message: String) {
         self.view.makeToast(message, duration: 2, position: .center)
     }
@@ -229,7 +245,7 @@ extension ProgramVC: UITableViewDelegate, UITableViewDataSource {
 
 extension ProgramVC : TopCellDelegate {
     func startNow() {
-        
+        self.presenter.getWeekMaterials(weekId: self.subscription.week.id)
     }
     
     func scrollToBottom() {

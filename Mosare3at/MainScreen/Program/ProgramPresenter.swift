@@ -14,6 +14,7 @@ public protocol ProgramView : class {
     func getTeamIdSuccess(teamId: String, teamMemberId: String)
     func getTeamSuccess(team: Team)
     func getWeekDeliverableSuccess(weekDeliverableResponse: WeekDeliverableResponse)
+    func getWeekMaterialSuccess(weekMaterials: [WeekMaterial])
 }
 
 public class ProgramPresenter {
@@ -69,6 +70,15 @@ extension ProgramPresenter {
             self.opetaionFailed(message: "noInternetConnection".localized())
         }
     }
+    
+    public func getWeekMaterials(weekId: Int) {
+        if UiHelpers.isInternetAvailable() {
+            UiHelpers.showLoader()
+            self.programRepository.getWeekMaterials(weekId: weekId)
+        } else {
+            self.programView?.opetaionFailed(message: "noInternetConnection".localized())
+        }
+    }
 }
 
 extension ProgramPresenter: ProgramPresenterDelegate {
@@ -90,5 +100,10 @@ extension ProgramPresenter: ProgramPresenterDelegate {
     
     public func getWeekDeliverableSuccess(weekDeliverableResponse: WeekDeliverableResponse) {
         self.programView?.getWeekDeliverableSuccess(weekDeliverableResponse: weekDeliverableResponse)
-    } 
+    }
+    
+    public func getWeekMaterialSuccess(weekMaterials: [WeekMaterial]) {
+        UiHelpers.hideLoader()
+        self.programView?.getWeekMaterialSuccess(weekMaterials: weekMaterials)
+    }
 }
