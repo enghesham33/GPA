@@ -210,7 +210,6 @@ extension MilestonesVC: MilestoneView {
     
     func getUserAnswersSuccess(userAnswers: [UserAnswer]) {
         if userAnswers.count == 0 {
-//            let userAnswer = userAnswers[0]
             for question in currentMilestone.questions {
                 question.questionType = QuestionType.NOT_ANSWERED
                 for choice in question.choices {

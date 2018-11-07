@@ -177,6 +177,10 @@ extension WeekVisionVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension WeekVisionVC: WeekVisionCellDelegate {
+    func outputCellClicked(deliverable: Deliverable) {
+        self.navigator.navigateToDeliverableDetailsScreen(week: self.week, deliverable: deliverable)
+    }
+    
     func goToMilestonesScreen(index: Int) {
         self.navigator.navigateToMilestonesScreen(weekMaterial: self.weekMaterial, project: self.project, week: self.week, clickedMilestone: self.weekMaterial.milestones.get(at: index)!, currentMilestoneIndex: index)
     }

@@ -14,6 +14,7 @@ import Localize_Swift
 public protocol WeekVisionCellDelegate: class {
     func goToMilestonesScreen(index: Int)
     func playVideo()
+    func outputCellClicked(deliverable: Deliverable)
 }
 
 
@@ -414,6 +415,7 @@ extension WeekVisionCell: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.deliverable = self.individualsDeliverables.get(at: indexPath.row)
         }
         cell.populateData()
+        cell.delegate = self
         return cell
     }
     
@@ -442,5 +444,10 @@ extension WeekVisionCell: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         
     }
-    
+}
+
+extension WeekVisionCell: OutputsCellDelegate {
+    func outputCellClicked(deliverable: Deliverable) {
+        self.delegate.outputCellClicked(deliverable: deliverable)
+    }
 }

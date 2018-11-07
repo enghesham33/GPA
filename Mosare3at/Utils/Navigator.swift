@@ -62,10 +62,8 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
-//    public func navigateToProjectsPagerVC(programId: Int) {
-//        let vc = ProjectsPagerVC.buildVC()
-//        vc.programId = programId
-//        self.navigationController.pushViewController(vc, animated: true)
-//    }
-    
+    public func navigateToDeliverableDetailsScreen(week: Week, deliverable: Deliverable) {
+        let vc = DeliverableDetailsVC.buildVC(week: week, deliverable: deliverable)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
 }

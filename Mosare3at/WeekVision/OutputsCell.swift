@@ -8,10 +8,15 @@
 
 import UIKit
 
+public protocol OutputsCellDelegate: class {
+    func outputCellClicked(deliverable: Deliverable)
+}
+
 class OutputsCell: UICollectionViewCell {
     
     static let identifier = "TaskCell"
     var superView: UIView!
+    var delegate: OutputsCellDelegate!
     
     var deliverable: Deliverable!
     
@@ -60,6 +65,10 @@ class OutputsCell: UICollectionViewCell {
         self.superView = self.contentView
         
         self.superView.addSubviews(views)
+        
+        superView.addTapGesture { (_) in
+            self.delegate.outputCellClicked(deliverable: self.deliverable)
+        }
         
         self.superView.backgroundColor = UIColor.AppColors.lightGray
         self.superView.addBorder(width: 1, color: UIColor.AppColors.gray)
