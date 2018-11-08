@@ -45,7 +45,8 @@ public class WeekDetailsLayout: BaseLayout {
     
     lazy var infoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "ic_info")
+        imageView.image = UIImage(named: "ic_info")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = UIColor.AppColors.darkRed
         imageView.contentMode = .scaleAspectFill
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in

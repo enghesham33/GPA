@@ -122,7 +122,9 @@ extension WeekDetailsVC: UITableViewDataSource, UITableViewDelegate {
         cell.milestone = milestone
         cell.isWorkingOn = milestone?.isWorkingOn
         cell.isDone = milestone?.isDone
+        cell.index = indexPath.row
         cell.weekWeight = self.week.weight
+        cell.delegate = self
         cell.populateData()
         return cell
     }
@@ -154,5 +156,11 @@ extension WeekDetailsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 100/6)
+    }
+}
+
+extension WeekDetailsVC: MilestoneCellDelegate {
+    func goToMilestonesScreen(index: Int) {
+        self.navigator.navigateToMilestonesScreen(weekMaterial: self.weekMaterial, project: self.project, week: self.week, clickedMilestone: self.weekMaterial.milestones.get(at: index)!, currentMilestoneIndex: index)
     }
 }

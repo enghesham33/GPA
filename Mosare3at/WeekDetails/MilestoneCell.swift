@@ -11,7 +11,7 @@ import Localize_Swift
 import Material
 
 public protocol MilestoneCellDelegate: class {
-    
+    func goToMilestonesScreen(index: Int)
 }
 
 class MilestoneCell: UITableViewCell {
@@ -23,6 +23,7 @@ class MilestoneCell: UITableViewCell {
     
     var weekWeight: Int!
     var milestone: Milestone!
+    var index: Int!
     var isDone: Bool!
     var isWorkingOn: Bool!
     
@@ -97,6 +98,10 @@ class MilestoneCell: UITableViewCell {
         containerView.addSubviews([weightLabel, verticalView1, verticalView2, milestoneNameLabel, doneMilestoneImageView, estimatedTimeLabel, estimatedTimeIconImageView])
         
         superView.backgroundColor = UIColor.AppColors.gray
+        
+        superView.addTapGesture { (_) in
+            self.delegate.goToMilestonesScreen(index: self.index)
+        }
         
         containerView.snp.makeConstraints { (maker) in
             maker.leading.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 3))

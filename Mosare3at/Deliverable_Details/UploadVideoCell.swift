@@ -32,7 +32,7 @@ class UploadVideoCell: UITableViewCell {
     lazy var videoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "mabrook")
+        imageView.image = UIImage(named: "video")
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in
             self.delegate.cameraVideoIconClicked()
@@ -43,7 +43,7 @@ class UploadVideoCell: UITableViewCell {
     lazy var galleryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "mabrook")
+        imageView.image = UIImage(named: "gallery")
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in
             self.delegate.galleryIconClicked()
@@ -91,24 +91,25 @@ class UploadVideoCell: UITableViewCell {
         containerView.addSubviews([titleLabel, videoImageView, galleryImageView, verticalView, horizontalView])
         
         videoImageView.snp.makeConstraints { (maker) in
-            maker.trailing.equalTo(containerView)
-            maker.top.equalTo(containerView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 20))
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9))
+            maker.trailing.equalTo(containerView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5) * -1)
+            maker.top.equalTo(containerView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 10))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 5))
         }
         
         horizontalView.snp.makeConstraints { (maker) in
             maker.trailing.equalTo(containerView)
-            maker.top.equalTo(videoImageView.snp.bottom)
+            //maker.top.equalTo(videoImageView.snp.bottom)
+            maker.centerY.equalTo(containerView)
             maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 20))
             maker.height.equalTo(1)
         }
         
         galleryImageView.snp.makeConstraints { (maker) in
-            maker.trailing.equalTo(containerView)
-            maker.top.equalTo(horizontalView.snp.bottom)
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 20))
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 9))
+            maker.trailing.equalTo(containerView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5) * -1)
+            maker.top.equalTo(horizontalView.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 10))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 5))
         }
         
         verticalView.snp.makeConstraints { (maker) in

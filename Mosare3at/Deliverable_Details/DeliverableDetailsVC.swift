@@ -39,7 +39,7 @@ class DeliverableDetailsVC: BaseVC, UINavigationControllerDelegate, UIImagePicke
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 
 }
