@@ -430,6 +430,13 @@
 			path = WeekVision;
 			sourceTree = "<group>";
 		};
+		E89FEB822194321B0051D3B9 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		E8C75929216BB4080075B0E9 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +506,7 @@
 		E8E841852160E409009E5080 /* Mosare3at */ = {
 			isa = PBXGroup;
 			children = (
+				E89FEB822194321B0051D3B9 /* Notifications */,
 				E8E841862160E409009E5080 /* AppDelegate.swift */,
 				E8E841882160E409009E5080 /* ViewController.swift */,
 				E8E8418A2160E409009E5080 /* Main.storyboard */,
