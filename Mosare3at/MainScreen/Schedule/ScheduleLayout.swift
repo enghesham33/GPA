@@ -11,6 +11,7 @@ import UIKit
 
 public protocol ScheduleLayoutDelegate: BaseLayoutDelegate {
     func openSideMenu()
+    func goToNotificationsScreen()
 }
 
 public class ScheduleLayout : BaseLayout {
@@ -52,6 +53,7 @@ public class ScheduleLayout : BaseLayout {
 extension ScheduleLayout : TopViewDelegate {
     public func goToNotifications() {
         // go to notifications screen
+        self.scheduleLayoutDelegate.goToNotificationsScreen()
     }
     
     public func goBack() {

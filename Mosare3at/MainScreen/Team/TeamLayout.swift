@@ -11,6 +11,7 @@ import UIKit
 
 public protocol TeamLayoutDelegate: BaseLayoutDelegate {
     func openSideMenu()
+    func goToNotificationsScreen()
 }
 
 public class TeamLayout : BaseLayout {
@@ -56,5 +57,6 @@ extension TeamLayout : TopViewDelegate {
     
     public func goToNotifications() {
         // go to notifications screen
+        self.teamLayoutDelegate.goToNotificationsScreen()
     }
 }

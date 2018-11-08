@@ -13,6 +13,7 @@ import Localize_Swift
 
 public protocol ProgramLayoutDelegate: BaseLayoutDelegate {
     func openSideMenu()
+    func goToNotificationsScreen()
 }
 
 public class ProgramLayout : BaseLayout {
@@ -79,6 +80,7 @@ extension ProgramLayout : TopViewDelegate {
     
     public func goToNotifications() {
         // go to notifications screen
+        self.programLayoutDelegate.goToNotificationsScreen()
         print("go to notifications screen")
     }
 }

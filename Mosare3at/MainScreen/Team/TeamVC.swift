@@ -53,6 +53,10 @@ extension TeamVC : TeamLayoutDelegate {
         } else {
             present(SideMenuManager.default.menuRightNavigationController!, animated: true, completion: nil)
         }
-        
+    }
+    
+    func goToNotificationsScreen() {
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToNotifications()
     }
 }

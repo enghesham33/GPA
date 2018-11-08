@@ -56,4 +56,9 @@ extension ScheduleVC: ScheduleLayoutDelegate {
         }
         
     }
+    
+    func goToNotificationsScreen() {
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToNotifications()
+    }
 }

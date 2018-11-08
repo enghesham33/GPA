@@ -11,6 +11,7 @@ import UIKit
 
 public protocol DashboardLayoutDelegate: BaseLayoutDelegate {
     func openSideMenu()
+    func goToNotificationsScreen()
 }
 
 public class DashboardLayout : BaseLayout {
@@ -55,6 +56,7 @@ extension DashboardLayout : TopViewDelegate {
     }
     
     public func goToNotifications() {
+        self.dashboardLayoutDelegate.goToNotificationsScreen()
         // go to notifications screen
     }
 }

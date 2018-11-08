@@ -53,6 +53,14 @@
 		E8925A74218ADA5A00EC344F /* WeekVisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8925A73218ADA5A00EC344F /* WeekVisionVC.swift */; };
 		E8925A76218ADA6800EC344F /* WeekVisionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8925A75218ADA6800EC344F /* WeekVisionLayout.swift */; };
 		E8925A78218AE1D700EC344F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8925A77218AE1D700EC344F /* TaskCell.swift */; };
+		E89FEB8421943D890051D3B9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8321943D890051D3B9 /* NotificationsVC.swift */; };
+		E89FEB8621943D980051D3B9 /* NotificationsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8521943D980051D3B9 /* NotificationsLayout.swift */; };
+		E89FEB8821943DA50051D3B9 /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8721943DA50051D3B9 /* NotificationsPresenter.swift */; };
+		E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8921943DB10051D3B9 /* NotificationsRepository.swift */; };
+		E89FEB8D21943DF40051D3B9 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8C21943DF40051D3B9 /* Notification.swift */; };
+		E89FEB8F21943EED0051D3B9 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8E21943EED0051D3B9 /* NotificationData.swift */; };
+		E89FEB9121943F000051D3B9 /* NotificationDataLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9021943F000051D3B9 /* NotificationDataLink.swift */; };
+		E89FEB932194421A0051D3B9 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB922194421A0051D3B9 /* NotificationCell.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -185,6 +193,14 @@
 		E8925A73218ADA5A00EC344F /* WeekVisionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVisionVC.swift; sourceTree = "<group>"; };
 		E8925A75218ADA6800EC344F /* WeekVisionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVisionLayout.swift; sourceTree = "<group>"; };
 		E8925A77218AE1D700EC344F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		E89FEB8321943D890051D3B9 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		E89FEB8521943D980051D3B9 /* NotificationsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsLayout.swift; sourceTree = "<group>"; };
+		E89FEB8721943DA50051D3B9 /* NotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPresenter.swift; sourceTree = "<group>"; };
+		E89FEB8921943DB10051D3B9 /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
+		E89FEB8C21943DF40051D3B9 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		E89FEB8E21943EED0051D3B9 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
+		E89FEB9021943F000051D3B9 /* NotificationDataLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDataLink.swift; sourceTree = "<group>"; };
+		E89FEB922194421A0051D3B9 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -433,8 +449,24 @@
 		E89FEB822194321B0051D3B9 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				E89FEB8B21943DE60051D3B9 /* Models */,
+				E89FEB8321943D890051D3B9 /* NotificationsVC.swift */,
+				E89FEB8521943D980051D3B9 /* NotificationsLayout.swift */,
+				E89FEB922194421A0051D3B9 /* NotificationCell.swift */,
+				E89FEB8721943DA50051D3B9 /* NotificationsPresenter.swift */,
+				E89FEB8921943DB10051D3B9 /* NotificationsRepository.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		E89FEB8B21943DE60051D3B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E89FEB8C21943DF40051D3B9 /* Notification.swift */,
+				E89FEB8E21943EED0051D3B9 /* NotificationData.swift */,
+				E89FEB9021943F000051D3B9 /* NotificationDataLink.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E8C75929216BB4080075B0E9 /* Avatar */ = {
@@ -506,7 +538,6 @@
 		E8E841852160E409009E5080 /* Mosare3at */ = {
 			isa = PBXGroup;
 			children = (
-				E89FEB822194321B0051D3B9 /* Notifications */,
 				E8E841862160E409009E5080 /* AppDelegate.swift */,
 				E8E841882160E409009E5080 /* ViewController.swift */,
 				E8E8418A2160E409009E5080 /* Main.storyboard */,
@@ -528,6 +559,7 @@
 				E8925A72218AD9FE00EC344F /* WeekVision */,
 				E8CEA858218ED352005DB211 /* Milestones */,
 				E8540B6F21937F1700AE1FFC /* Deliverable_Details */,
+				E89FEB822194321B0051D3B9 /* Notifications */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -880,6 +912,7 @@
 				E8925A78218AE1D700EC344F /* TaskCell.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8540B792193834800AE1FFC /* UploadVideoCell.swift in Sources */,
+				E89FEB8821943DA50051D3B9 /* NotificationsPresenter.swift in Sources */,
 				E8E841B22160E9C4009E5080 /* BaseScrollableLayout.swift in Sources */,
 				E848ABF521732B0000055C11 /* ScheduleLayout.swift in Sources */,
 				E8540B7121937F5300AE1FFC /* DeliverableDetailsVC.swift in Sources */,
@@ -898,17 +931,21 @@
 				E8CEA860218ED88C005DB211 /* QuestionCell.swift in Sources */,
 				E8CEA85A218ED3BB005DB211 /* MilestonesVC.swift in Sources */,
 				E8CEFE6621760840009488C6 /* Singleton.swift in Sources */,
+				E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */,
 				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
 				E8CEA85E218ED561005DB211 /* MilestonesCell.swift in Sources */,
 				E8CEA85C218ED40B005DB211 /* MilestonesLayout.swift in Sources */,
 				E848ABEB21731C4C00055C11 /* ScheduleVC.swift in Sources */,
+				E89FEB8F21943EED0051D3B9 /* NotificationData.swift in Sources */,
+				E89FEB932194421A0051D3B9 /* NotificationCell.swift in Sources */,
 				E8F1A7BB2175D00C00DA0DB2 /* TeacherAssistant.swift in Sources */,
 				E8F1A7B12175BCF700DA0DB2 /* Program.swift in Sources */,
 				E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */,
 				E8F1A7BD2175D16E00DA0DB2 /* TeamMember.swift in Sources */,
 				E8925A74218ADA5A00EC344F /* WeekVisionVC.swift in Sources */,
+				E89FEB8621943D980051D3B9 /* NotificationsLayout.swift in Sources */,
 				E8F1A7AD2175BC8600DA0DB2 /* SubscribtionsResponse.swift in Sources */,
 				E8EE4175218B2D0800F1CE08 /* WeekVisionCell.swift in Sources */,
 				E8F1A7B92175BD8F00DA0DB2 /* WeekMaterial.swift in Sources */,
@@ -919,7 +956,9 @@
 				E848ABEF2173267900055C11 /* ProgramLayout.swift in Sources */,
 				E8CEA867218F047D005DB211 /* MilestonesPresenter.swift in Sources */,
 				E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */,
+				E89FEB9121943F000051D3B9 /* NotificationDataLink.swift in Sources */,
 				E8EE417B218B754E00F1CE08 /* WeekVisionRepository.swift in Sources */,
+				E89FEB8421943D890051D3B9 /* NotificationsVC.swift in Sources */,
 				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
 				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
@@ -931,6 +970,7 @@
 				E80615D7217F275F00DAFB5A /* CurrentWeekStatus.swift in Sources */,
 				E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
+				E89FEB8D21943DF40051D3B9 /* Notification.swift in Sources */,
 				E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */,
 				E8CEA869218F048F005DB211 /* MilestonesRepository.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,

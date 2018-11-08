@@ -144,6 +144,11 @@ extension ProgramVC : ProgramLayoutDelegate {
     func retry() {
         
     }
+    
+    func goToNotificationsScreen() {
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToNotifications()
+    }
 }
 
 extension ProgramVC : ProgramView {

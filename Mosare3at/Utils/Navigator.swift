@@ -66,4 +66,9 @@ public class Navigator {
         let vc = DeliverableDetailsVC.buildVC(week: week, deliverable: deliverable)
         self.navigationController.pushViewController(vc, animated: true)
     }
+    
+    public func navigateToNotifications() {
+        let vc = NotificationsVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
 }

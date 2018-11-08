@@ -14,6 +14,7 @@ import Firebase
 import UserNotifications
 import AlamofireNetworkActivityIndicator
 import AVFoundation
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,10 +35,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         setUpNotification(application)
-        startApplication()
-        
+        if UiHelpers.isInternetAvailable() {
+            getNotSeenNotifications(url: CommonConstants.BASE_URL + "notifications?seen=false&flag=mob&both")
+        } else {
+            startApplication()
+        }
         
         return true
+    }
+    
+    func getNotSeenNotifications(url: String) {
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        
+        Alamofire.request(URL(string: url)!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            UiHelpers.hideLoader()
+            if response.result.isSuccess {
+                if let json = response.result.value as? Dictionary<String,AnyObject> {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                        let jsonArray = json["hydra:member"] as? [Dictionary<String,AnyObject>]
+                        self.unreadNotificationsNumber = self.unreadNotificationsNumber + (jsonArray?.count)!
+                        if let hydraView = json["hydra:view"] as? Dictionary<String,AnyObject> {
+                            if hydraView.has("hydra:next") {
+                                self.getNotSeenNotifications(url: hydraView["hydra:next"] as! String)
+                            } else {
+                                self.startApplication()
+                            }
+                        } else{
+                           self.startApplication()
+                        }
+                        
+                    } else {
+                        self.startApplication()
+                    }
+                } else {
+                    self.startApplication()
+                }
+            } else {
+                self.startApplication()
+            }
+        }
     }
     
     /**

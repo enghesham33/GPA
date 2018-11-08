@@ -133,6 +133,12 @@ class UiHelpers {
             return .EQUAL
         }
     }
+    
+    public class func convertDateToString(date: Date, dateFormat: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat        
+        return formatter.string(from: date)
+    }
 }
 
 public enum LengthRelation: Int {

@@ -42,6 +42,11 @@ extension DashboardVC: SideMenuCellDelegate {
 }
 
 extension DashboardVC : DashboardLayoutDelegate {
+    func goToNotificationsScreen() {
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToNotifications()
+    }
+    
     func retry() {
         
     }

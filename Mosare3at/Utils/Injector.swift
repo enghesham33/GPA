@@ -72,4 +72,12 @@ public class Injector {
     public class func provideMilestonesPresenter() -> MilestonePresenter {
         return MilestonePresenter(repository: Injector.provideMilestonesRepository())
     }
+    
+    public class func provideNotificationsRepository() -> NotificationsRepository {
+        return NotificationsRepository()
+    }
+    
+    public class func provideNotificationsPresenter() -> NotificationsPresenter {
+        return NotificationsPresenter(repository: Injector.provideNotificationsRepository())
+    }
 }
