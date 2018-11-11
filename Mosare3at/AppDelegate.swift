@@ -31,15 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.2
         NetworkActivityIndicatorManager.shared.completionDelay = 0.5
-        UIApplication.shared.statusBarStyle = .lightContent
         
         FirebaseApp.configure()
         setUpNotification(application)
-        if UiHelpers.isInternetAvailable() {
+        if UiHelpers.isInternetAvailable() && Defaults[.isLoggedIn] != nil && Defaults[.isLoggedIn]! {
             getNotSeenNotifications(url: CommonConstants.BASE_URL + "notifications?seen=false&flag=mob&both")
-        } else {
-            startApplication()
         }
+        startApplication()
         
         return true
     }
@@ -58,20 +56,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             if hydraView.has("hydra:next") {
                                 self.getNotSeenNotifications(url: hydraView["hydra:next"] as! String)
                             } else {
-                                self.startApplication()
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED), object: nil)
                             }
                         } else{
-                           self.startApplication()
+//                           self.startApplication()
                         }
                         
                     } else {
-                        self.startApplication()
+//                        self.startApplication()
                     }
                 } else {
-                    self.startApplication()
+//                    self.startApplication()
                 }
             } else {
-                self.startApplication()
+//                self.startApplication()
             }
         }
     }

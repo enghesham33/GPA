@@ -22,10 +22,28 @@ class TeamVC: BaseVC, UISideMenuNavigationControllerDelegate {
         super.viewDidLoad()
         layout = TeamLayout(superview: self.view, teamLayoutDelegate: self)
         layout.setupViews()
+        if AppDelegate.instance.unreadNotificationsNumber > 0 {
+            self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
+        }
+        
+        
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED),
+                                               object: self,
+                                               queue: OperationQueue.main,
+                                               using: notificationsUpdated(noti:))
+    }
+    
+    func notificationsUpdated(noti: Notification) {
+        self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }

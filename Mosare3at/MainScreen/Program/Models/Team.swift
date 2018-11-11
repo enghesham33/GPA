@@ -74,6 +74,11 @@ public class Team {
         if let currentWeekDic = dictionary["currentWeek"], currentWeekDic is Dictionary<String, Any> {
             team.currentWeek = Week.getInstance(dictionary: currentWeekDic as! Dictionary<String, Any>)
         }
+        
+        if let teacherAssistantDic = dictionary["teacherAssistant"], teacherAssistantDic is Dictionary<String, Any> {
+            team.teacherAssistant = TeacherAssistant.getInstance(dictionary: teacherAssistantDic as! Dictionary<String, Any>)
+        }
+        
         team.currentWeekStartDate =  dictionary["currentWeekStartDate"] as? String
         team.points =  dictionary["points"] as? Int
         team.status =  dictionary["status"] as? String

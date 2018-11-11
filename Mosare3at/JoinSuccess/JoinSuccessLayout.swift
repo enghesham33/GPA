@@ -69,7 +69,7 @@ public class JoinSuccessLayout: BaseLayout {
     lazy var badgeImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.backgroundColor = UIColor.AppColors.gray
+        imageView.image = UIImage(named: "prize")
         return imageView
     }()
     
@@ -163,7 +163,7 @@ public class JoinSuccessLayout: BaseLayout {
             maker.top.equalTo(badgeLabel.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.centerX.equalTo(self.superview.snp.centerX)
             maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 40))
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 20))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 30))
         }
         
         shareImageview.snp.makeConstraints { (maker) in

@@ -71,4 +71,9 @@ public class Navigator {
         let vc = NotificationsVC.buildVC()
         self.navigationController.pushViewController(vc, animated: true)
     }
+    
+    public func navigateToTeamRating(week: Week) {
+        let vc = TeamRatingVC.buildVC(week: week)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
 }

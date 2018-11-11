@@ -10,7 +10,7 @@ import Foundation
 
 public protocol NotificationsView:class {
     func opetaionFailed(message: String)
-    func getNotificationsSuccess(notifications: [Notification], nextPage: String)
+    func getNotificationsSuccess(notifications: [NotificationObj], nextPage: String)
 }
 
 public class NotificationsPresenter {
@@ -44,7 +44,7 @@ extension NotificationsPresenter: NotificationsPresenterDelegate {
         self.notificationsView?.opetaionFailed(message: message)
     }
     
-    public func getNotificationsSuccess(notifications: [Notification], nextPage: String) {
+    public func getNotificationsSuccess(notifications: [NotificationObj], nextPage: String) {
         self.notificationsView?.getNotificationsSuccess(notifications: notifications, nextPage: nextPage)
     }
 }

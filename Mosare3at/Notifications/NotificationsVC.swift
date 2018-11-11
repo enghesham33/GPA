@@ -12,7 +12,7 @@ class NotificationsVC: BaseVC {
 
     var layout: NotificationsLayout!
     
-    var notifications: [Notification]!
+    var notifications: [NotificationObj]!
     
     var nextPage: String!
     
@@ -47,7 +47,7 @@ extension NotificationsVC: NotificationsView {
         self.view.makeToast(message)
     }
     
-    func getNotificationsSuccess(notifications: [Notification], nextPage: String) {
+    func getNotificationsSuccess(notifications: [NotificationObj], nextPage: String) {
         self.notifications = notifications
         self.nextPage = nextPage
         

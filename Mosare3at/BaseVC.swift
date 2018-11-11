@@ -32,7 +32,12 @@ class BaseVC: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        if self is LoginVC || self is ChooseAvatarVC || self is JoinSuccessVC {
+            return .default
+        } else {
+            return .lightContent
+        }
+        
     }
     
     /**

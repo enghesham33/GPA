@@ -40,12 +40,12 @@ public class MilestonesRepository {
                         }
                         self.delegate.getMilestonesSuccess(milestones: milestones)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
@@ -70,12 +70,12 @@ public class MilestonesRepository {
                         }
                         self.delegate.getUserAnswersSuccess(userAnswers: userAnswers)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
@@ -97,12 +97,12 @@ public class MilestonesRepository {
                         let userAnswer = UserAnswer.getInstance(dictionary: json)
                         self.delegate.updateUserAnswerSuccess(userAnswer: userAnswer)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())

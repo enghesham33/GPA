@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Notification {
+public class NotificationObj {
     var requestId: String!
     var id: Int!
     var userRequestId: String!
@@ -37,9 +37,9 @@ public class Notification {
         return dictionary
     }
     
-    public static func getInstance(dictionary: Dictionary<String, Any>) -> Notification {
+    public static func getInstance(dictionary: Dictionary<String, Any>) -> NotificationObj {
         
-        let notification = Notification()
+        let notification = NotificationObj()
         
         notification.requestId =  dictionary["@id"] as? String
         notification.id =  dictionary["id"] as? Int

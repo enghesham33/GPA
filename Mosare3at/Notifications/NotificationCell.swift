@@ -13,7 +13,7 @@ class NotificationCell: UITableViewCell {
 
     public static let identifier = "NotificationCell"
     
-    public var notification: Notification!
+    public var notification: NotificationObj!
     
     var superView: UIView!
     

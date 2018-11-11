@@ -41,12 +41,12 @@ public class ProjectPageRepository {
                         }
                         self.delegate.getProjectsSuccess(projects: projects)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
@@ -70,12 +70,12 @@ public class ProjectPageRepository {
                         }
                         self.delegate.getWeeksSuccess(weeks: weeks)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
@@ -97,12 +97,12 @@ public class ProjectPageRepository {
                         let currentWeekStatus: CurrentWeekStatus = CurrentWeekStatus.getInstance(dictionary: json)
                         self.delegate.getCurrentWeekStatusSuccess(currentWeekStatus: currentWeekStatus)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
@@ -127,12 +127,12 @@ public class ProjectPageRepository {
                     if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         self.delegate.updateFirstTimeWeekSuccess()
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())

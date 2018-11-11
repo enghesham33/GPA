@@ -15,6 +15,16 @@ public class TeamMember {
     var requestId: String!
     var member: Member!
     
+    var badges: [Badge]! // for internal usage
+    
+    // the following is for the rating
+    var ratedUser: String! // the user's request id
+    var ratedBy: String! // the user's request id
+    var team: String! // team request Id
+    var week: String! // week request id
+    var comment: String! //comment
+    var badge: String! // gained points
+    
     init() {
         
     }

@@ -57,10 +57,18 @@
 		E89FEB8621943D980051D3B9 /* NotificationsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8521943D980051D3B9 /* NotificationsLayout.swift */; };
 		E89FEB8821943DA50051D3B9 /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8721943DA50051D3B9 /* NotificationsPresenter.swift */; };
 		E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8921943DB10051D3B9 /* NotificationsRepository.swift */; };
-		E89FEB8D21943DF40051D3B9 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8C21943DF40051D3B9 /* Notification.swift */; };
+		E89FEB8D21943DF40051D3B9 /* NotificationObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8C21943DF40051D3B9 /* NotificationObj.swift */; };
 		E89FEB8F21943EED0051D3B9 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB8E21943EED0051D3B9 /* NotificationData.swift */; };
 		E89FEB9121943F000051D3B9 /* NotificationDataLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9021943F000051D3B9 /* NotificationDataLink.swift */; };
 		E89FEB932194421A0051D3B9 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB922194421A0051D3B9 /* NotificationCell.swift */; };
+		E89FEB96219469F40051D3B9 /* TeamRatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB95219469F40051D3B9 /* TeamRatingVC.swift */; };
+		E89FEB9821946A1D0051D3B9 /* TeamRatingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9721946A1D0051D3B9 /* TeamRatingLayout.swift */; };
+		E89FEB9A2194762D0051D3B9 /* TeacherAssitantMarksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB992194762D0051D3B9 /* TeacherAssitantMarksCell.swift */; };
+		E89FEB9D219485CB0051D3B9 /* TeacherAssistantMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */; };
+		E89FEB9F2194869D0051D3B9 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9E2194869D0051D3B9 /* Badge.swift */; };
+		E89FEBA1219487F60051D3B9 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEBA0219487F60051D3B9 /* BadgeCell.swift */; };
+		E8B9D6A92196F62500A16686 /* TeamRatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */; };
+		E8B9D6AB2196F63100A16686 /* TeamRatingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -197,10 +205,18 @@
 		E89FEB8521943D980051D3B9 /* NotificationsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsLayout.swift; sourceTree = "<group>"; };
 		E89FEB8721943DA50051D3B9 /* NotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPresenter.swift; sourceTree = "<group>"; };
 		E89FEB8921943DB10051D3B9 /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
-		E89FEB8C21943DF40051D3B9 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		E89FEB8C21943DF40051D3B9 /* NotificationObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObj.swift; sourceTree = "<group>"; };
 		E89FEB8E21943EED0051D3B9 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		E89FEB9021943F000051D3B9 /* NotificationDataLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDataLink.swift; sourceTree = "<group>"; };
 		E89FEB922194421A0051D3B9 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		E89FEB95219469F40051D3B9 /* TeamRatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingVC.swift; sourceTree = "<group>"; };
+		E89FEB9721946A1D0051D3B9 /* TeamRatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingLayout.swift; sourceTree = "<group>"; };
+		E89FEB992194762D0051D3B9 /* TeacherAssitantMarksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAssitantMarksCell.swift; sourceTree = "<group>"; };
+		E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAssistantMark.swift; sourceTree = "<group>"; };
+		E89FEB9E2194869D0051D3B9 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		E89FEBA0219487F60051D3B9 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingPresenter.swift; sourceTree = "<group>"; };
+		E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingRepository.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -462,9 +478,32 @@
 		E89FEB8B21943DE60051D3B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E89FEB8C21943DF40051D3B9 /* Notification.swift */,
+				E89FEB8C21943DF40051D3B9 /* NotificationObj.swift */,
 				E89FEB8E21943EED0051D3B9 /* NotificationData.swift */,
 				E89FEB9021943F000051D3B9 /* NotificationDataLink.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E89FEB94219468880051D3B9 /* RateTeam */ = {
+			isa = PBXGroup;
+			children = (
+				E89FEB9B219485B00051D3B9 /* Models */,
+				E89FEB95219469F40051D3B9 /* TeamRatingVC.swift */,
+				E89FEB9721946A1D0051D3B9 /* TeamRatingLayout.swift */,
+				E89FEB992194762D0051D3B9 /* TeacherAssitantMarksCell.swift */,
+				E89FEBA0219487F60051D3B9 /* BadgeCell.swift */,
+				E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */,
+				E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */,
+			);
+			path = RateTeam;
+			sourceTree = "<group>";
+		};
+		E89FEB9B219485B00051D3B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */,
+				E89FEB9E2194869D0051D3B9 /* Badge.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,6 +599,7 @@
 				E8CEA858218ED352005DB211 /* Milestones */,
 				E8540B6F21937F1700AE1FFC /* Deliverable_Details */,
 				E89FEB822194321B0051D3B9 /* Notifications */,
+				E89FEB94219468880051D3B9 /* RateTeam */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -892,6 +932,7 @@
 				E8F1A7B72175BD1A00DA0DB2 /* Milestone.swift in Sources */,
 				E8CEA86B218F20EF005DB211 /* AnswerCell.swift in Sources */,
 				E8F1A7B52175BD0C00DA0DB2 /* Week.swift in Sources */,
+				E89FEB9F2194869D0051D3B9 /* Badge.swift in Sources */,
 				E84D8857218A6109009147CC /* MilestoneCell.swift in Sources */,
 				E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */,
 				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
@@ -933,7 +974,9 @@
 				E8CEFE6621760840009488C6 /* Singleton.swift in Sources */,
 				E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */,
 				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
+				E89FEB9A2194762D0051D3B9 /* TeacherAssitantMarksCell.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
+				E89FEB9821946A1D0051D3B9 /* TeamRatingLayout.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
 				E8CEA85E218ED561005DB211 /* MilestonesCell.swift in Sources */,
 				E8CEA85C218ED40B005DB211 /* MilestonesLayout.swift in Sources */,
@@ -956,8 +999,11 @@
 				E848ABEF2173267900055C11 /* ProgramLayout.swift in Sources */,
 				E8CEA867218F047D005DB211 /* MilestonesPresenter.swift in Sources */,
 				E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */,
+				E8B9D6AB2196F63100A16686 /* TeamRatingRepository.swift in Sources */,
+				E8B9D6A92196F62500A16686 /* TeamRatingPresenter.swift in Sources */,
 				E89FEB9121943F000051D3B9 /* NotificationDataLink.swift in Sources */,
 				E8EE417B218B754E00F1CE08 /* WeekVisionRepository.swift in Sources */,
+				E89FEBA1219487F60051D3B9 /* BadgeCell.swift in Sources */,
 				E89FEB8421943D890051D3B9 /* NotificationsVC.swift in Sources */,
 				E8E841AF2160E976009E5080 /* ViewControllersExtension.swift in Sources */,
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
@@ -965,12 +1011,13 @@
 				E8EE4177218B473C00F1CE08 /* OutputsCell.swift in Sources */,
 				E80615CD217E37D800DAFB5A /* ProjectPageLayout.swift in Sources */,
 				E8CEFE642176046E009488C6 /* WeekDeliverablesResponse.swift in Sources */,
+				E89FEB96219469F40051D3B9 /* TeamRatingVC.swift in Sources */,
 				E848ABF121732A0E00055C11 /* DashboardLayout.swift in Sources */,
 				E839D894216C853A0097911F /* AvatarRepository.swift in Sources */,
 				E80615D7217F275F00DAFB5A /* CurrentWeekStatus.swift in Sources */,
 				E848ABFA2173338600055C11 /* SideMenuLayout.swift in Sources */,
 				E8EB002C216374C400CD23ED /* Injector.swift in Sources */,
-				E89FEB8D21943DF40051D3B9 /* Notification.swift in Sources */,
+				E89FEB8D21943DF40051D3B9 /* NotificationObj.swift in Sources */,
 				E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */,
 				E8CEA869218F048F005DB211 /* MilestonesRepository.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
@@ -978,6 +1025,7 @@
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
 				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,
 				E80615C9217E378A00DAFB5A /* ProjectsPagerVC.swift in Sources */,
+				E89FEB9D219485CB0051D3B9 /* TeacherAssistantMark.swift in Sources */,
 				E8EB002A2163641700CD23ED /* User.swift in Sources */,
 				E8925A76218ADA6800EC344F /* WeekVisionLayout.swift in Sources */,
 				E848ABE521731BE900055C11 /* ProgramVC.swift in Sources */,

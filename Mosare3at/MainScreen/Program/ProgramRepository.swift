@@ -39,7 +39,7 @@ public class ProgramRepository {
                         let subscriptionResponse = SubscribtionsResponse.getInstance(dictionary: json)
                         self.delegate.getSubscriptionsSuccess(subscriptionsResponse: subscriptionResponse)
                     } else {
-                        self.delegate.opetaionFailed(message: json["message"] as! String)
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 }
             } else {
@@ -72,11 +72,11 @@ public class ProgramRepository {
                             }
                         }
                     } else {
-                        self.delegate.opetaionFailed(message: json["message"] as! String)
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let errorResponse = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: errorResponse?["message"] as! String)
+//                    let errorResponse = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
@@ -97,7 +97,7 @@ public class ProgramRepository {
                         let team = Team.getInstance(dictionary: json)
                         self.delegate.getTeamSuccess(team: team)
                     } else {
-                        self.delegate.opetaionFailed(message: json["message"] as! String)
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 }
             } else {
@@ -119,7 +119,7 @@ public class ProgramRepository {
                         let weekDeliverableResponse = WeekDeliverableResponse.getInstance(dictionary: json)
                         self.delegate.getWeekDeliverableSuccess(weekDeliverableResponse: weekDeliverableResponse)
                     } else {
-                        self.delegate.opetaionFailed(message: json["message"] as! String)
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 }
             } else {
@@ -144,12 +144,12 @@ public class ProgramRepository {
                         }
                         self.delegate.getWeekMaterialSuccess(weekMaterials: weekMaterials)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())

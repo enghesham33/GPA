@@ -17,4 +17,5 @@ class CommonConstants {
     public static let DELIVERABLE_NONE = "none"
     public static let DELIVERABLE_DELAYED = "delayed"
     public static let DELIVERABLE_REJECTED = "rejected"
+    public static let NOTIFICATIONS_UPDATED = "Notifications_Updated"
 }

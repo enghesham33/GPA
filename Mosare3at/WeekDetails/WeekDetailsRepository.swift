@@ -38,12 +38,12 @@ public class WeekDetailsRepository {
                         }
                         self.delegate.getWeekMaterialSuccess(weekMaterials: weekMaterials)
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())

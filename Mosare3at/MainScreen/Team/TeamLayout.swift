@@ -43,6 +43,13 @@ public class TeamLayout : BaseLayout {
         self.topView.logoImageView.isHidden = false
         self.topView.screenTitleLabel.isHidden = true
         self.topView.delegate = self
+        self.topView.notificationsImageView.isHidden = false
+        if AppDelegate.instance.unreadNotificationsNumber > 0 {
+            self.topView.notificationsNumberLabel.isHidden = false
+            self.topView.notificationsNumberLabel.layer.masksToBounds = true
+            self.topView.notificationsNumberLabel.layer.cornerRadius = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1)
+            self.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
+        }
         self.topView.backImageView.addTapGesture(action: nil)
         self.topView.backImageView.addTapGesture { (_) in
             self.teamLayoutDelegate.openSideMenu()

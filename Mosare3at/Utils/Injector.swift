@@ -80,4 +80,12 @@ public class Injector {
     public class func provideNotificationsPresenter() -> NotificationsPresenter {
         return NotificationsPresenter(repository: Injector.provideNotificationsRepository())
     }
+    
+    public class func provideTeamRatingRepository() -> TeamRatingRepository {
+        return TeamRatingRepository()
+    }
+    
+    public class func provideTeamRatingPresenter() -> TeamRatingPresenter {
+        return TeamRatingPresenter(repository: Injector.provideTeamRatingRepository())
+    }
 }

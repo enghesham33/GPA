@@ -12,7 +12,7 @@ import SwiftyUserDefaults
 
 public protocol NotificationsPresenterDelegate {
     func opetaionFailed(message: String)
-    func getNotificationsSuccess(notifications: [Notification], nextPage: String)
+    func getNotificationsSuccess(notifications: [NotificationObj], nextPage: String)
 }
 public class NotificationsRepository {
     
@@ -31,9 +31,9 @@ public class NotificationsRepository {
                 if let json = response.result.value as? Dictionary<String,AnyObject> {
                     if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
                         let jsonArray = json["hydra:member"] as? [Dictionary<String,AnyObject>]
-                        var notifications = [Notification]()
+                        var notifications = [NotificationObj]()
                         for dic in jsonArray! {
-                            let notification = Notification.getInstance(dictionary: dic)
+                            let notification = NotificationObj.getInstance(dictionary: dic)
                             notifications.append(notification)
                         }
                         
@@ -48,12 +48,12 @@ public class NotificationsRepository {
                         }
                         
                     } else {
-                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                        self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
-                    self.delegate.opetaionFailed(message: jsonObj!["message"] as! String)
+//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())

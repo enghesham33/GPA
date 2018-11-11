@@ -59,6 +59,10 @@ class MainScreenVC: UITabBarController {
 
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
 }
 

@@ -17,6 +17,15 @@ public class TeacherAssistant {
     var profilePic: String!
     var lastname: String!
     
+    // the following is for the rating
+    var selectedMarks: [String] = []
+    var teacherAssistant: String! // the same value of requestId
+    var ratedBy: String! // the user's request id
+    var team: String! // team request Id
+    var week: String! // week request id
+    var comment: String! //comment
+    var points: Int! // gained points
+    
     init() {
         
     }

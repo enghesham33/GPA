@@ -94,6 +94,7 @@ class MilestonesVC: BaseVC {
                 self.layout.nextView.addTapGesture { (_) in
                     // go to team rate
                     print("go to team rate")
+                    self.navigator.navigateToTeamRating(week: self.week)
                 }
                 // enable prev
                 self.layout.previousLabel.textColor = UIColor.AppColors.primaryColor
@@ -127,25 +128,29 @@ extension MilestonesVC: MilestonesLayoutDelegate {
     }
     
     func goNextPageMilestone() {
-        self.currentMilestone = self.milestones.get(at: self.currentMilestoneIndex + 1)!
-        self.currentMilestoneIndex = self.currentMilestoneIndex + 1
-        self.layout.setupTopView(screenTitle: "\("milestone".localized()) \(self.week.weight!).\(self.currentMilestone.weight!)")
-        for question in self.currentMilestone.questions {
-            self.presenter.getUserAnswers(userId: User.getInstance(dictionary: Defaults[.user]!).id, projectId: self.project.id, weekId: self.week.id, milestoneId: self.currentMilestone.id, questionId: question.id)
+        if self.milestones != nil {
+            self.currentMilestone = self.milestones.get(at: self.currentMilestoneIndex + 1)!
+            self.currentMilestoneIndex = self.currentMilestoneIndex + 1
+            self.layout.setupTopView(screenTitle: "\("milestone".localized()) \(self.week.weight!).\(self.currentMilestone.weight!)")
+            for question in self.currentMilestone.questions {
+                self.presenter.getUserAnswers(userId: User.getInstance(dictionary: Defaults[.user]!).id, projectId: self.project.id, weekId: self.week.id, milestoneId: self.currentMilestone.id, questionId: question.id)
+            }
+            applyNextAndPreviousLogic()
+            scrollToFirstRow()
         }
-        applyNextAndPreviousLogic()
-        scrollToFirstRow()
     }
     
     func goPreviousMilestone() {
-        self.currentMilestone = self.milestones.get(at: self.currentMilestoneIndex - 1)!
-        self.currentMilestoneIndex = self.currentMilestoneIndex - 1
-        self.layout.setupTopView(screenTitle: "\("milestone".localized()) \(self.week.weight!).\(self.currentMilestone.weight!)")
-        for question in self.currentMilestone.questions {
-            self.presenter.getUserAnswers(userId: User.getInstance(dictionary: Defaults[.user]!).id, projectId: self.project.id, weekId: self.week.id, milestoneId: self.currentMilestone.id, questionId: question.id)
+         if self.milestones != nil {
+            self.currentMilestone = self.milestones.get(at: self.currentMilestoneIndex - 1)!
+            self.currentMilestoneIndex = self.currentMilestoneIndex - 1
+            self.layout.setupTopView(screenTitle: "\("milestone".localized()) \(self.week.weight!).\(self.currentMilestone.weight!)")
+            for question in self.currentMilestone.questions {
+                self.presenter.getUserAnswers(userId: User.getInstance(dictionary: Defaults[.user]!).id, projectId: self.project.id, weekId: self.week.id, milestoneId: self.currentMilestone.id, questionId: question.id)
+            }
+            applyNextAndPreviousLogic()
+            scrollToFirstRow()
         }
-        applyNextAndPreviousLogic()
-        scrollToFirstRow()
     }
     
     func retry() {
