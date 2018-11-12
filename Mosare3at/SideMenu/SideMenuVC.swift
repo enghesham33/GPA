@@ -36,7 +36,12 @@ class SideMenuVC : BaseVC {
         
         setupMenuTableView()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: NSNotification.Name(rawValue: CommonConstants.SIDE_MENU_PROGRESS_UPDATED), object: nil)
         
+    }
+    
+    @objc func onDidReceiveData(_ notification:Notification) {
+        showUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,10 +60,9 @@ class SideMenuVC : BaseVC {
         layout.usernameLabel.text = "\(user.firstName!) \(user.lastName!)"
         layout.mainUserProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
         layout.userProfilePicImageView.af_setImage(withURL: URL(string: "\(CommonConstants.IMAGES_BASE_URL)\(user.profilePic!)")!, placeholderImage: UIImage(named: "placeholder"))
-        if Singleton.getInstance().sideMenuDoneTasksCount != nil && Singleton.getInstance().sideMenuTotalTasksCount != nil {
-            layout.outputsLabel.text = "\((Singleton.getInstance().sideMenuDoneTasksCount / Singleton.getInstance().sideMenuTotalTasksCount))% \("outputs".localized())"
+        if Singleton.getInstance().sideMenuDoneTasksCount != nil && Singleton.getInstance().sideMenuDoneTasksCount > 0 && Singleton.getInstance().sideMenuTotalTasksCount != nil && Singleton.getInstance().sideMenuTotalTasksCount > 0 {
+            layout.outputsLabel.text = "\(Int(Float(Singleton.getInstance().sideMenuDoneTasksCount) / Float(Singleton.getInstance().sideMenuTotalTasksCount) * 100))% \("outputs".localized())"
         }
-        
     }
 }
 

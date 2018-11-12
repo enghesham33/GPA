@@ -42,15 +42,11 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
             self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
         }
         
-        
-        
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED),
-                                               object: self,
-                                               queue: OperationQueue.main,
-                                               using: notificationsUpdated(noti:))
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED), object: nil)
     }
     
-    func notificationsUpdated(noti: Notification) {
+    @objc func onDidReceiveData(_ notification:Notification) {
+        self.layout.topView.notificationsNumberLabel.isHidden = false
         self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
     }
     
@@ -76,6 +72,7 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
         
         Singleton.getInstance().sideMenuDoneTasksCount = doneTasksCount
         Singleton.getInstance().sideMenuTotalTasksCount = weekDeliverables.count
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: CommonConstants.SIDE_MENU_PROGRESS_UPDATED), object: nil)
     }
     
     func getMilestoneName(weight: Int) -> String {

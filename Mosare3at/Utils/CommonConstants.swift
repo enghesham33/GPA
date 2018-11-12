@@ -18,4 +18,5 @@ class CommonConstants {
     public static let DELIVERABLE_DELAYED = "delayed"
     public static let DELIVERABLE_REJECTED = "rejected"
     public static let NOTIFICATIONS_UPDATED = "Notifications_Updated"
+    public static let SIDE_MENU_PROGRESS_UPDATED = "SIDE_MENU_PROGRESS_UPDATED"
 }

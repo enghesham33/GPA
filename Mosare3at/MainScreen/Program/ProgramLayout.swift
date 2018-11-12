@@ -53,9 +53,6 @@ public class ProgramLayout : BaseLayout {
         self.topView.backImageView.image = UIImage(named: "side_menu")
         self.topView.notificationsImageView.isHidden = false
         if AppDelegate.instance.unreadNotificationsNumber > 0 {
-            self.topView.notificationsNumberLabel.isHidden = false
-            self.topView.notificationsNumberLabel.layer.masksToBounds = true
-            self.topView.notificationsNumberLabel.layer.cornerRadius = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1)
             self.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
         }
         self.topView.logoImageView.isHidden = false

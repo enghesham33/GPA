@@ -66,6 +66,8 @@ public class TopView: UIView {
         label.backgroundColor = UIColor.AppColors.red
         label.isHidden = true
         label.font = AppFont.font(type: .Regular, size: 12)
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1)
         return label
     }()
     

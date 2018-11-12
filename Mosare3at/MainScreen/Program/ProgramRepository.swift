@@ -29,7 +29,6 @@ public class ProgramRepository {
     
     public func getSubscriptions(userId: Int, token: String) {
         let headers = ["X-AUTH-TOKEN" : token]
-        //"Content-Type" : "application/json", 
         let parameters = ["user" : "/users/\(userId)"]
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "subscriptions")!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
             UiHelpers.hideLoader()
