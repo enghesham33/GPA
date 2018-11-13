@@ -13,7 +13,7 @@ import SideMenu
 class TeamVC: BaseVC, UISideMenuNavigationControllerDelegate {
     
     var layout: TeamLayout!
-    
+    var sideMenuVC: SideMenuVC!
     static func buildVC() -> TeamVC {
         return TeamVC()
     }
@@ -39,7 +39,7 @@ class TeamVC: BaseVC, UISideMenuNavigationControllerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
+        sideMenuVC = UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -56,6 +56,32 @@ extension TeamVC: SideMenuHeaderDelegate {
 
 extension TeamVC: SideMenuCellDelegate {
     func sideMenuItemSelected(index: Int) {
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        switch index {
+        case 0:
+            
+            break
+            
+        case 1:
+            self.navigator.navigateToVideos()
+            break
+            
+        case 2:
+            self.navigator.navigateToGameMethodology()
+            break
+            
+        case 3:
+            self.navigator.navigateToTerms()
+            break
+            
+        case 4:
+            self.navigator.navigateToSettings()
+            break
+            
+        default:
+            break
+        }
          print("team :: item \(index) clicked")
     }
 }

@@ -22,6 +22,7 @@ public class User {
     var takeTutorial: Bool!
     var roles: [String]!
     var profilePic: String!
+    var mobile: String!
     
     init() {
         
@@ -40,6 +41,7 @@ public class User {
         dictionary["takeTutorial"] = takeTutorial
         dictionary["roles"] = roles
         dictionary["profilePic"] = profilePic
+        dictionary["mobile"] = mobile
         return dictionary
     }
     
@@ -58,6 +60,7 @@ public class User {
         user.takeTutorial = dictionary["takeTutorial"] as? Bool
         user.roles = dictionary["roles"] as? [String]
         user.profilePic = dictionary["profilePic"] as? String
+        user.mobile = dictionary["mobile"] as? String
         
         return user
     }

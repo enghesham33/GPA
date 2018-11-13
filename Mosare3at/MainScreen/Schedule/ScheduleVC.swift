@@ -14,6 +14,7 @@ import SideMenu
 class ScheduleVC: BaseVC, UISideMenuNavigationControllerDelegate {
     
     var layout: ScheduleLayout!
+    var sideMenuVC: SideMenuVC!
     
     static func buildVC() -> ScheduleVC {
         return ScheduleVC()
@@ -40,7 +41,7 @@ class ScheduleVC: BaseVC, UISideMenuNavigationControllerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
+        sideMenuVC = UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -57,6 +58,32 @@ extension ScheduleVC: SideMenuHeaderDelegate {
 
 extension ScheduleVC: SideMenuCellDelegate {
     func sideMenuItemSelected(index: Int) {
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        switch index {
+        case 0:
+            
+            break
+            
+        case 1:
+            self.navigator.navigateToVideos()
+            break
+            
+        case 2:
+            self.navigator.navigateToGameMethodology()
+            break
+            
+        case 3:
+            self.navigator.navigateToTerms()
+            break
+            
+        case 4:
+            self.navigator.navigateToSettings()
+            break
+            
+        default:
+            break
+        }
         print("schedule :: item \(index) clicked")
     }
 }

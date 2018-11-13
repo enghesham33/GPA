@@ -19,6 +19,7 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
     var weekDeliverables: [WeekDeliverable] = []
     
     var subscription: Subscribtion!
+    weak var sideMenuVC: SideMenuVC!
     
     static func buildVC() -> ProgramVC {
         return ProgramVC()
@@ -51,7 +52,7 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
+        sideMenuVC = UiHelpers.setupSideMenu(delegate: self, viewToPresent: self.layout.topView.backImageView, viewToEdge: self.view, sideMenuCellDelegate: self, sideMenuHeaderDelegate: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -143,6 +144,33 @@ extension ProgramVC: SideMenuHeaderDelegate {
 
 extension ProgramVC: SideMenuCellDelegate {
     func sideMenuItemSelected(index: Int) {
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        
+        switch index {
+        case 0:
+            
+            break
+            
+        case 1:
+            self.navigator.navigateToVideos()
+            break
+            
+        case 2:
+            self.navigator.navigateToGameMethodology()
+            break
+            
+        case 3:
+            self.navigator.navigateToTerms()
+            break
+            
+        case 4:
+            self.navigator.navigateToSettings()
+            break
+            
+        default:
+            break
+        }
         print("program :: item \(index) clicked")
     }
 }

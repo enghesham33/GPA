@@ -35,11 +35,9 @@ public class WeekVisionRepository {
                         
                         self.delegate.getVideoLinksSuccess(link: dic["360"] as! String)
                     } else {
-//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
                         self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
                     self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {

@@ -50,6 +50,22 @@
 		E8540B772193833200AE1FFC /* ImportantNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8540B762193833200AE1FFC /* ImportantNoteCell.swift */; };
 		E8540B792193834800AE1FFC /* UploadVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8540B782193834800AE1FFC /* UploadVideoCell.swift */; };
 		E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */; };
+		E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */; };
+		E88B0F91219AAE74005DEB38 /* GameMethodologyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */; };
+		E88B0F93219AB008005DEB38 /* GameMethodologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */; };
+		E88B0F95219AB117005DEB38 /* StaticDataObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F94219AB117005DEB38 /* StaticDataObj.swift */; };
+		E88B0F98219AC229005DEB38 /* SettingsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F97219AC229005DEB38 /* SettingsLayout.swift */; };
+		E88B0F9A219AC23C005DEB38 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F99219AC23C005DEB38 /* SettingsVC.swift */; };
+		E88B0F9D219AC702005DEB38 /* NotificationSettingsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F9C219AC702005DEB38 /* NotificationSettingsLayout.swift */; };
+		E88B0F9F219AC87E005DEB38 /* NotificationsSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F9E219AC87E005DEB38 /* NotificationsSettingsVC.swift */; };
+		E88B0FA4219ADB21005DEB38 /* TermsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FA1219ADB21005DEB38 /* TermsCell.swift */; };
+		E88B0FA5219ADB21005DEB38 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FA2219ADB21005DEB38 /* TermsVC.swift */; };
+		E88B0FA6219ADB21005DEB38 /* TermsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FA3219ADB21005DEB38 /* TermsLayout.swift */; };
+		E88B0FA9219AE154005DEB38 /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FA8219AE154005DEB38 /* VideosVC.swift */; };
+		E88B0FAB219AE173005DEB38 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FAA219AE173005DEB38 /* VideoCell.swift */; };
+		E88B0FAD219AE17E005DEB38 /* VideosLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FAC219AE17E005DEB38 /* VideosLayout.swift */; };
+		E88B0FAF219AE189005DEB38 /* VideosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FAE219AE189005DEB38 /* VideosPresenter.swift */; };
+		E88B0FB1219AE198005DEB38 /* VideosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0FB0219AE198005DEB38 /* VideosRepository.swift */; };
 		E8925A74218ADA5A00EC344F /* WeekVisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8925A73218ADA5A00EC344F /* WeekVisionVC.swift */; };
 		E8925A76218ADA6800EC344F /* WeekVisionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8925A75218ADA6800EC344F /* WeekVisionLayout.swift */; };
 		E8925A78218AE1D700EC344F /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8925A77218AE1D700EC344F /* TaskCell.swift */; };
@@ -198,6 +214,22 @@
 		E8540B762193833200AE1FFC /* ImportantNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNoteCell.swift; sourceTree = "<group>"; };
 		E8540B782193834800AE1FFC /* UploadVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoCell.swift; sourceTree = "<group>"; };
 		E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramTopCell.swift; sourceTree = "<group>"; };
+		E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyLayout.swift; sourceTree = "<group>"; };
+		E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyVC.swift; sourceTree = "<group>"; };
+		E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyCell.swift; sourceTree = "<group>"; };
+		E88B0F94219AB117005DEB38 /* StaticDataObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataObj.swift; sourceTree = "<group>"; };
+		E88B0F97219AC229005DEB38 /* SettingsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayout.swift; sourceTree = "<group>"; };
+		E88B0F99219AC23C005DEB38 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E88B0F9C219AC702005DEB38 /* NotificationSettingsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsLayout.swift; sourceTree = "<group>"; };
+		E88B0F9E219AC87E005DEB38 /* NotificationsSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsVC.swift; sourceTree = "<group>"; };
+		E88B0FA1219ADB21005DEB38 /* TermsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsCell.swift; sourceTree = "<group>"; };
+		E88B0FA2219ADB21005DEB38 /* TermsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		E88B0FA3219ADB21005DEB38 /* TermsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsLayout.swift; sourceTree = "<group>"; };
+		E88B0FA8219AE154005DEB38 /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
+		E88B0FAA219AE173005DEB38 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		E88B0FAC219AE17E005DEB38 /* VideosLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosLayout.swift; sourceTree = "<group>"; };
+		E88B0FAE219AE189005DEB38 /* VideosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosPresenter.swift; sourceTree = "<group>"; };
+		E88B0FB0219AE198005DEB38 /* VideosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosRepository.swift; sourceTree = "<group>"; };
 		E8925A73218ADA5A00EC344F /* WeekVisionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVisionVC.swift; sourceTree = "<group>"; };
 		E8925A75218ADA6800EC344F /* WeekVisionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVisionLayout.swift; sourceTree = "<group>"; };
 		E8925A77218AE1D700EC344F /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -448,6 +480,58 @@
 			path = Deliverable_Details;
 			sourceTree = "<group>";
 		};
+		E88B0F8D219AAE44005DEB38 /* GameMethodolgy */ = {
+			isa = PBXGroup;
+			children = (
+				E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */,
+				E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */,
+				E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */,
+				E88B0F94219AB117005DEB38 /* StaticDataObj.swift */,
+			);
+			path = GameMethodolgy;
+			sourceTree = "<group>";
+		};
+		E88B0F96219AC144005DEB38 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E88B0F9B219AC6D6005DEB38 /* NotificationSettings */,
+				E88B0F99219AC23C005DEB38 /* SettingsVC.swift */,
+				E88B0F97219AC229005DEB38 /* SettingsLayout.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E88B0F9B219AC6D6005DEB38 /* NotificationSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E88B0F9E219AC87E005DEB38 /* NotificationsSettingsVC.swift */,
+				E88B0F9C219AC702005DEB38 /* NotificationSettingsLayout.swift */,
+			);
+			path = NotificationSettings;
+			sourceTree = "<group>";
+		};
+		E88B0FA0219ADAC3005DEB38 /* TermsAndConditions */ = {
+			isa = PBXGroup;
+			children = (
+				E88B0FA2219ADB21005DEB38 /* TermsVC.swift */,
+				E88B0FA3219ADB21005DEB38 /* TermsLayout.swift */,
+				E88B0FA1219ADB21005DEB38 /* TermsCell.swift */,
+			);
+			path = TermsAndConditions;
+			sourceTree = "<group>";
+		};
+		E88B0FA7219AE134005DEB38 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				E88B0FA8219AE154005DEB38 /* VideosVC.swift */,
+				E88B0FAC219AE17E005DEB38 /* VideosLayout.swift */,
+				E88B0FAA219AE173005DEB38 /* VideoCell.swift */,
+				E88B0FAE219AE189005DEB38 /* VideosPresenter.swift */,
+				E88B0FB0219AE198005DEB38 /* VideosRepository.swift */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		E8925A72218AD9FE00EC344F /* WeekVision */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +684,10 @@
 				E8540B6F21937F1700AE1FFC /* Deliverable_Details */,
 				E89FEB822194321B0051D3B9 /* Notifications */,
 				E89FEB94219468880051D3B9 /* RateTeam */,
+				E88B0F8D219AAE44005DEB38 /* GameMethodolgy */,
+				E88B0F96219AC144005DEB38 /* Settings */,
+				E88B0FA0219ADAC3005DEB38 /* TermsAndConditions */,
+				E88B0FA7219AE134005DEB38 /* Videos */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -911,11 +999,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88B0FB1219AE198005DEB38 /* VideosRepository.swift in Sources */,
 				E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */,
 				E848ABE721731C1E00055C11 /* DashboardVC.swift in Sources */,
 				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
 				E80615CB217E37BE00DAFB5A /* ProjectPageVC.swift in Sources */,
+				E88B0F98219AC229005DEB38 /* SettingsLayout.swift in Sources */,
 				E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */,
+				E88B0FA5219ADB21005DEB38 /* TermsVC.swift in Sources */,
 				E8CEA865218EE6B5005DB211 /* Answer.swift in Sources */,
 				E8F1A7BF2175D1AB00DA0DB2 /* Member.swift in Sources */,
 				E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */,
@@ -924,17 +1015,20 @@
 				E8CEFE602175DFA8009488C6 /* Video.swift in Sources */,
 				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
 				E84D8855218A5ECE009147CC /* WeekDetailsLayout.swift in Sources */,
+				E88B0F95219AB117005DEB38 /* StaticDataObj.swift in Sources */,
 				E80615D3217E3F0600DAFB5A /* ProjectPageRepository.swift in Sources */,
 				E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */,
 				E848ABED217323F700055C11 /* MainScreenLayout.swift in Sources */,
 				E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */,
 				E8CEFE5C2175DB4C009488C6 /* Deliverable.swift in Sources */,
 				E8F1A7B72175BD1A00DA0DB2 /* Milestone.swift in Sources */,
+				E88B0FAD219AE17E005DEB38 /* VideosLayout.swift in Sources */,
 				E8CEA86B218F20EF005DB211 /* AnswerCell.swift in Sources */,
 				E8F1A7B52175BD0C00DA0DB2 /* Week.swift in Sources */,
 				E89FEB9F2194869D0051D3B9 /* Badge.swift in Sources */,
 				E84D8857218A6109009147CC /* MilestoneCell.swift in Sources */,
 				E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */,
+				E88B0FA9219AE154005DEB38 /* VideosVC.swift in Sources */,
 				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
 				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
 				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
@@ -944,6 +1038,7 @@
 				E8F1A7AF2175BCEC00DA0DB2 /* Subscription.swift in Sources */,
 				E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */,
 				E84D8853218A5EC1009147CC /* WeekDetailsVC.swift in Sources */,
+				E88B0F91219AAE74005DEB38 /* GameMethodologyVC.swift in Sources */,
 				E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */,
 				E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */,
 				E8F1A7B32175BD0000DA0DB2 /* Project.swift in Sources */,
@@ -972,13 +1067,17 @@
 				E8CEA860218ED88C005DB211 /* QuestionCell.swift in Sources */,
 				E8CEA85A218ED3BB005DB211 /* MilestonesVC.swift in Sources */,
 				E8CEFE6621760840009488C6 /* Singleton.swift in Sources */,
+				E88B0FA6219ADB21005DEB38 /* TermsLayout.swift in Sources */,
+				E88B0F9F219AC87E005DEB38 /* NotificationsSettingsVC.swift in Sources */,
 				E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */,
 				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
 				E89FEB9A2194762D0051D3B9 /* TeacherAssitantMarksCell.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
+				E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */,
 				E89FEB9821946A1D0051D3B9 /* TeamRatingLayout.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
 				E8CEA85E218ED561005DB211 /* MilestonesCell.swift in Sources */,
+				E88B0F9D219AC702005DEB38 /* NotificationSettingsLayout.swift in Sources */,
 				E8CEA85C218ED40B005DB211 /* MilestonesLayout.swift in Sources */,
 				E848ABEB21731C4C00055C11 /* ScheduleVC.swift in Sources */,
 				E89FEB8F21943EED0051D3B9 /* NotificationData.swift in Sources */,
@@ -993,6 +1092,7 @@
 				E8EE4175218B2D0800F1CE08 /* WeekVisionCell.swift in Sources */,
 				E8F1A7B92175BD8F00DA0DB2 /* WeekMaterial.swift in Sources */,
 				E80615D5217F124E00DAFB5A /* UserAnswer.swift in Sources */,
+				E88B0F93219AB008005DEB38 /* GameMethodologyCell.swift in Sources */,
 				E8EB00162163511700CD23ED /* DefaultsKeys.swift in Sources */,
 				E84D885B218A7EFA009147CC /* WeekDetailsRepository.swift in Sources */,
 				E8E841A72160E8DC009E5080 /* Navigator.swift in Sources */,
@@ -1000,6 +1100,7 @@
 				E8CEA867218F047D005DB211 /* MilestonesPresenter.swift in Sources */,
 				E839D892216C852C0097911F /* AvatarPresenter.swift in Sources */,
 				E8B9D6AB2196F63100A16686 /* TeamRatingRepository.swift in Sources */,
+				E88B0FAB219AE173005DEB38 /* VideoCell.swift in Sources */,
 				E8B9D6A92196F62500A16686 /* TeamRatingPresenter.swift in Sources */,
 				E89FEB9121943F000051D3B9 /* NotificationDataLink.swift in Sources */,
 				E8EE417B218B754E00F1CE08 /* WeekVisionRepository.swift in Sources */,
@@ -1009,9 +1110,11 @@
 				E812F6B82165391700A02952 /* ForgetPasswordPresenter.swift in Sources */,
 				E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */,
 				E8EE4177218B473C00F1CE08 /* OutputsCell.swift in Sources */,
+				E88B0FA4219ADB21005DEB38 /* TermsCell.swift in Sources */,
 				E80615CD217E37D800DAFB5A /* ProjectPageLayout.swift in Sources */,
 				E8CEFE642176046E009488C6 /* WeekDeliverablesResponse.swift in Sources */,
 				E89FEB96219469F40051D3B9 /* TeamRatingVC.swift in Sources */,
+				E88B0FAF219AE189005DEB38 /* VideosPresenter.swift in Sources */,
 				E848ABF121732A0E00055C11 /* DashboardLayout.swift in Sources */,
 				E839D894216C853A0097911F /* AvatarRepository.swift in Sources */,
 				E80615D7217F275F00DAFB5A /* CurrentWeekStatus.swift in Sources */,
@@ -1029,6 +1132,7 @@
 				E8EB002A2163641700CD23ED /* User.swift in Sources */,
 				E8925A76218ADA6800EC344F /* WeekVisionLayout.swift in Sources */,
 				E848ABE521731BE900055C11 /* ProgramVC.swift in Sources */,
+				E88B0F9A219AC23C005DEB38 /* SettingsVC.swift in Sources */,
 				E848ABE921731C3600055C11 /* TeamVC.swift in Sources */,
 				E8F1A7A92175BBD700DA0DB2 /* ProgramRepository.swift in Sources */,
 				E8CEFE5A2175DB41009488C6 /* WeekDeliverable.swift in Sources */,

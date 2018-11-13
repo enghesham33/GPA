@@ -41,11 +41,9 @@ public class ProjectPageRepository {
                         }
                         self.delegate.getProjectsSuccess(projects: projects)
                     } else {
-//                        let jsonObj = response.result.value as? Dictionary<String,AnyObject>
                         self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                     }
                 } else {
-//                    let jsonObj = response.result.value as? Dictionary<String,AnyObject>
                     self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
             } else {

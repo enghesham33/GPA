@@ -97,7 +97,7 @@ class UiHelpers {
         vc.present(activityViewController, animated: true, completion: nil)
     }
     
-    class func setupSideMenu(delegate: UISideMenuNavigationControllerDelegate, viewToPresent: UIView, viewToEdge: UIView, sideMenuCellDelegate: SideMenuCellDelegate, sideMenuHeaderDelegate: SideMenuHeaderDelegate) {
+    class func setupSideMenu(delegate: UISideMenuNavigationControllerDelegate, viewToPresent: UIView, viewToEdge: UIView, sideMenuCellDelegate: SideMenuCellDelegate, sideMenuHeaderDelegate: SideMenuHeaderDelegate) -> SideMenuVC {
         
         let sideMenuVC = SideMenuVC.buildVC()
         sideMenuVC.sideMenuCellDelegate = sideMenuCellDelegate
@@ -116,6 +116,7 @@ class UiHelpers {
         
         SideMenuManager.default.menuAddPanGestureToPresent(toView: viewToPresent)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: viewToEdge)
+        return sideMenuVC
     }
     
     public class func convertStringToDate(dateString: String) -> Date {

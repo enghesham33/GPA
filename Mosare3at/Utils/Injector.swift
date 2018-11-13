@@ -88,4 +88,12 @@ public class Injector {
     public class func provideTeamRatingPresenter() -> TeamRatingPresenter {
         return TeamRatingPresenter(repository: Injector.provideTeamRatingRepository())
     }
+    
+    public class func provideVideosRepository() -> VideosRepository {
+        return VideosRepository()
+    }
+    
+    public class func provideVideosPresenter() -> VideosPresenter {
+        return VideosPresenter(repository: Injector.provideVideosRepository())
+    }
 }

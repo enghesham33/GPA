@@ -18,9 +18,9 @@ class SideMenuVC : BaseVC {
     var sideMenuCellDelegate: SideMenuCellDelegate!
     var sideMenuHeaderDelegate: SideMenuHeaderDelegate!
     
-    var menuStringsDataSource: [String] = ["myPage".localized(), "gameWay".localized(), "settings".localized(), "logout".localized()]
+    var menuStringsDataSource: [String] = ["myPage".localized(), "movies".localized(), "gameWay".localized(), "termsAndConditions".localized(), "settings".localized()]
     
-    var menuImagesDataSource: [UIImage] = [UIImage(named: "profile")!, UIImage(named: "profile")!, UIImage(named: "settings")!, UIImage(named: "profile")!]
+    var menuImagesDataSource: [UIImage] = [UIImage(named: "profile")!, UIImage(named: "video_side_menu")!, UIImage(named: "profile")!, UIImage(named: "profile")!, UIImage(named: "settings")!]
     
     
     static func buildVC() -> SideMenuVC {

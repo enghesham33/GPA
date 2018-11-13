@@ -19,4 +19,16 @@ extension DefaultsKeys {
     static let teamId = DefaultsKey<String?>("teamId")
     static let teamMemberId = DefaultsKey<String?>("teamMemberId")
     static let currentWeek = DefaultsKey<Dictionary<String, Any>?>("currentWeek")
+    
+    static let isWeekSummary = DefaultsKey<Bool?>("isWeekSummary")
+    static let isNewPoints = DefaultsKey<Bool?>("isNewPoints")
+    static let isNewBadges = DefaultsKey<Bool?>("isNewBadges")
+    static let isProjectStart = DefaultsKey<Bool?>("isProjectStart")
+    static let isDeadLine = DefaultsKey<Bool?>("isDeadLine")
+    static let isDeliverableAccepted = DefaultsKey<Bool?>("isDeliverableAccepted")
+    static let isDeliverableRefused = DefaultsKey<Bool?>("isDeliverableRefused")
+    static let isTeamDataUpdated = DefaultsKey<Bool?>("isTeamDataUpdated")
+    static let isGotCertificate = DefaultsKey<Bool?>("isGotCertificate")
+    static let isNewVideo = DefaultsKey<Bool?>("isNewVideo")
+    
 }

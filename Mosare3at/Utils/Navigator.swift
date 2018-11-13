@@ -76,4 +76,29 @@ public class Navigator {
         let vc = TeamRatingVC.buildVC(week: week)
         self.navigationController.pushViewController(vc, animated: true)
     }
+    
+    public func navigateToGameMethodology() {
+        let vc = GameMethodologyVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    public func navigateToSettings() {
+        let vc = SettingsVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    public func navigateToNotificationsSettings() {
+        let vc = NotificationsSettingsVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    public func navigateToTerms() {
+        let vc = TermsVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    public func navigateToVideos() {
+        let vc = VideosVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
 }

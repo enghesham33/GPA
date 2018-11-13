@@ -17,7 +17,9 @@ public class Video {
     var description: String!
     var accessMode: String!
     var uploadDate: String!
+    var owner: User!
     
+    var videoLink: String! // for internal usage
     init() {
         
     }
@@ -35,6 +37,7 @@ public class Video {
         dictionary["thumbnail"] = thumbnailsDicArray
         dictionary["accessMode"] = accessMode
         dictionary["uploadDate"] = uploadDate
+        dictionary["owner"] = owner.convertToDictionary()
         return dictionary
     }
     
@@ -54,7 +57,9 @@ public class Video {
             video.thumbnails =  thumbnails
         }
         
-        
+        if let ownerDic = dictionary["owner"], ownerDic is  Dictionary<String, Any> {
+            video.owner =  User.getInstance(dictionary: ownerDic as! Dictionary<String, Any>)
+        }
         video.accessMode =  dictionary["accessMode"] as? String
         video.uploadDate =  dictionary["uploadDate"] as? String
         return video

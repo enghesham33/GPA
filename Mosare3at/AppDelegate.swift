@@ -39,6 +39,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         startApplication()
         
+        if Defaults[.isWeekSummary] == nil {
+            Defaults[.isWeekSummary] = true
+        }
+        
+        if Defaults[.isNewPoints] == nil {
+            Defaults[.isNewPoints] = true
+        }
+        
+        if Defaults[.isNewBadges] == nil {
+            Defaults[.isNewBadges] = true
+        }
+        
+        if Defaults[.isProjectStart] == nil {
+            Defaults[.isProjectStart] = true
+        }
+        
+        if Defaults[.isDeadLine] == nil {
+            Defaults[.isDeadLine] = true
+        }
+        
+        if Defaults[.isDeliverableAccepted] == nil {
+            Defaults[.isDeliverableAccepted] = true
+        }
+        
+        if Defaults[.isDeliverableRefused] == nil {
+            Defaults[.isDeliverableRefused] = true
+        }
+        
+        if Defaults[.isTeamDataUpdated] == nil {
+            Defaults[.isTeamDataUpdated] = true
+        }
+        
+        if Defaults[.isGotCertificate] == nil {
+            Defaults[.isGotCertificate] = true
+        }
+        
+        if Defaults[.isNewVideo] == nil {
+            Defaults[.isNewVideo] = true
+        }
+        
         return true
     }
     
