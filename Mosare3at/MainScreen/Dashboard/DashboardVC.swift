@@ -9,11 +9,21 @@
 import Foundation
 import SideMenu
 import Localize_Swift
+import SwiftyUserDefaults
 
 class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
     
     var layout : DashboardLayout!
     var sideMenuVC: SideMenuVC!
+    
+    var user: User!
+    var userInfo: UserInfo!
+    var myTeamMembers: [TeamMember]!
+    var allMembers: [TeamMember]!
+    var allTeams: [Team]!
+    
+    var presenter: DashboardPresenter!
+    
     static func buildVC() -> DashboardVC {
         return DashboardVC()
     }
@@ -23,11 +33,14 @@ class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
         layout = DashboardLayout(superview: self.view, dashboardLayoutDelegate: self)
         layout.setupViews()
         
+        presenter = Injector.provideDashboardPresenter()
+        presenter.setView(view: self)
+        presenter.getUser()
+        
         if AppDelegate.instance.unreadNotificationsNumber > 0 {
+            self.layout.topView.notificationsNumberLabel.isHidden = false
             self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
         }
-        
-        
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED),
                                                object: self,
@@ -46,6 +59,100 @@ class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func calculateCellHeight(selection: Int) {
+        var height:CGFloat = 0.0
+        
+        switch selection {
+        case 0:
+            break
+            
+        case 1:
+            break
+            
+        case 2:
+            break
+            
+        default:
+            break
+        }
+        
+        DashboardCell.cellHeight =  height
+    }
+}
+
+extension DashboardVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:DashboardCell = self.layout.dashboardTableView.dequeueReusableCell(withIdentifier: DashboardCell.identifier, for: indexPath) as! DashboardCell
+        
+        cell.user = user
+        cell.userInfo = userInfo
+        cell.myTeamMembers = myTeamMembers
+        cell.allMembers = allMembers
+        cell.allTeams = allTeams
+        cell.delegate = self
+        cell.setupViews()
+        cell.populateData()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return DashboardCell.cellHeight
+    }
+}
+
+extension DashboardVC: DashboardCellDelegate {
+    func refreshTableViewHeight(selection: Int) {
+        calculateCellHeight(selection: selection)
+        layout.dashboardTableView.reloadData()
+    }
+}
+
+extension DashboardVC: DashboardView {
+    func opetaionFailed(message: String) {
+        self.view.makeToast(message, duration: 2, position: .center)
+    }
+    
+    func getUserSuccess(user: User) {
+        self.user = user
+        Defaults[.user] = user.convertToDictionary()
+        presenter.getBadges()
+    }
+    
+    func getBadgesSuccess(badges: [Badge]) {
+        Singleton.getInstance().badges = badges
+        presenter.getUserInfo()
+    }
+    
+    func getUserInfoSuccess(userInfo: UserInfo) {
+        self.userInfo = userInfo
+        presenter.getTeamMembers(teamId: userInfo.currentTeamId)
+    }
+    
+    func getTeamMembersSuccess(members: [TeamMember]) {
+        myTeamMembers = members
+        presenter.getAllMembers()
+    }
+    
+    func getAllMembersSuccess(members: [TeamMember]) {
+        allMembers = members
+        presenter.getAllTeams()
+    }
+    
+    func getAllTeamsSuccess(teams: [Team]) {
+        self.allTeams = teams
+        calculateCellHeight(selection: 0)
+        layout.dashboardTableView.dataSource = self
+        layout.dashboardTableView.delegate = self
+        self.layout.dashboardTableView.reloadData()
+    }
+    
+    
 }
 
 extension DashboardVC: SideMenuHeaderDelegate {

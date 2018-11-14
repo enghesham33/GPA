@@ -23,10 +23,9 @@ class TeamVC: BaseVC, UISideMenuNavigationControllerDelegate {
         layout = TeamLayout(superview: self.view, teamLayoutDelegate: self)
         layout.setupViews()
         if AppDelegate.instance.unreadNotificationsNumber > 0 {
+            self.layout.topView.notificationsNumberLabel.isHidden = false
             self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
         }
-        
-        
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED),
                                                object: self,

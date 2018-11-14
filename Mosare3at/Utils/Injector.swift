@@ -96,4 +96,20 @@ public class Injector {
     public class func provideVideosPresenter() -> VideosPresenter {
         return VideosPresenter(repository: Injector.provideVideosRepository())
     }
+    
+    public class func provideTutorialRepository() -> TutorialRepository {
+        return TutorialRepository()
+    }
+    
+    public class func provideTutorialPresenter() -> TutorialPresenter {
+        return TutorialPresenter(repository: Injector.provideTutorialRepository())
+    }
+    
+    public class func provideDashboardRepository() -> DashboardRepository {
+        return DashboardRepository()
+    }
+    
+    public class func provideDashboardPresenter() -> DashboardPresenter {
+        return DashboardPresenter(repository: Injector.provideDashboardRepository())
+    }
 }

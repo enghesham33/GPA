@@ -18,6 +18,8 @@ class TutorialPageVC : BaseVC {
     var pageTitle: String!
     var delegate: TutorialPagerDelegate!
     
+    var presenter: TutorialPresenter!
+    
     // to return object of TutorialPageVC
     static func buildVC() -> TutorialPageVC {
         return TutorialPageVC()
@@ -28,21 +30,33 @@ class TutorialPageVC : BaseVC {
         
         layout = TutorialLayout(superview: view, tutorialDelegate: self)
         layout.setupViews(index: index, title: pageTitle, message: message)
+        
+        presenter.setView(view: self)
     }
     
 }
 
 extension TutorialPageVC: TutorialDelegate {
     func goToChooseAvatar() {
-        let user = User.getInstance(dictionary: Defaults[.user]!)
-        user.takeTutorial = true
-        Defaults[.user] = user.convertToDictionary()
-        self.delegate.goToChooseAvatar()
+        presenter.updateUserTakeTutorial()
     }
     
     func retry() {
         
     }
+}
+
+extension TutorialPageVC: TutorialView {
+    func opetaionFailed(message: String) {
+        self.view.makeToast(message)
+    }
     
-    
+    func updateUserTakeTutorialSuccess(success: Bool) {
+        if success {
+            let user = User.getInstance(dictionary: Defaults[.user]!)
+            user.takeTutorial = true
+            Defaults[.user] = user.convertToDictionary()
+            self.navigator.navigateToChooseAvatar()
+        }
+    }
 }

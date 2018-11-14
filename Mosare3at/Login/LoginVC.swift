@@ -71,12 +71,12 @@ extension LoginVC : LoginView {
         Defaults[.token] = user.token
         Defaults[.isLoggedIn] = true
         self.view.makeToast("تم الدخول بنجاح")
-        self.goToTutorial()
-//        if user.takeTutorial {
-//            
-//        } else {
-//            self.goToTutorial()
-//        }
+        if user.takeTutorial {
+            goToProgramScreen()
+        } else {
+            self.goToTutorial()
+        }
+        
     }
     
     func loginFailed(errorMessage: String) {

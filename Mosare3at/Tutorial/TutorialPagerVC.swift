@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 public protocol TutorialPagerDelegate: class {
     func goToChooseAvatar()
@@ -14,7 +15,7 @@ public protocol TutorialPagerDelegate: class {
 
 class TutorialPagerVC: UIPageViewController, TutorialPagerDelegate {
     func goToChooseAvatar() {
-        self.navigationController?.pushViewController(ChooseAvatarVC.buildVC(), animated: true)
+        self.presenter.updateUserTakeTutorial()
     }
     
 
@@ -25,6 +26,8 @@ class TutorialPagerVC: UIPageViewController, TutorialPagerDelegate {
     var page3 = TutorialPageVC()
     var page4 = TutorialPageVC()
     var page5 = TutorialPageVC()
+    
+    var presenter: TutorialPresenter!
     
     var pages: [TutorialPageVC]!
     
@@ -50,35 +53,44 @@ class TutorialPagerVC: UIPageViewController, TutorialPagerDelegate {
         self.dataSource = self
         self.delegate = self
         
+        presenter = Injector.provideTutorialPresenter()
+        presenter.setView(view: self)
+        
         page0.index = 0
         page0.pageTitle = "page0Title".localized()
         page0.message = "page0Message".localized()
         page0.delegate = self
+        page0.presenter = presenter
         
         page1.index = 1
         page1.pageTitle = "page1Title".localized()
         page1.message = "page1Message".localized()
         page1.delegate = self
+        page1.presenter = presenter
         
         page2.index = 2
         page2.pageTitle = "page2Title".localized()
         page2.message = "page2Message".localized()
         page2.delegate = self
+        page2.presenter = presenter
         
         page3.index = 3
         page3.pageTitle = "page3Title".localized()
         page3.message = "page3Message".localized()
         page3.delegate = self
+        page3.presenter = presenter
         
         page4.index = 4
         page4.pageTitle = "page4Title".localized()
         page4.message = "page4Message".localized()
         page4.delegate = self
+        page4.presenter = presenter
         
         page5.index = 5
         page5.pageTitle = "page5Title".localized()
         page5.message = "page5Message".localized()
         page5.delegate = self
+        page5.presenter = presenter
         
         pages = [page0, page1, page2, page3, page4, page5]
         
@@ -156,5 +168,20 @@ extension TutorialPagerVC: UIPageViewControllerDataSource, UIPageViewControllerD
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.firstIndex(of: pageContentViewController as! TutorialPageVC)!
+    }
+}
+
+extension TutorialPagerVC: TutorialView {
+    func opetaionFailed(message: String) {
+        self.view.makeToast(message)
+    }
+    
+    func updateUserTakeTutorialSuccess(success: Bool) {
+        if success {
+            let user = User.getInstance(dictionary: Defaults[.user]!)
+            user.takeTutorial = true
+            Defaults[.user] = user.convertToDictionary()
+            self.navigationController?.pushViewController(ChooseAvatarVC.buildVC(), animated: true)
+        }
     }
 }

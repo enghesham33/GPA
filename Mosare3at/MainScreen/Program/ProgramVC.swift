@@ -40,6 +40,7 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
         getSubscriptions()
         
         if AppDelegate.instance.unreadNotificationsNumber > 0 {
+            self.layout.topView.notificationsNumberLabel.isHidden = false
             self.layout.topView.notificationsNumberLabel.text = "\(AppDelegate.instance.unreadNotificationsNumber)"
         }
         

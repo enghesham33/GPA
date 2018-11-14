@@ -21,6 +21,7 @@ public class Singleton {
     
     var sideMenuDoneTasksCount: Int!
     var sideMenuTotalTasksCount: Int!
+    var badges: [Badge]!
     
 }
 

@@ -50,6 +50,13 @@
 		E8540B772193833200AE1FFC /* ImportantNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8540B762193833200AE1FFC /* ImportantNoteCell.swift */; };
 		E8540B792193834800AE1FFC /* UploadVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8540B782193834800AE1FFC /* UploadVideoCell.swift */; };
 		E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */; };
+		E86FA6AB219C9B5F0085E761 /* TutorialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6AA219C9B5F0085E761 /* TutorialPresenter.swift */; };
+		E86FA6AD219C9B6C0085E761 /* TutorialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6AC219C9B6C0085E761 /* TutorialRepository.swift */; };
+		E86FA6AF219CA3CD0085E761 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6AE219CA3CD0085E761 /* DashboardCell.swift */; };
+		E86FA6B1219CA7640085E761 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B0219CA7640085E761 /* DashboardPresenter.swift */; };
+		E86FA6B3219CA7730085E761 /* DashboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B2219CA7730085E761 /* DashboardRepository.swift */; };
+		E86FA6B6219CACDD0085E761 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B5219CACDD0085E761 /* UserInfo.swift */; };
+		E86FA6B8219CC56A0085E761 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B7219CC56A0085E761 /* MemberCell.swift */; };
 		E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */; };
 		E88B0F91219AAE74005DEB38 /* GameMethodologyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */; };
 		E88B0F93219AB008005DEB38 /* GameMethodologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */; };
@@ -214,6 +221,13 @@
 		E8540B762193833200AE1FFC /* ImportantNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNoteCell.swift; sourceTree = "<group>"; };
 		E8540B782193834800AE1FFC /* UploadVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoCell.swift; sourceTree = "<group>"; };
 		E86678B2217C9F63000D31A3 /* ProgramTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramTopCell.swift; sourceTree = "<group>"; };
+		E86FA6AA219C9B5F0085E761 /* TutorialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPresenter.swift; sourceTree = "<group>"; };
+		E86FA6AC219C9B6C0085E761 /* TutorialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialRepository.swift; sourceTree = "<group>"; };
+		E86FA6AE219CA3CD0085E761 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
+		E86FA6B0219CA7640085E761 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		E86FA6B2219CA7730085E761 /* DashboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRepository.swift; sourceTree = "<group>"; };
+		E86FA6B5219CACDD0085E761 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		E86FA6B7219CC56A0085E761 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyLayout.swift; sourceTree = "<group>"; };
 		E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyVC.swift; sourceTree = "<group>"; };
 		E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyCell.swift; sourceTree = "<group>"; };
@@ -422,8 +436,13 @@
 		E848ABE121731BB800055C11 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				E86FA6B4219CACCE0085E761 /* Models */,
 				E848ABE621731C1E00055C11 /* DashboardVC.swift */,
 				E848ABF021732A0E00055C11 /* DashboardLayout.swift */,
+				E86FA6AE219CA3CD0085E761 /* DashboardCell.swift */,
+				E86FA6B7219CC56A0085E761 /* MemberCell.swift */,
+				E86FA6B0219CA7640085E761 /* DashboardPresenter.swift */,
+				E86FA6B2219CA7730085E761 /* DashboardRepository.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -478,6 +497,14 @@
 				E8540B782193834800AE1FFC /* UploadVideoCell.swift */,
 			);
 			path = Deliverable_Details;
+			sourceTree = "<group>";
+		};
+		E86FA6B4219CACCE0085E761 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E86FA6B5219CACDD0085E761 /* UserInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E88B0F8D219AAE44005DEB38 /* GameMethodolgy */ = {
@@ -634,6 +661,8 @@
 				E8E3E3442166738200CDCBF0 /* TutorialPagerVC.swift */,
 				E8E3E3462166753D00CDCBF0 /* TutorialPageVC.swift */,
 				E8E3E3482166758A00CDCBF0 /* TutorialPageLayout.swift */,
+				E86FA6AA219C9B5F0085E761 /* TutorialPresenter.swift */,
+				E86FA6AC219C9B6C0085E761 /* TutorialRepository.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1005,6 +1034,7 @@
 				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
 				E80615CB217E37BE00DAFB5A /* ProjectPageVC.swift in Sources */,
 				E88B0F98219AC229005DEB38 /* SettingsLayout.swift in Sources */,
+				E86FA6B3219CA7730085E761 /* DashboardRepository.swift in Sources */,
 				E8EB003B2163A76600CD23ED /* ForgetPasswordLayout.swift in Sources */,
 				E88B0FA5219ADB21005DEB38 /* TermsVC.swift in Sources */,
 				E8CEA865218EE6B5005DB211 /* Answer.swift in Sources */,
@@ -1017,6 +1047,7 @@
 				E84D8855218A5ECE009147CC /* WeekDetailsLayout.swift in Sources */,
 				E88B0F95219AB117005DEB38 /* StaticDataObj.swift in Sources */,
 				E80615D3217E3F0600DAFB5A /* ProjectPageRepository.swift in Sources */,
+				E86FA6B8219CC56A0085E761 /* MemberCell.swift in Sources */,
 				E812F6BC2165460400A02952 /* ForgetPasswordDoneLayout.swift in Sources */,
 				E848ABED217323F700055C11 /* MainScreenLayout.swift in Sources */,
 				E848ABFC2173339C00055C11 /* SideMenuCell.swift in Sources */,
@@ -1045,6 +1076,7 @@
 				E8CEA863218EE54F005DB211 /* Question.swift in Sources */,
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
 				E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */,
+				E86FA6AB219C9B5F0085E761 /* TutorialPresenter.swift in Sources */,
 				E8925A78218AE1D700EC344F /* TaskCell.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8540B792193834800AE1FFC /* UploadVideoCell.swift in Sources */,
@@ -1064,9 +1096,11 @@
 				E848ABF321732A4200055C11 /* TeamLayout.swift in Sources */,
 				E8EB0026216360EC00CD23ED /* LoginPresenter.swift in Sources */,
 				E8540B772193833200AE1FFC /* ImportantNoteCell.swift in Sources */,
+				E86FA6AD219C9B6C0085E761 /* TutorialRepository.swift in Sources */,
 				E8CEA860218ED88C005DB211 /* QuestionCell.swift in Sources */,
 				E8CEA85A218ED3BB005DB211 /* MilestonesVC.swift in Sources */,
 				E8CEFE6621760840009488C6 /* Singleton.swift in Sources */,
+				E86FA6AF219CA3CD0085E761 /* DashboardCell.swift in Sources */,
 				E88B0FA6219ADB21005DEB38 /* TermsLayout.swift in Sources */,
 				E88B0F9F219AC87E005DEB38 /* NotificationsSettingsVC.swift in Sources */,
 				E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */,
@@ -1076,10 +1110,12 @@
 				E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */,
 				E89FEB9821946A1D0051D3B9 /* TeamRatingLayout.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
+				E86FA6B1219CA7640085E761 /* DashboardPresenter.swift in Sources */,
 				E8CEA85E218ED561005DB211 /* MilestonesCell.swift in Sources */,
 				E88B0F9D219AC702005DEB38 /* NotificationSettingsLayout.swift in Sources */,
 				E8CEA85C218ED40B005DB211 /* MilestonesLayout.swift in Sources */,
 				E848ABEB21731C4C00055C11 /* ScheduleVC.swift in Sources */,
+				E86FA6B6219CACDD0085E761 /* UserInfo.swift in Sources */,
 				E89FEB8F21943EED0051D3B9 /* NotificationData.swift in Sources */,
 				E89FEB932194421A0051D3B9 /* NotificationCell.swift in Sources */,
 				E8F1A7BB2175D00C00DA0DB2 /* TeacherAssistant.swift in Sources */,

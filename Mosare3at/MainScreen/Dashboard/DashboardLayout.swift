@@ -25,9 +25,17 @@ public class DashboardLayout : BaseLayout {
         self.dashboardLayoutDelegate = dashboardLayoutDelegate
     }
     
+    lazy var dashboardTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.isScrollEnabled = true
+        tableView.register(DashboardCell.self, forCellReuseIdentifier: DashboardCell.identifier)
+        return tableView
+    }()
+    
     public func setupViews() {
         
-        let views = [topView]
+        let views = [topView, dashboardTableView]
         self.superview.addSubviews(views)
         
         self.topView.snp.makeConstraints { maker in
@@ -54,6 +62,11 @@ public class DashboardLayout : BaseLayout {
         self.topView.backImageView.addTapGesture(action: nil)
         self.topView.backImageView.addTapGesture { (_) in
             self.dashboardLayoutDelegate.openSideMenu()
+        }
+        
+        self.dashboardTableView.snp.makeConstraints { maker in
+            maker.leading.trailing.bottom.equalTo(superview)
+            maker.top.equalTo(self.topView.snp.bottom)
         }
     }
 }

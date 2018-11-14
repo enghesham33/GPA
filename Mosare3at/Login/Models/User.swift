@@ -23,6 +23,8 @@ public class User {
     var roles: [String]!
     var profilePic: String!
     var mobile: String!
+    var totalPoints: Int!
+    var totalBadges: Int!
     
     init() {
         
@@ -42,6 +44,8 @@ public class User {
         dictionary["roles"] = roles
         dictionary["profilePic"] = profilePic
         dictionary["mobile"] = mobile
+        dictionary["TotalPoints"] = totalPoints
+        dictionary["TotalBadges"] = totalBadges
         return dictionary
     }
     
@@ -61,7 +65,8 @@ public class User {
         user.roles = dictionary["roles"] as? [String]
         user.profilePic = dictionary["profilePic"] as? String
         user.mobile = dictionary["mobile"] as? String
-        
+        user.totalPoints = dictionary["TotalPoints"] as? Int
+        user.totalBadges = dictionary["TotalBadges"] as? Int
         return user
     }
     

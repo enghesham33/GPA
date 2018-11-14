@@ -30,7 +30,7 @@ class NotificationCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.backgroundColor = .white
+        label.backgroundColor = .clear
         if Localize.currentLanguage() == "en" {
             label.textAlignment = .left
         } else {
@@ -43,7 +43,7 @@ class NotificationCell: UITableViewCell {
     lazy var detailsLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.AppColors.darkGray
-        label.backgroundColor = .white
+        label.backgroundColor = .clear
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         if Localize.currentLanguage() == "en" {
@@ -58,7 +58,7 @@ class NotificationCell: UITableViewCell {
     lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.AppColors.gray
-        label.backgroundColor = .white
+        label.backgroundColor = .clear
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         if Localize.currentLanguage() == "en" {
