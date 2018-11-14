@@ -212,6 +212,14 @@ extension TeamRatingVC: TeamRatingView {
     }
     
     func getTeamSuccess(team: Team) {
+        let user = User.getInstance(dictionary:  Defaults[.user]!)
+        var counter = 0
+        for teamMember in team.teamMembers {
+            if teamMember.member.id == user.id {
+                team.teamMembers.remove(at: counter)
+            }
+            counter = counter + 1
+        }
         self.team = team
         self.team.teacherAssistant.points = 5
         self.presenter.getBadges()
@@ -233,7 +241,7 @@ extension TeamRatingVC: TeamRatingLayoutDelegate {
             } else {
                 self.team.teacherAssistant.comment = " "
             }
-            
+            self.layout.addCommentField.text = ""
         } else {
             if let _ = self.team.teamMembers[currentTeamMemberIndex].badge {
                 if self.layout.addCommentField.text != nil && !(self.layout.addCommentField.text?.isEmpty)! {
@@ -245,17 +253,22 @@ extension TeamRatingVC: TeamRatingLayoutDelegate {
                 currentTeamMemberIndex = currentTeamMemberIndex + 1
                 applyNextAndPrevLogic()
                 populateCurrentSelectedUserData()
+                self.layout.addCommentField.text = ""
             } else {
                 self.view.makeToast("selectBadge".localized())
             }
         }
-        
     }
     
     func goToPreviousUser() {
         currentTeamMemberIndex = currentTeamMemberIndex - 1
         applyNextAndPrevLogic()
         populateCurrentSelectedUserData()
+        if currentTeamMemberIndex == -1 {
+            self.layout.addCommentField.text = self.team.teacherAssistant.comment
+        } else {
+            self.layout.addCommentField.text = self.team.teamMembers.get(at: currentTeamMemberIndex)?.comment
+        }
     }
     
     func retry() {

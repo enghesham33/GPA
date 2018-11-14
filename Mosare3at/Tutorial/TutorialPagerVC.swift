@@ -40,6 +40,7 @@ class TutorialPagerVC: UIPageViewController, TutorialPagerDelegate {
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (recognizer) in
 //            popVC() go to program screen
+            self.goToChooseAvatar()
         })
         return imageView
     }()
