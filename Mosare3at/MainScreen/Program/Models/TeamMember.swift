@@ -54,6 +54,10 @@ public class TeamMember {
         teamMember.badgesCount =  dictionary["Badges"] as? Int
         teamMember.collectives =  dictionary["collectives"] as? Int
         teamMember.requestId =  dictionary["@id"] as? String
+        if dictionary.keys.contains("user") {
+            teamMember.member =  Member.getInstance(dictionary: (dictionary["user"] as? Dictionary)!)
+        }
+        
         if dictionary.keys.contains("member") {
             teamMember.member =  Member.getInstance(dictionary: (dictionary["member"] as? Dictionary)!)
         }

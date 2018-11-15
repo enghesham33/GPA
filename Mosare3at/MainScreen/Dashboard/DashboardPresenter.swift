@@ -34,10 +34,10 @@ public class DashboardPresenter {
 }
 
 extension DashboardPresenter {
-    public func getUser() {
+    public func getUser(userId: Int) {
         if UiHelpers.isInternetAvailable() {
             UiHelpers.showLoader()
-            self.dashboardRepository.getUserInfo()
+            self.dashboardRepository.getUserData(userId: userId)
         } else {
             self.opetaionFailed(message: "noInternetConnection".localized())
         }

@@ -32,10 +32,10 @@ class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
         super.viewDidLoad()
         layout = DashboardLayout(superview: self.view, dashboardLayoutDelegate: self)
         layout.setupViews()
-        
+        user = User.getInstance(dictionary: Defaults[.user]!)
         presenter = Injector.provideDashboardPresenter()
         presenter.setView(view: self)
-        presenter.getUser()
+        presenter.getUser(userId: user.id)
         
         if AppDelegate.instance.unreadNotificationsNumber > 0 {
             self.layout.topView.notificationsNumberLabel.isHidden = false
@@ -65,12 +65,15 @@ class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
         
         switch selection {
         case 0:
+            height = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 120)
             break
             
         case 1:
+            height = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 140)
             break
             
         case 2:
+            height = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 160)
             break
             
         default:
@@ -88,6 +91,8 @@ extension DashboardVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:DashboardCell = self.layout.dashboardTableView.dequeueReusableCell(withIdentifier: DashboardCell.identifier, for: indexPath) as! DashboardCell
+        
+        cell.selectionStyle = .none
         
         cell.user = user
         cell.userInfo = userInfo
@@ -107,9 +112,23 @@ extension DashboardVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension DashboardVC: DashboardCellDelegate {
+    
     func refreshTableViewHeight(selection: Int) {
         calculateCellHeight(selection: selection)
-        layout.dashboardTableView.reloadData()
+        layout.dashboardTableView.beginUpdates()
+        layout.dashboardTableView.endUpdates()
+    }
+    
+    func openMyProfile() {
+        
+    }
+    
+    func openBadgeDialog(badge: Badge) {
+        
+    }
+    
+    func openAllBadges() {
+        
     }
 }
 

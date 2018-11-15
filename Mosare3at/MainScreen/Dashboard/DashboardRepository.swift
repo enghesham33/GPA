@@ -23,7 +23,8 @@ public protocol DashboardPresenterDelegate {
 public class DashboardRepository {
     //getSubscribtions
     var delegate: DashboardPresenterDelegate!
-    
+    var allMembers = [TeamMember]()
+    var allTeams = [Team]()
     public func setDelegate(delegate: DashboardPresenterDelegate) {
         self.delegate = delegate
     }
@@ -136,7 +137,7 @@ public class DashboardRepository {
         if let _ = page {
             parameters["page"] = page
         }
-        var members = [TeamMember]()
+        
         
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "program_points")!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON{
             (response) in
@@ -149,7 +150,7 @@ public class DashboardRepository {
                         
                         for dic in membersJsonArray! {
                             let member = TeamMember.getInstance(dictionary: dic)
-                            members.append(member)
+                            self.allMembers.append(member)
                         }
                         
                         let hydraView = json["hydra:view"] as? Dictionary<String,AnyObject>
@@ -157,7 +158,7 @@ public class DashboardRepository {
                             let page = next.components(separatedBy: "=")[next.components(separatedBy: "=").count - 1]
                             self.getAllMembers(page: page)
                         } else {
-                            self.delegate.getAllMembersSuccess(members: members)
+                            self.delegate.getAllMembersSuccess(members: self.allMembers)
                         }
                         
                     } else {
@@ -181,7 +182,7 @@ public class DashboardRepository {
             parameters["page"] = page
         }
         
-         var teams = [Team]()
+        
         Alamofire.request(URL(string: CommonConstants.BASE_URL + "teams")!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON{
             (response) in
             
@@ -192,7 +193,7 @@ public class DashboardRepository {
                         
                         for dic in membersJsonArray! {
                             let team = Team.getInstance(dictionary: dic)
-                            teams.append(team)
+                            self.allTeams.append(team)
                         }
                         
                         let hydraView = json["hydra:view"] as? Dictionary<String,AnyObject>
@@ -200,7 +201,7 @@ public class DashboardRepository {
                             let page = next.components(separatedBy: "=")[next.components(separatedBy: "=").count - 1]
                             self.getAllTeams(page: page)
                         } else {
-                            self.delegate.getAllTeamsSuccess(teams: teams)
+                            self.delegate.getAllTeamsSuccess(teams: self.allTeams)
                         }
                     } else {
                         self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
