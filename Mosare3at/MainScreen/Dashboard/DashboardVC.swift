@@ -65,22 +65,22 @@ class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
         
         switch selection {
         case 0:
-            height = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 120)
+            height = CGFloat(myTeamMembers.count) * UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12)
             break
             
         case 1:
-            height = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 140)
+            height = CGFloat(allMembers.count) *  UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12)
             break
             
         case 2:
-            height = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 160)
+            height = CGFloat(allTeams.count) * UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12)
             break
             
         default:
             break
         }
         
-        DashboardCell.cellHeight =  height
+        DashboardCell.cellHeight = UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 70) + height
     }
 }
 
@@ -115,8 +115,9 @@ extension DashboardVC: DashboardCellDelegate {
     
     func refreshTableViewHeight(selection: Int) {
         calculateCellHeight(selection: selection)
-        layout.dashboardTableView.beginUpdates()
-        layout.dashboardTableView.endUpdates()
+        layout.dashboardTableView.reloadData()
+//        layout.dashboardTableView.beginUpdates()
+//        layout.dashboardTableView.endUpdates()
     }
     
     func openMyProfile() {

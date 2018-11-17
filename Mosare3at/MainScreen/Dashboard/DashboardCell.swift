@@ -163,7 +163,6 @@ class DashboardCell: UITableViewCell {
     lazy var badge1Imageview: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.backgroundColor = .gray
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in
             print("badge1Imageview clicked")
@@ -174,7 +173,6 @@ class DashboardCell: UITableViewCell {
     lazy var badge2Imageview: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.backgroundColor = .gray
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in
             print("badge2Imageview clicked")
@@ -209,6 +207,7 @@ class DashboardCell: UITableViewCell {
             self.allMembersLine.isHidden = true
             self.allTeamsLine.isHidden = true
             self.selection = 0
+            self.membersTableView.reloadData()
             self.delegate.refreshTableViewHeight(selection: 0)
         }
         return button
@@ -233,6 +232,7 @@ class DashboardCell: UITableViewCell {
             self.allMembersLine.isHidden = false
             self.allTeamsLine.isHidden = true
              self.selection = 1
+            self.membersTableView.reloadData()
             self.delegate.refreshTableViewHeight(selection: 1)
         }
         return button
@@ -257,6 +257,7 @@ class DashboardCell: UITableViewCell {
             self.allMembersLine.isHidden = true
             self.allTeamsLine.isHidden = false
              self.selection = 2
+            self.membersTableView.reloadData()
             self.delegate.refreshTableViewHeight(selection: 2)
         }
         return button
@@ -271,10 +272,9 @@ class DashboardCell: UITableViewCell {
     
     lazy var membersTableView: UITableView = {
         let tableView = UITableView()
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.isScrollEnabled = false
         tableView.register(MemberCell.self, forCellReuseIdentifier: MemberCell.identifier)
-        tableView.backgroundColor = .gray
         return tableView
     }()
     
@@ -438,23 +438,23 @@ class DashboardCell: UITableViewCell {
         membersTableView.snp.remakeConstraints { (maker) in
             maker.leading.trailing.equalTo(superView)
             maker.top.equalTo(allTeamsButton.snp.bottom)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 50))
-//            switch self.selection {
-//            case 0:
-//                maker.height.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
-//                break
-//
-//            case 1:
-//                maker.height.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
-//                break
-//
-//            case 2:
-//                maker.height.equalTo(<#T##other: ConstraintRelatableTarget##ConstraintRelatableTarget#>)
-//                break
-//
-//            default:
-//                break
-//            }
+//            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 50))
+            switch self.selection {
+            case 0:
+                maker.height.equalTo(CGFloat(myTeamMembers.count) * UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12))
+                break
+
+            case 1:
+                maker.height.equalTo(CGFloat(allMembers.count) * UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12))
+                break
+
+            case 2:
+                maker.height.equalTo(CGFloat(allTeams.count) * UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12))
+                break
+
+            default:
+                break
+            }
             
         }
         membersTableView.dataSource = self
@@ -493,16 +493,82 @@ class DashboardCell: UITableViewCell {
         badgesValueLabel.text = "\(user.totalBadges!)"
         
         userNameLabel.text = user.firstName + " " + user.lastName
+        
+        if userInfo.badges != nil {
+            if userInfo.badges.count == 0 {
+                badge1Imageview.isHidden = true
+                badge2Imageview.isHidden = true
+            } else if userInfo.badges.count == 1 {
+                badge1Imageview.isHidden = false
+                badge1Imageview.af_setImage(withURL: URL(string: (userInfo.badges.get(at: 0)?.image)!)!)
+                badge2Imageview.isHidden = true
+            } else {
+                badge1Imageview.isHidden = false
+                badge2Imageview.isHidden = false
+                badge1Imageview.af_setImage(withURL: URL(string: (CommonConstants.IMAGES_BASE_URL + (userInfo.badges.get(at: 0)?.image)!))!)
+                badge2Imageview.af_setImage(withURL: URL(string: (CommonConstants.IMAGES_BASE_URL + (userInfo.badges.get(at: 1)?.image)!))!)
+            }
+        }
+        
+        membersTableView.reloadData()
+        
     }
     
 }
 
 extension DashboardCell: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        
+        switch selection {
+        case 0:
+            return myTeamMembers.count
+            
+        case 1:
+            return allMembers.count
+            
+        case 2:
+            return allTeams.count
+            
+        default:
+            return 0
+        }        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell:MemberCell = self.membersTableView.dequeueReusableCell(withIdentifier: MemberCell.identifier, for: indexPath) as! MemberCell
+        
+        cell.selectionStyle = .none
+        
+        cell.user = user
+        cell.index = indexPath.row
+        if selection == 0 {
+            cell.member = myTeamMembers.get(at: indexPath.row)!
+        } else if selection == 1 {
+            cell.member = allMembers.get(at: indexPath.row)!
+        } else if selection == 2 {
+            cell.member = nil
+            cell.team = allTeams.get(at: indexPath.row)!
+            cell.myTeamPoints = getMyTeamPoints()
+        }
+        cell.setupViews()
+        cell.populateData()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 12)
+    }
+    
+    func getMyTeamPoints() -> Int {
+        for team in allTeams {
+            for member in team.teamMembers {
+                if member.member.id == user.id {
+                    return team.points
+                }
+            }
+        }
+        
+        return 0
     }
 }

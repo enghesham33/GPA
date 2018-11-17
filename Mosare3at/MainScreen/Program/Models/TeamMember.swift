@@ -51,7 +51,12 @@ public class TeamMember {
         teamMember.nickname =  dictionary["nickname"] as? String
         teamMember.status =  dictionary["status"] as? String
         teamMember.points =  dictionary["points"] as? Int
-        teamMember.badgesCount =  dictionary["Badges"] as? Int
+        if dictionary.keys.contains("Badges") {
+            teamMember.badgesCount =  dictionary["Badges"] as? Int
+        } else if dictionary.keys.contains("badges") {
+            teamMember.badgesCount =  dictionary["badges"] as? Int
+        }
+        
         teamMember.collectives =  dictionary["collectives"] as? Int
         teamMember.requestId =  dictionary["@id"] as? String
         if dictionary.keys.contains("user") {
