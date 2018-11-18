@@ -1106,3 +1106,13 @@ Pods/Target Support Files/AlamofireImage/AlamofireImage-umbrella.h
 Pods/Target Support Files/AlamofireImage/AlamofireImage.modulemap
 Pods/Target Support Files/AlamofireImage/AlamofireImage.xcconfig
 Pods/Target Support Files/AlamofireImage/Info.plist
+Pods/EzPopup/LICENSE
+Pods/EzPopup/README.md
+Pods/EzPopup/EzPopup/Classes/PopupViewController.swift
+Pods/Pods.xcodeproj/xcuserdata/heshamdonia.xcuserdatad/xcschemes/EzPopup.xcscheme
+Pods/Target Support Files/EzPopup/EzPopup-dummy.m
+Pods/Target Support Files/EzPopup/EzPopup-prefix.pch
+Pods/Target Support Files/EzPopup/EzPopup-umbrella.h
+Pods/Target Support Files/EzPopup/EzPopup.modulemap
+Pods/Target Support Files/EzPopup/EzPopup.xcconfig
+Pods/Target Support Files/EzPopup/Info.plist
