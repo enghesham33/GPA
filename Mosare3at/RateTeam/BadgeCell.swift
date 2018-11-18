@@ -25,7 +25,10 @@ class BadgeCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 23)/2
         imageView.addTapGesture(action: { (recognizer) in
-            self.delegate.badgeSelected(index: self.index)
+            if self.delegate != nil {
+                self.delegate.badgeSelected(index: self.index)
+            }
+            
         })
         return imageView
     }()

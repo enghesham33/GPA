@@ -92,6 +92,16 @@
 		E89FEBA1219487F60051D3B9 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEBA0219487F60051D3B9 /* BadgeCell.swift */; };
 		E8B9D6A92196F62500A16686 /* TeamRatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */; };
 		E8B9D6AB2196F63100A16686 /* TeamRatingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */; };
+		E8C5475821A15DE700B915DD /* PopupDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5475721A15DE700B915DD /* PopupDialogVC.swift */; };
+		E8C5475A21A15DF600B915DD /* PopupDialogLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5475921A15DF600B915DD /* PopupDialogLayout.swift */; };
+		E8C5475F21A1726100B915DD /* AllBadgesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5475E21A1726100B915DD /* AllBadgesVC.swift */; };
+		E8C5476121A1728600B915DD /* AllBadgesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476021A1728600B915DD /* AllBadgesLayout.swift */; };
+		E8C5476421A1771300B915DD /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476321A1771300B915DD /* MyProfileVC.swift */; };
+		E8C5476621A1774100B915DD /* MyProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476521A1774100B915DD /* MyProfileLayout.swift */; };
+		E8C5476821A178A200B915DD /* MyProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476721A178A200B915DD /* MyProfileCell.swift */; };
+		E8C5476A21A1843900B915DD /* MyProfileDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476921A1843900B915DD /* MyProfileDetailsCell.swift */; };
+		E8C5476C21A1951500B915DD /* MyProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476B21A1951500B915DD /* MyProfilePresenter.swift */; };
+		E8C5476E21A1953500B915DD /* MyProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5476D21A1953500B915DD /* MyProfileRepository.swift */; };
 		E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */; };
 		E8C7592D216BBC8B0075B0E9 /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */; };
 		E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */; };
@@ -263,6 +273,16 @@
 		E89FEBA0219487F60051D3B9 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
 		E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingPresenter.swift; sourceTree = "<group>"; };
 		E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingRepository.swift; sourceTree = "<group>"; };
+		E8C5475721A15DE700B915DD /* PopupDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogVC.swift; sourceTree = "<group>"; };
+		E8C5475921A15DF600B915DD /* PopupDialogLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogLayout.swift; sourceTree = "<group>"; };
+		E8C5475E21A1726100B915DD /* AllBadgesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBadgesVC.swift; sourceTree = "<group>"; };
+		E8C5476021A1728600B915DD /* AllBadgesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBadgesLayout.swift; sourceTree = "<group>"; };
+		E8C5476321A1771300B915DD /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		E8C5476521A1774100B915DD /* MyProfileLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileLayout.swift; sourceTree = "<group>"; };
+		E8C5476721A178A200B915DD /* MyProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
+		E8C5476921A1843900B915DD /* MyProfileDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetailsCell.swift; sourceTree = "<group>"; };
+		E8C5476B21A1951500B915DD /* MyProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePresenter.swift; sourceTree = "<group>"; };
+		E8C5476D21A1953500B915DD /* MyProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileRepository.swift; sourceTree = "<group>"; };
 		E8C7592A216BB4330075B0E9 /* ChooseAvatarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarLayout.swift; sourceTree = "<group>"; };
 		E8C7592C216BBC8B0075B0E9 /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		E8C7592E216BE6FE0075B0E9 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
@@ -619,6 +639,37 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E8C5475621A15DA500B915DD /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				E8C5475721A15DE700B915DD /* PopupDialogVC.swift */,
+				E8C5475921A15DF600B915DD /* PopupDialogLayout.swift */,
+			);
+			path = PopupDialog;
+			sourceTree = "<group>";
+		};
+		E8C5475B21A171DC00B915DD /* AllBadges */ = {
+			isa = PBXGroup;
+			children = (
+				E8C5475E21A1726100B915DD /* AllBadgesVC.swift */,
+				E8C5476021A1728600B915DD /* AllBadgesLayout.swift */,
+			);
+			path = AllBadges;
+			sourceTree = "<group>";
+		};
+		E8C5476221A1762500B915DD /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E8C5476321A1771300B915DD /* MyProfileVC.swift */,
+				E8C5476521A1774100B915DD /* MyProfileLayout.swift */,
+				E8C5476721A178A200B915DD /* MyProfileCell.swift */,
+				E8C5476921A1843900B915DD /* MyProfileDetailsCell.swift */,
+				E8C5476B21A1951500B915DD /* MyProfilePresenter.swift */,
+				E8C5476D21A1953500B915DD /* MyProfileRepository.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
 		E8C75929216BB4080075B0E9 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +768,9 @@
 				E88B0F96219AC144005DEB38 /* Settings */,
 				E88B0FA0219ADAC3005DEB38 /* TermsAndConditions */,
 				E88B0FA7219AE134005DEB38 /* Videos */,
+				E8C5475621A15DA500B915DD /* PopupDialog */,
+				E8C5475B21A171DC00B915DD /* AllBadges */,
+				E8C5476221A1762500B915DD /* MyProfile */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -936,6 +990,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
@@ -962,6 +1017,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
@@ -1040,6 +1096,7 @@
 				E8CEA865218EE6B5005DB211 /* Answer.swift in Sources */,
 				E8F1A7BF2175D1AB00DA0DB2 /* Member.swift in Sources */,
 				E848ABF82173337600055C11 /* SideMenuVC.swift in Sources */,
+				E8C5476421A1771300B915DD /* MyProfileVC.swift in Sources */,
 				E8F1A7C12175D28F00DA0DB2 /* Team.swift in Sources */,
 				E8EE4179218B754100F1CE08 /* WeekVisionPresenter.swift in Sources */,
 				E8CEFE602175DFA8009488C6 /* Video.swift in Sources */,
@@ -1058,11 +1115,14 @@
 				E8F1A7B52175BD0C00DA0DB2 /* Week.swift in Sources */,
 				E89FEB9F2194869D0051D3B9 /* Badge.swift in Sources */,
 				E84D8857218A6109009147CC /* MilestoneCell.swift in Sources */,
+				E8C5476621A1774100B915DD /* MyProfileLayout.swift in Sources */,
 				E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */,
+				E8C5476C21A1951500B915DD /* MyProfilePresenter.swift in Sources */,
 				E88B0FA9219AE154005DEB38 /* VideosVC.swift in Sources */,
 				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
 				E8E841B62160F070009E5080 /* Colors.swift in Sources */,
 				E8E841BE216102C1009E5080 /* LoginVC.swift in Sources */,
+				E8C5475821A15DE700B915DD /* PopupDialogVC.swift in Sources */,
 				E84D8859218A7EEE009147CC /* WeekDetailsPresenter.swift in Sources */,
 				E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */,
 				E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */,
@@ -1073,7 +1133,9 @@
 				E8E3E3472166753D00CDCBF0 /* TutorialPageVC.swift in Sources */,
 				E8C7592F216BE6FE0075B0E9 /* AvatarCell.swift in Sources */,
 				E8F1A7B32175BD0000DA0DB2 /* Project.swift in Sources */,
+				E8C5475A21A15DF600B915DD /* PopupDialogLayout.swift in Sources */,
 				E8CEA863218EE54F005DB211 /* Question.swift in Sources */,
+				E8C5476A21A1843900B915DD /* MyProfileDetailsCell.swift in Sources */,
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
 				E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */,
 				E86FA6AB219C9B5F0085E761 /* TutorialPresenter.swift in Sources */,
@@ -1087,6 +1149,7 @@
 				E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */,
 				E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */,
 				E8F1A7A72175BBCC00DA0DB2 /* ProgramPresenter.swift in Sources */,
+				E8C5476121A1728600B915DD /* AllBadgesLayout.swift in Sources */,
 				E8CEFE622175DFC6009488C6 /* Thumbnail.swift in Sources */,
 				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
 				E8540B7321937F7200AE1FFC /* DeliverableDetailsLayout.swift in Sources */,
@@ -1102,6 +1165,7 @@
 				E8CEFE6621760840009488C6 /* Singleton.swift in Sources */,
 				E86FA6AF219CA3CD0085E761 /* DashboardCell.swift in Sources */,
 				E88B0FA6219ADB21005DEB38 /* TermsLayout.swift in Sources */,
+				E8C5476821A178A200B915DD /* MyProfileCell.swift in Sources */,
 				E88B0F9F219AC87E005DEB38 /* NotificationsSettingsVC.swift in Sources */,
 				E89FEB8A21943DB10051D3B9 /* NotificationsRepository.swift in Sources */,
 				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
@@ -1125,6 +1189,7 @@
 				E8925A74218ADA5A00EC344F /* WeekVisionVC.swift in Sources */,
 				E89FEB8621943D980051D3B9 /* NotificationsLayout.swift in Sources */,
 				E8F1A7AD2175BC8600DA0DB2 /* SubscribtionsResponse.swift in Sources */,
+				E8C5476E21A1953500B915DD /* MyProfileRepository.swift in Sources */,
 				E8EE4175218B2D0800F1CE08 /* WeekVisionCell.swift in Sources */,
 				E8F1A7B92175BD8F00DA0DB2 /* WeekMaterial.swift in Sources */,
 				E80615D5217F124E00DAFB5A /* UserAnswer.swift in Sources */,
@@ -1160,6 +1225,7 @@
 				E839D897216CC1E20097911F /* JoinSuccessLayout.swift in Sources */,
 				E8CEA869218F048F005DB211 /* MilestonesRepository.swift in Sources */,
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
+				E8C5475F21A1726100B915DD /* AllBadgesVC.swift in Sources */,
 				E8540B752193805000AE1FFC /* DeliverableDetailsCell.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
 				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,

@@ -101,4 +101,9 @@ public class Navigator {
         let vc = VideosVC.buildVC()
         self.navigationController.pushViewController(vc, animated: true)
     }
+    
+    public func navigateToMyProfile() {
+        let vc = MyProfileVC.buildVC()
+        self.navigationController.pushViewController(vc, animated: true)
+    }
 }

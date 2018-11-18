@@ -68,6 +68,14 @@ extension VideosPresenter {
             self.videosView?.opetaionFailed(message: "noInternetConnection".localized())
         }
     }
+    
+    public func updateUserPoints(points: Int) {
+        if UiHelpers.isInternetAvailable() {
+            self.videosRepository.updateUserPoints(points: points)
+        } else {
+            self.videosView?.opetaionFailed(message: "noInternetConnection".localized())
+        }
+    }
 }
 
 extension VideosPresenter: VideosPresenterDelegate {

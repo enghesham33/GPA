@@ -98,18 +98,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             } else {
                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: CommonConstants.NOTIFICATIONS_UPDATED), object: nil)
                             }
-                        } else{
-//                           self.startApplication()
                         }
-                        
-                    } else {
-//                        self.startApplication()
                     }
-                } else {
-//                    self.startApplication()
                 }
-            } else {
-//                self.startApplication()
             }
         }
     }
@@ -141,10 +132,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    public class func logout() {
+        Defaults.removeAll()
+    }
+    
     /**
      This method set the allignment of all used design components according to current language and set the root viewController according to loggedIn or not.
      */
     func startApplication() {
+        
+        Localize.setCurrentLanguage("ar")
         
         switch Localize.currentLanguage() {
         case "ar":

@@ -49,7 +49,9 @@ class TeamVC: BaseVC, UISideMenuNavigationControllerDelegate {
 
 extension TeamVC: SideMenuHeaderDelegate {
     func headerClicked() {
-         print("team :: header clicked")
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToMyProfile()
     }
 }
 
@@ -59,7 +61,7 @@ extension TeamVC: SideMenuCellDelegate {
         self.navigator = Navigator(navController: self.navigationController!)
         switch index {
         case 0:
-            
+            self.navigator.navigateToMyProfile()
             break
             
         case 1:

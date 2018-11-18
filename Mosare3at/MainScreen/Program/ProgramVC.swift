@@ -139,7 +139,9 @@ class ProgramVC: BaseVC, UISideMenuNavigationControllerDelegate {
 
 extension ProgramVC: SideMenuHeaderDelegate {
     func headerClicked() {
-        print("program :: header clicked")
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToMyProfile()
     }
 }
 
@@ -150,7 +152,7 @@ extension ProgramVC: SideMenuCellDelegate {
         
         switch index {
         case 0:
-            
+            self.navigator.navigateToMyProfile()
             break
             
         case 1:

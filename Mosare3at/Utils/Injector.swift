@@ -112,4 +112,12 @@ public class Injector {
     public class func provideDashboardPresenter() -> DashboardPresenter {
         return DashboardPresenter(repository: Injector.provideDashboardRepository())
     }
+    
+    public class func provideMyProfileRepository() -> MyProfileRepository {
+        return MyProfileRepository()
+    }
+    
+    public class func provideMyProfilePresenter() -> MyProfilePresenter {
+        return MyProfilePresenter(repository: Injector.provideMyProfileRepository())
+    }
 }

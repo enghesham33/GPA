@@ -156,6 +156,7 @@ class DashboardCell: UITableViewCell {
         button.addShadow(offset: CGSize.zero, radius: 2.0, color: .black, opacity: 0.5)
         button.addTapGesture { recognizer in
             print("my profile button clicked")
+            self.delegate.openMyProfile()
         }
         return button
     }()
@@ -165,7 +166,7 @@ class DashboardCell: UITableViewCell {
         imageView.contentMode = .scaleToFill
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in
-            print("badge1Imageview clicked")
+            self.delegate.openBadgeDialog(badge: self.userInfo.badges.get(at: 0)!)
         })
         return imageView
     }()
@@ -175,7 +176,7 @@ class DashboardCell: UITableViewCell {
         imageView.contentMode = .scaleToFill
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (_) in
-            print("badge2Imageview clicked")
+            self.delegate.openBadgeDialog(badge: self.userInfo.badges.get(at: 1)!)
         })
         return imageView
     }()
@@ -191,6 +192,7 @@ class DashboardCell: UITableViewCell {
         label.font = AppFont.font(type: .Bold, size: 16)
         label.addTapGesture(action: { (_) in
             print("allBadgesLabel clicked")
+            self.delegate.openAllBadges()
         })
         return label
     }()

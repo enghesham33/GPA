@@ -160,6 +160,24 @@ public class VideosRepository {
             }
         }
     }
+    
+    public func updateUserPoints(points: Int) {
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        let teamMemberId = Defaults[.teamMemberId]!
+        let params = ["activity":"/activities/2", "points" : points, "teamMember" : teamMemberId] as [String : Any]
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + "user_points")!, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            UiHelpers.hideLoader()
+            if response.result.isSuccess {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                        print("updated")
+                    } else {
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                    }
+            } else {
+                self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+            }
+        }
+    }
 }
 
 

@@ -10,6 +10,7 @@ import Foundation
 import SideMenu
 import Localize_Swift
 import SwiftyUserDefaults
+import EzPopup
 
 class DashboardVC: BaseVC, UISideMenuNavigationControllerDelegate {
     
@@ -121,15 +122,18 @@ extension DashboardVC: DashboardCellDelegate {
     }
     
     func openMyProfile() {
-        
+        self.navigator.navigateToMyProfile()
     }
     
     func openBadgeDialog(badge: Badge) {
-        
+        let vc = PopupDialogVC.buildVC()
+        vc.badge = badge
+        let popupVC = PopupViewController(contentController: vc, popupWidth: UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 90), popupHeight: UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 70))
+        present(popupVC, animated: true)
     }
     
     func openAllBadges() {
-        
+        self.navigationController?.presentVC(AllBadgesVC())
     }
 }
 
@@ -177,7 +181,9 @@ extension DashboardVC: DashboardView {
 
 extension DashboardVC: SideMenuHeaderDelegate {
     func headerClicked() {
-         print("dashboard ::  header clicked")
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToMyProfile()
     }
 }
 
@@ -187,7 +193,7 @@ extension DashboardVC: SideMenuCellDelegate {
         self.navigator = Navigator(navController: self.navigationController!)
         switch index {
         case 0:
-            
+            self.navigator.navigateToMyProfile()
             break
             
         case 1:

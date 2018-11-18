@@ -19,6 +19,7 @@ public class UserInfo {
     var totalBadges: Int!
     var badges: [Badge]!
     var videos: Int!
+    var achievements: [Any]!
     
     public func convertToDictionary() -> Dictionary<String, Any> {
         var dictionary = Dictionary<String, Any>()
@@ -32,6 +33,7 @@ public class UserInfo {
         dictionary["rank"] = rank
         dictionary["totalPoints"] = totalPoints
         dictionary["totalBadges"] = totalBadges
+        
 
         if badges != nil {
             var badgessDicArray = [Dictionary<String, Any>]()
@@ -41,6 +43,15 @@ public class UserInfo {
             }
             dictionary["badges"] = badgessDicArray
         }
+        
+//        if achievements != nil {
+//            var achievementsDicArray = [Dictionary<String, Any>]()
+//            
+//            for achievement in achievements {
+//                achievementsDicArray.append(achievement)
+//            }
+//            dictionary["achievements"] = badgessDicArray
+//        }
         
         dictionary["videos"] = videos
         

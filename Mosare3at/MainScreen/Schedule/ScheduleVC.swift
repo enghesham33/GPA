@@ -51,7 +51,9 @@ class ScheduleVC: BaseVC, UISideMenuNavigationControllerDelegate {
 
 extension ScheduleVC: SideMenuHeaderDelegate {
     func headerClicked() {
-        print("schedule :: header clicked")
+        sideMenuVC.closeSideMenu()
+        self.navigator = Navigator(navController: self.navigationController!)
+        self.navigator.navigateToMyProfile()
     }
 }
 
@@ -61,7 +63,7 @@ extension ScheduleVC: SideMenuCellDelegate {
         self.navigator = Navigator(navController: self.navigationController!)
         switch index {
         case 0:
-            
+            self.navigator.navigateToMyProfile()
             break
             
         case 1:
