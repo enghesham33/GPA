@@ -16,9 +16,14 @@ public protocol TopViewDelegate {
     func goToNotifications()
 }
 
+public protocol VideosFiltersDelegate {
+    func showFilters()
+}
+
 public class TopView: UIView {
     
     public var delegate: TopViewDelegate!
+    public var videosFilterDelegate: VideosFiltersDelegate!
     
     public var screenTitle: String!
     
@@ -33,6 +38,18 @@ public class TopView: UIView {
         imageView.isUserInteractionEnabled = true
         imageView.addTapGesture(action: { (recognizer) in
             self.delegate.goBack()
+        })
+        return imageView
+    }()
+    
+    lazy var leftImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "filter_icon")
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        imageView.isHidden = true
+        imageView.addTapGesture(action: { (recognizer) in
+            self.videosFilterDelegate.showFilters()
         })
         return imageView
     }()
@@ -88,13 +105,23 @@ public class TopView: UIView {
     }
     
     public func setupViews(screenTitle: String) {
-        let views = [backImageView, screenTitleLabel, logoImageView, notificationsImageView, notificationsNumberLabel]
+        let views = [backImageView, screenTitleLabel, logoImageView, notificationsImageView, notificationsNumberLabel, leftImageView]
         self.backgroundColor = .black
         
         self.addSubviews(views)
         
         self.backImageView.snp.makeConstraints { maker in
             maker.leading.equalTo(self.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
+            
+            maker.top.equalTo(self.snp.top).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
+            
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+            
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
+        }
+        
+        self.leftImageView.snp.makeConstraints { maker in
+            maker.trailing.equalTo(self.snp.trailing).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 3) * -1)
             
             maker.top.equalTo(self.snp.top).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
             

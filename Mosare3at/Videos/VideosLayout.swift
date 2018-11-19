@@ -11,6 +11,7 @@ import UIKit
 
 public protocol VideosLayoutDelegate : class {
     func goBack()
+    func showFilters()
 }
 
 public class VideosLayout: BaseLayout {
@@ -58,6 +59,8 @@ public class VideosLayout: BaseLayout {
     public func setupTopView(screenTitle: String) {
         self.topView.setupViews(screenTitle: screenTitle)
         self.topView.screenTitleLabel.isHidden = false
+        self.topView.leftImageView.isHidden = false
+        self.topView.videosFilterDelegate = self
         self.topView.delegate = self
     }
 }
@@ -69,5 +72,11 @@ extension VideosLayout: TopViewDelegate {
     
     public func goToNotifications() {
         
+    }
+}
+
+extension VideosLayout: VideosFiltersDelegate {
+    public func showFilters() {
+        self.delegate.showFilters()
     }
 }

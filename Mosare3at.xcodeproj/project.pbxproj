@@ -57,6 +57,8 @@
 		E86FA6B3219CA7730085E761 /* DashboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B2219CA7730085E761 /* DashboardRepository.swift */; };
 		E86FA6B6219CACDD0085E761 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B5219CACDD0085E761 /* UserInfo.swift */; };
 		E86FA6B8219CC56A0085E761 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B7219CC56A0085E761 /* MemberCell.swift */; };
+		E8724BA621A33B2B00F33C75 /* FiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8724BA521A33B2B00F33C75 /* FiltersVC.swift */; };
+		E8724BA821A33B3500F33C75 /* FiltersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8724BA721A33B3500F33C75 /* FiltersLayout.swift */; };
 		E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */; };
 		E88B0F91219AAE74005DEB38 /* GameMethodologyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */; };
 		E88B0F93219AB008005DEB38 /* GameMethodologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */; };
@@ -238,6 +240,8 @@
 		E86FA6B2219CA7730085E761 /* DashboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRepository.swift; sourceTree = "<group>"; };
 		E86FA6B5219CACDD0085E761 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E86FA6B7219CC56A0085E761 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
+		E8724BA521A33B2B00F33C75 /* FiltersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersVC.swift; sourceTree = "<group>"; };
+		E8724BA721A33B3500F33C75 /* FiltersLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersLayout.swift; sourceTree = "<group>"; };
 		E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyLayout.swift; sourceTree = "<group>"; };
 		E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyVC.swift; sourceTree = "<group>"; };
 		E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyCell.swift; sourceTree = "<group>"; };
@@ -527,6 +531,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E8724BA421A33AC900F33C75 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				E8724BA521A33B2B00F33C75 /* FiltersVC.swift */,
+				E8724BA721A33B3500F33C75 /* FiltersLayout.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
 		E88B0F8D219AAE44005DEB38 /* GameMethodolgy */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +583,7 @@
 		E88B0FA7219AE134005DEB38 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				E8724BA421A33AC900F33C75 /* Filters */,
 				E88B0FA8219AE154005DEB38 /* VideosVC.swift */,
 				E88B0FAC219AE17E005DEB38 /* VideosLayout.swift */,
 				E88B0FAA219AE173005DEB38 /* VideoCell.swift */,
@@ -989,6 +1003,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
@@ -1016,6 +1031,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
@@ -1117,6 +1133,7 @@
 				E84D8857218A6109009147CC /* MilestoneCell.swift in Sources */,
 				E8C5476621A1774100B915DD /* MyProfileLayout.swift in Sources */,
 				E80615D1217E3ED500DAFB5A /* ProjectPagerPresenter.swift in Sources */,
+				E8724BA821A33B3500F33C75 /* FiltersLayout.swift in Sources */,
 				E8C5476C21A1951500B915DD /* MyProfilePresenter.swift in Sources */,
 				E88B0FA9219AE154005DEB38 /* VideosVC.swift in Sources */,
 				E848ABDD2173174C00055C11 /* MainScreenVC.swift in Sources */,
@@ -1227,6 +1244,7 @@
 				E8E841B02160E976009E5080 /* UIDevice+extensions.swift in Sources */,
 				E8C5475F21A1726100B915DD /* AllBadgesVC.swift in Sources */,
 				E8540B752193805000AE1FFC /* DeliverableDetailsCell.swift in Sources */,
+				E8724BA621A33B2B00F33C75 /* FiltersVC.swift in Sources */,
 				E8E841A92160E90B009E5080 /* BaseVC.swift in Sources */,
 				E8EB0028216360F700CD23ED /* LoginRepository.swift in Sources */,
 				E80615C9217E378A00DAFB5A /* ProjectsPagerVC.swift in Sources */,

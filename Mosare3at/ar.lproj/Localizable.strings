@@ -100,8 +100,15 @@
 "registeredProjects" = "البرامج و المشاريع المسجلة";
 "personalData" = "البيانات الشخصية";
 "acheivements" = "الانجازات";
-
-
+"project" = "المشروع";
+"order" = "الأبجدية";
+"filter" = "فلتر";
+"apply" = "تطبيق";
+"cancel" = "إلغاء";
+"allProjects" = "كل المشاريع";
+"allTeams" = "كل الفرق";
+"asc" = "تصاعدي";
+"desc" = "تنازلي";
 
 
 "weekSummary" = "ملخص الأسبوع";

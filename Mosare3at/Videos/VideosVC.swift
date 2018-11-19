@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyUserDefaults
 import AVKit
+import EzPopup
 
 class VideosVC: BaseVC {
 
@@ -17,7 +18,7 @@ class VideosVC: BaseVC {
     var programId: Int!
     var videos: [Video]!
     var projects: [Project]!
-    var team: [Team]!
+    var teams: [Team]!
     var presenter: VideosPresenter!
     
     
@@ -46,8 +47,32 @@ class VideosVC: BaseVC {
 }
 
 extension VideosVC: VideosLayoutDelegate {
+    func showFilters() {
+        
+        let vc = FiltersVC.buildVC()
+        vc.projects = projects
+        vc.programs = [program]
+        vc.teams = teams
+        vc.delegate = self
+        
+        let popupVC = PopupViewController(contentController: vc, popupWidth: UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 90), popupHeight: UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 70))
+        present(popupVC, animated: true)
+    }
+    
     func goBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension VideosVC: FiltersDelegate {
+    func applyFilters(selectedProgramIndex: Int, selectedProjectIndex: Int, selectedTeamIndex: Int, selectedOrderIndex: Int) {
+        var order = ""
+        if selectedOrderIndex == 0 {
+            order = CommonConstants.ASCENDING
+        } else {
+            order = CommonConstants.DESCENDING
+        }
+        self.presenter.getVideos(programId: self.programId, projectId: self.projects.get(at: selectedProjectIndex)?.id, teamId: self.teams.get(at: selectedTeamIndex)?.id, order: order)
     }
 }
 
@@ -99,6 +124,7 @@ extension VideosVC: VideosView {
     }
     
     func getTeamsSuccess(teams: [Team]) {
+        self.teams = teams
         self.presenter.getVideos(programId: self.programId, projectId: nil, teamId: nil, order: CommonConstants.ASCENDING)
     }
     

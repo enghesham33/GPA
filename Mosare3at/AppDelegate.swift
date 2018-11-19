@@ -15,6 +15,7 @@ import UserNotifications
 import AlamofireNetworkActivityIndicator
 import AVFoundation
 import Alamofire
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.2
         NetworkActivityIndicatorManager.shared.completionDelay = 0.5
-        
+        DropDown.startListeningToKeyboard()
         FirebaseApp.configure()
         setUpNotification(application)
         if UiHelpers.isInternetAvailable() && Defaults[.isLoggedIn] != nil && Defaults[.isLoggedIn]! {

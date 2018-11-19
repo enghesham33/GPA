@@ -25,6 +25,7 @@ target 'Mosare3at' do
   pod 'NVActivityIndicatorView'
   pod 'AlamofireImage'
   pod 'EzPopup'
+  pod 'DropDown'
 #  pod 'PopupDialog'
 
   target 'Mosare3atUITests' do
