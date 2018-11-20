@@ -11,6 +11,7 @@ import Foundation
 public protocol MyProfileView : class {
     func opetaionFailed(message: String)
     func getUserInfoSuccess(userInfo: UserInfo)
+    func getProgramsProgressSuccess(programs: [RegisteredProgram])
 }
 
 public class MyProfilePresenter {
@@ -37,9 +38,23 @@ extension MyProfilePresenter {
             self.myProfileView?.opetaionFailed(message: "noInternetConnection".localized())
         }
     }
+    
+    public func getProgramsProgress() {
+        if UiHelpers.isInternetAvailable() {
+            UiHelpers.showLoader()
+            self.myProfileRepository.getProgramsProgress()
+        } else {
+            self.myProfileView?.opetaionFailed(message: "noInternetConnection".localized())
+        }
+    }
 }
 
 extension MyProfilePresenter: MyProfilePresenterDelegate {
+    public func getProgramsProgressSuccess(programs: [RegisteredProgram]) {
+        UiHelpers.hideLoader()
+        self.myProfileView?.getProgramsProgressSuccess(programs: programs)
+    }
+    
     public func opetaionFailed(message: String) {
         UiHelpers.hideLoader()
         self.myProfileView?.opetaionFailed(message: message)

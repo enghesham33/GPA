@@ -117,8 +117,6 @@ extension DashboardVC: DashboardCellDelegate {
     func refreshTableViewHeight(selection: Int) {
         calculateCellHeight(selection: selection)
         layout.dashboardTableView.reloadData()
-//        layout.dashboardTableView.beginUpdates()
-//        layout.dashboardTableView.endUpdates()
     }
     
     func openMyProfile() {
@@ -133,7 +131,7 @@ extension DashboardVC: DashboardCellDelegate {
     }
     
     func openAllBadges() {
-        self.navigationController?.presentVC(AllBadgesVC())
+        self.navigationController?.presentVC(AllBadgesVC.buildVC(badges: Singleton.getInstance().badges))
     }
 }
 
@@ -145,7 +143,11 @@ extension DashboardVC: DashboardView {
     func getUserSuccess(user: User) {
         self.user = user
         Defaults[.user] = user.convertToDictionary()
-        presenter.getBadges()
+        if Singleton.getInstance().badges != nil && Singleton.getInstance().badges.count > 0 {
+             presenter.getUserInfo()
+        } else {
+            presenter.getBadges()
+        }
     }
     
     func getBadgesSuccess(badges: [Badge]) {

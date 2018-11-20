@@ -12,6 +12,8 @@ import Material
 public protocol MyProfileCellDelegate: class {
     func close()
     func logout()
+    func navigateToRegisteredPrograms()
+    func navigateToAllBadges()
 }
 
 class MyProfileCell: UITableViewCell {
@@ -22,6 +24,7 @@ class MyProfileCell: UITableViewCell {
     
     var user: User!
     var userInfo: UserInfo!
+    var programsCount: Int = 0
     
     lazy var menuHeaderView: UIView = {
         let view = UIView()
@@ -203,7 +206,7 @@ class MyProfileCell: UITableViewCell {
             maker.top.equalTo(curveImageView.snp.bottom)
             maker.leading.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 7) * CGFloat(5) + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 5))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 7) * CGFloat(5) + UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 3))
         }
         
         myProfileView.addSubview(myProfileTableView)
@@ -215,7 +218,7 @@ class MyProfileCell: UITableViewCell {
         }
         
         logoutButton.snp.makeConstraints { (maker) in
-            maker.top.equalTo(myProfileView.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
+            maker.top.equalTo(myProfileView.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
             maker.leading.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1))
             maker.trailing.equalTo(superView).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 1) * -1)
         }
@@ -254,9 +257,11 @@ extension MyProfileCell: UITableViewDelegate, UITableViewDataSource {
         let cell:MyProfileDetailsCell = myProfileTableView.dequeueReusableCell(withIdentifier: MyProfileDetailsCell.identifier, for: indexPath) as! MyProfileDetailsCell
         cell.selectionStyle = .none
         cell.setupViews()
+        cell.index = indexPath.row
+        cell.delegate = self
         switch indexPath.row {
         case 0:
-            cell.populateData(title: "registeredProjects".localized(), count: "0")
+            cell.populateData(title: "registeredProjects".localized(), count: "\(programsCount)")
             break
             
         case 1:
@@ -264,7 +269,7 @@ extension MyProfileCell: UITableViewDelegate, UITableViewDataSource {
             break
             
         case 2:
-            cell.populateData(title: "badges".localized(), count: "\(userInfo!.totalBadges!)")
+            cell.populateData(title: "badges".localized(), count: "\(userInfo!.badges.count)")
             break
             
         case 3:
@@ -287,5 +292,34 @@ extension MyProfileCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 7)
+    }
+}
+
+extension MyProfileCell : MyProfileDetailsCellDelegate {
+    func navigate(index: Int) {
+        switch index {
+        case 0:
+            self.delegate.navigateToRegisteredPrograms()
+            break
+            
+        case 1:
+            
+            break
+            
+        case 2:
+            self.delegate.navigateToAllBadges()
+            break
+            
+        case 3:
+            
+            break
+            
+        case 4:
+            
+            break
+        default:
+            break
+        }
+        
     }
 }

@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setUpNotification(application)
         if UiHelpers.isInternetAvailable() && Defaults[.isLoggedIn] != nil && Defaults[.isLoggedIn]! {
             getNotSeenNotifications(url: CommonConstants.BASE_URL + "notifications?seen=false&flag=mob&both")
+            getBadges()
         }
         startApplication()
         
@@ -106,6 +107,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    public func getBadges() {
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + "badges")!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON{
+            (response) in
+            
+            if response.result.isSuccess {
+                if let json = response.result.value as? Dictionary<String,AnyObject> {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                        let jsonArray = json["hydra:member"] as? [Dictionary<String,AnyObject>]
+                        var badges = [Badge]()
+                        for dic in jsonArray! {
+                            let badge = Badge.getInstance(dictionary: dic)
+                            badges.append(badge)
+                        }
+                        Singleton.getInstance().badges = badges
+                    }
+                }
+            }
+        }
+    }
+    
     /**
      This method called to setup receiving remote notifications from Firebase.
      - Parameter application: The application instance.
@@ -162,12 +184,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
             UITabBar.appearance().semanticContentAttribute = .forceRightToLeft
             ErrorTextField.appearance().semanticContentAttribute = .forceRightToLeft
-//            DropDown.appearance().semanticContentAttribute = .forceRightToLeft
+            DropDown.appearance().semanticContentAttribute = .forceRightToLeft
             TextField.appearance().semanticContentAttribute = .forceRightToLeft
             Switch.appearance().semanticContentAttribute = .forceRightToLeft
             UITableViewCell.appearance().semanticContentAttribute = .forceRightToLeft
             UICollectionViewCell.appearance().semanticContentAttribute = .forceRightToLeft
             UISearchBar.appearance().semanticContentAttribute = .forceRightToLeft
+            UIProgressView.appearance().semanticContentAttribute = .forceRightToLeft
             break
             
         case "en":
@@ -187,11 +210,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
             UITabBar.appearance().semanticContentAttribute = .forceLeftToRight
             ErrorTextField.appearance().semanticContentAttribute = .forceLeftToRight
-//            DropDown.appearance().semanticContentAttribute = .forceLeftToRight
+            DropDown.appearance().semanticContentAttribute = .forceLeftToRight
             TextField.appearance().semanticContentAttribute = .forceLeftToRight
             UITableViewCell.appearance().semanticContentAttribute = .forceLeftToRight
             UICollectionViewCell.appearance().semanticContentAttribute = .forceLeftToRight
             UISearchBar.appearance().semanticContentAttribute = .forceLeftToRight
+            UIProgressView.appearance().semanticContentAttribute = .forceLeftToRight
             break
             
         default:

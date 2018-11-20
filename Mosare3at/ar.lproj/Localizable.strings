@@ -110,8 +110,8 @@
 "asc" = "تصاعدي";
 "desc" = "تنازلي";
 "allPrograms" = "كل البرامج";
-
-
+"giveUpFromProject" = "الإنسحاب من المشروع";
+"startIn" = "يبدأ في ";
 "weekSummary" = "ملخص الأسبوع";
 "newPoints" = "حصلت علي نقاط جديدة";
 "newBadge" = "حصلت علي وسام جديد";

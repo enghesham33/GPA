@@ -92,6 +92,12 @@
 		E89FEB9D219485CB0051D3B9 /* TeacherAssistantMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */; };
 		E89FEB9F2194869D0051D3B9 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9E2194869D0051D3B9 /* Badge.swift */; };
 		E89FEBA1219487F60051D3B9 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEBA0219487F60051D3B9 /* BadgeCell.swift */; };
+		E8B73F5021A3FEF000CE2590 /* RegisteredProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F4F21A3FEF000CE2590 /* RegisteredProgram.swift */; };
+		E8B73F5221A3FEFA00CE2590 /* RegisteredProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5121A3FEFA00CE2590 /* RegisteredProject.swift */; };
+		E8B73F5521A404A000CE2590 /* RegisteredProgramsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5421A404A000CE2590 /* RegisteredProgramsVC.swift */; };
+		E8B73F5721A404B000CE2590 /* RegisteredProgramsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5621A404B000CE2590 /* RegisteredProgramsLayout.swift */; };
+		E8B73F5921A4050400CE2590 /* RegisteredProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5821A4050400CE2590 /* RegisteredProgramCell.swift */; };
+		E8B73F5B21A4051500CE2590 /* RegisteredProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5A21A4051500CE2590 /* RegisteredProjectCell.swift */; };
 		E8B9D6A92196F62500A16686 /* TeamRatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */; };
 		E8B9D6AB2196F63100A16686 /* TeamRatingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */; };
 		E8C5475821A15DE700B915DD /* PopupDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5475721A15DE700B915DD /* PopupDialogVC.swift */; };
@@ -275,6 +281,12 @@
 		E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAssistantMark.swift; sourceTree = "<group>"; };
 		E89FEB9E2194869D0051D3B9 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		E89FEBA0219487F60051D3B9 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		E8B73F4F21A3FEF000CE2590 /* RegisteredProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProgram.swift; sourceTree = "<group>"; };
+		E8B73F5121A3FEFA00CE2590 /* RegisteredProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProject.swift; sourceTree = "<group>"; };
+		E8B73F5421A404A000CE2590 /* RegisteredProgramsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProgramsVC.swift; sourceTree = "<group>"; };
+		E8B73F5621A404B000CE2590 /* RegisteredProgramsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProgramsLayout.swift; sourceTree = "<group>"; };
+		E8B73F5821A4050400CE2590 /* RegisteredProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProgramCell.swift; sourceTree = "<group>"; };
+		E8B73F5A21A4051500CE2590 /* RegisteredProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProjectCell.swift; sourceTree = "<group>"; };
 		E8B9D6A82196F62500A16686 /* TeamRatingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingPresenter.swift; sourceTree = "<group>"; };
 		E8B9D6AA2196F63100A16686 /* TeamRatingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRatingRepository.swift; sourceTree = "<group>"; };
 		E8C5475721A15DE700B915DD /* PopupDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogVC.swift; sourceTree = "<group>"; };
@@ -653,6 +665,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E8B73F4D21A3FE8300CE2590 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8B73F4F21A3FEF000CE2590 /* RegisteredProgram.swift */,
+				E8B73F5121A3FEFA00CE2590 /* RegisteredProject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E8B73F5321A4047700CE2590 /* RegisteredProjects */ = {
+			isa = PBXGroup;
+			children = (
+				E8B73F5421A404A000CE2590 /* RegisteredProgramsVC.swift */,
+				E8B73F5621A404B000CE2590 /* RegisteredProgramsLayout.swift */,
+				E8B73F5821A4050400CE2590 /* RegisteredProgramCell.swift */,
+				E8B73F5A21A4051500CE2590 /* RegisteredProjectCell.swift */,
+			);
+			path = RegisteredProjects;
+			sourceTree = "<group>";
+		};
 		E8C5475621A15DA500B915DD /* PopupDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +706,8 @@
 		E8C5476221A1762500B915DD /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				E8B73F5321A4047700CE2590 /* RegisteredProjects */,
+				E8B73F4D21A3FE8300CE2590 /* Models */,
 				E8C5476321A1771300B915DD /* MyProfileVC.swift */,
 				E8C5476521A1774100B915DD /* MyProfileLayout.swift */,
 				E8C5476721A178A200B915DD /* MyProfileCell.swift */,
@@ -1103,6 +1137,7 @@
 				E88B0FB1219AE198005DEB38 /* VideosRepository.swift in Sources */,
 				E839D899216CD11C0097911F /* JoinSuccessVC.swift in Sources */,
 				E848ABE721731C1E00055C11 /* DashboardVC.swift in Sources */,
+				E8B73F5521A404A000CE2590 /* RegisteredProgramsVC.swift in Sources */,
 				E8E841892160E409009E5080 /* ViewController.swift in Sources */,
 				E80615CB217E37BE00DAFB5A /* ProjectPageVC.swift in Sources */,
 				E88B0F98219AC229005DEB38 /* SettingsLayout.swift in Sources */,
@@ -1115,6 +1150,7 @@
 				E8C5476421A1771300B915DD /* MyProfileVC.swift in Sources */,
 				E8F1A7C12175D28F00DA0DB2 /* Team.swift in Sources */,
 				E8EE4179218B754100F1CE08 /* WeekVisionPresenter.swift in Sources */,
+				E8B73F5721A404B000CE2590 /* RegisteredProgramsLayout.swift in Sources */,
 				E8CEFE602175DFA8009488C6 /* Video.swift in Sources */,
 				E8E841C22161031B009E5080 /* UiHelpers.swift in Sources */,
 				E84D8855218A5ECE009147CC /* WeekDetailsLayout.swift in Sources */,
@@ -1166,6 +1202,7 @@
 				E812F6BA2165392500A02952 /* ForgetPasswordRepository.swift in Sources */,
 				E8E3E3492166758A00CDCBF0 /* TutorialPageLayout.swift in Sources */,
 				E8F1A7A72175BBCC00DA0DB2 /* ProgramPresenter.swift in Sources */,
+				E8B73F5921A4050400CE2590 /* RegisteredProgramCell.swift in Sources */,
 				E8C5476121A1728600B915DD /* AllBadgesLayout.swift in Sources */,
 				E8CEFE622175DFC6009488C6 /* Thumbnail.swift in Sources */,
 				E8E841AE2160E976009E5080 /* NavigationBarUtils.swift in Sources */,
@@ -1190,7 +1227,9 @@
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
 				E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */,
 				E89FEB9821946A1D0051D3B9 /* TeamRatingLayout.swift in Sources */,
+				E8B73F5021A3FEF000CE2590 /* RegisteredProgram.swift in Sources */,
 				E8EB003D2163ADCE00CD23ED /* ForgetPasswordVC.swift in Sources */,
+				E8B73F5B21A4051500CE2590 /* RegisteredProjectCell.swift in Sources */,
 				E86FA6B1219CA7640085E761 /* DashboardPresenter.swift in Sources */,
 				E8CEA85E218ED561005DB211 /* MilestonesCell.swift in Sources */,
 				E88B0F9D219AC702005DEB38 /* NotificationSettingsLayout.swift in Sources */,
@@ -1252,6 +1291,7 @@
 				E8EB002A2163641700CD23ED /* User.swift in Sources */,
 				E8925A76218ADA6800EC344F /* WeekVisionLayout.swift in Sources */,
 				E848ABE521731BE900055C11 /* ProgramVC.swift in Sources */,
+				E8B73F5221A3FEFA00CE2590 /* RegisteredProject.swift in Sources */,
 				E88B0F9A219AC23C005DEB38 /* SettingsVC.swift in Sources */,
 				E848ABE921731C3600055C11 /* TeamVC.swift in Sources */,
 				E8F1A7A92175BBD700DA0DB2 /* ProgramRepository.swift in Sources */,

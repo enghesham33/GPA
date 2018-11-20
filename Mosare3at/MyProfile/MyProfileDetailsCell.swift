@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol MyProfileDetailsCellDelegate {
+    func navigate(index: Int)
+}
+
 class MyProfileDetailsCell: UITableViewCell {
 
     public static let identifier = "MyProfileDetailsCell"
     var superView: UIView!
+    var index: Int!
+    
+    var delegate: MyProfileDetailsCellDelegate!
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -68,5 +75,8 @@ class MyProfileDetailsCell: UITableViewCell {
     public func populateData(title: String, count: String) {
         self.titleLabel.text = title
         self.countLabel.text = count
+        superView.addTapGesture { (_) in
+            self.delegate.navigate(index: self.index)
+        }
     }
 }

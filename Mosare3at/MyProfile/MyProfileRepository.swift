@@ -13,6 +13,7 @@ import SwiftyUserDefaults
 public protocol MyProfilePresenterDelegate : class {
     func opetaionFailed(message: String)
     func getUserInfoSuccess(userInfo: UserInfo)
+    func getProgramsProgressSuccess(programs: [RegisteredProgram])
 }
 
 public class MyProfileRepository {
@@ -51,8 +52,30 @@ public class MyProfileRepository {
     
     public func getProgramsProgress() {
         let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
-        let programId = Subscribtion.getInstance(dictionary: Defaults[.subscription]!).program.requestId.components(separatedBy: "/")[Subscribtion.getInstance(dictionary: Defaults[.subscription]!).program.requestId.components(separatedBy: "/").count - 1]
-        
-        
+        let userId = User.getInstance(dictionary: Defaults[.user]!).id!
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + "getProgramsProgress/\(userId)")!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON{
+            (response) in
+            
+            if response.result.isSuccess {
+                if let json = response.result.value as? Dictionary<String,AnyObject> {
+                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                        let jsonArray = json["programs"] as? [Dictionary<String,AnyObject>]
+                        var programs = [RegisteredProgram]()
+                        for dic in jsonArray! {
+                            let program = RegisteredProgram.getInstance(dictionary: dic)
+                            programs.append(program)
+                        }
+                        self.delegate.getProgramsProgressSuccess(programs: programs)
+                    } else {
+                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                    }
+                } else {
+                    self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                    
+                }
+            } else {
+                self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+            }
+        }
     }
 }

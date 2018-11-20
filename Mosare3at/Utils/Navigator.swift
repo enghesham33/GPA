@@ -106,4 +106,9 @@ public class Navigator {
         let vc = MyProfileVC.buildVC()
         self.navigationController.pushViewController(vc, animated: true)
     }
+    
+    public func navigateToRegisteredPrograms(programs: [RegisteredProgram]) {
+        let vc = RegisteredProgramsVC.buildVC(programs: programs)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
 }

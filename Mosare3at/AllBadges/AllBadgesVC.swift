@@ -12,6 +12,14 @@ class AllBadgesVC: BaseVC {
 
     var layout: AllBadgesLayout!
     
+    var badges: [Badge]!
+    
+    public static func buildVC(badges: [Badge]) -> AllBadgesVC {
+        let vc = AllBadgesVC()
+        vc.badges = badges
+        return vc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +49,7 @@ extension AllBadgesVC: AllBadgesLayoutDelegate {
 
 extension AllBadgesVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Singleton.getInstance().badges.count
+        return self.badges.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

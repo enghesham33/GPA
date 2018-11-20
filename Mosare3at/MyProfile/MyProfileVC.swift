@@ -14,6 +14,7 @@ class MyProfileVC: BaseVC {
     var layout: MyProfileLayout!
     var user: User!
     var userInfo: UserInfo!
+    var registeredPrograms: [RegisteredProgram]!
     
     var presenter: MyProfilePresenter!
     
@@ -38,15 +39,20 @@ class MyProfileVC: BaseVC {
 }
 
 extension MyProfileVC: MyProfileView {
+    func getProgramsProgressSuccess(programs: [RegisteredProgram]) {
+        self.registeredPrograms = programs
+        layout.myProfileTableView.dataSource = self
+        layout.myProfileTableView.delegate = self
+        layout.myProfileTableView.reloadData()
+    }
+    
     func opetaionFailed(message: String) {
         self.view.makeToast(message)
     }
     
     func getUserInfoSuccess(userInfo: UserInfo) {
         self.userInfo = userInfo
-        layout.myProfileTableView.dataSource = self
-        layout.myProfileTableView.delegate = self
-        layout.myProfileTableView.reloadData()
+        presenter.getProgramsProgress()
     }
 }
 
@@ -72,6 +78,7 @@ extension MyProfileVC: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.user = user
         cell.userInfo = userInfo
+        cell.programsCount = (registeredPrograms.get(at: 0)?.projects.count)!
         cell.delegate = self
         cell.setupViews()
         cell.populateData()
@@ -91,6 +98,14 @@ extension MyProfileVC: MyProfileCellDelegate {
     func logout() {
         AppDelegate.logout()
         AppDelegate.instance.startApplication()
+    }
+    
+    func navigateToRegisteredPrograms() {
+        self.navigator.navigateToRegisteredPrograms(programs: registeredPrograms)
+    }
+    
+    func navigateToAllBadges() {
+        presentVC(AllBadgesVC.buildVC(badges: userInfo.badges))
     }
 }
 
