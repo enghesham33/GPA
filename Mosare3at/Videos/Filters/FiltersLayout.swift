@@ -14,6 +14,10 @@ import Material
 public protocol FiltersLayoutDelegate: class {
     func applyFilters()
     func cancel()
+    func setupProgramsDropDown()
+    func setupProjectsDropDown()
+    func setupOrdersDropDown()
+    func setupTeamsDropDown()
 }
 
 public class FiltersLayout: BaseLayout {
@@ -52,6 +56,7 @@ public class FiltersLayout: BaseLayout {
     
     lazy var programTextField: ErrorTextField = {
         let field = UiHelpers.textField(placeholder: "")
+        field.text = "allPrograms".localized()
         field.returnKeyType = UIReturnKeyType.next
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
@@ -60,6 +65,16 @@ public class FiltersLayout: BaseLayout {
         field.textAlignment = .center
         return field
     }()
+    
+    lazy var programView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.addTapGesture(action: { (recognizer) in
+            self.delegate.setupProgramsDropDown()
+        })
+        return view
+    }()
+
     
     lazy var programArrowImageView: UIImageView = {
         let imageView = UIImageView()
@@ -81,12 +96,22 @@ public class FiltersLayout: BaseLayout {
     lazy var projectTextField: ErrorTextField = {
         let field = UiHelpers.textField(placeholder: "")
         field.returnKeyType = UIReturnKeyType.next
+        field.text = "allProjects".localized()
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
         field.textColor = UIColor.AppColors.gray
         field.isEnabled = false
         field.textAlignment = .center
         return field
+    }()
+    
+    lazy var projectView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.addTapGesture(action: { (recognizer) in
+            self.delegate.setupProjectsDropDown()
+        })
+        return view
     }()
     
     lazy var projectArrowImageView: UIImageView = {
@@ -108,6 +133,7 @@ public class FiltersLayout: BaseLayout {
     
     lazy var orderTextField: ErrorTextField = {
         let field = UiHelpers.textField(placeholder: "")
+        field.text = "asc".localized()
         field.returnKeyType = UIReturnKeyType.next
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
@@ -115,6 +141,15 @@ public class FiltersLayout: BaseLayout {
         field.isEnabled = false
         field.textAlignment = .center
         return field
+    }()
+    
+    lazy var orderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.addTapGesture(action: { (recognizer) in
+            self.delegate.setupOrdersDropDown()
+        })
+        return view
     }()
     
     lazy var orderArrowImageView: UIImageView = {
@@ -136,6 +171,7 @@ public class FiltersLayout: BaseLayout {
     
     lazy var teamTextField: ErrorTextField = {
         let field = UiHelpers.textField(placeholder: "")
+        field.text = "allTeams".localized()
         field.returnKeyType = UIReturnKeyType.next
         field.autocorrectionType = .no
         field.autocapitalizationType = .none
@@ -143,6 +179,15 @@ public class FiltersLayout: BaseLayout {
         field.isEnabled = false
         field.textAlignment = .center
         return field
+    }()
+    
+    lazy var teamView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.addTapGesture(action: { (recognizer) in
+            self.delegate.setupTeamsDropDown()
+        })
+        return view
     }()
     
     lazy var teamArrowImageView: UIImageView = {
@@ -189,7 +234,7 @@ public class FiltersLayout: BaseLayout {
     }()
     
     public func setupViews() {
-        let views = [titleLabel, programLabel, programTextField, programArrowImageView, projectLabel, projectTextField, projectArrowImageView, orderLabel, orderTextField, orderArrowImageView, teamLabel, teamTextField, teamArrowImageView, applyLabel, cancelLabel, verticalView, horizontalView]
+        let views = [titleLabel, programLabel, programTextField, programArrowImageView, projectLabel, projectTextField, projectArrowImageView, orderLabel, orderTextField, orderArrowImageView, teamLabel, teamTextField, teamArrowImageView, applyLabel, cancelLabel, verticalView, horizontalView, programView, projectView, orderView, teamView]
         
         self.superview.addSubviews(views)
         
@@ -221,6 +266,10 @@ public class FiltersLayout: BaseLayout {
             maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
         }
         
+        programView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(programTextField)
+        }
+        
         projectLabel.snp.makeConstraints { (maker) in
             maker.leading.equalTo(superview).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
             maker.top.equalTo(programLabel.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
@@ -240,6 +289,10 @@ public class FiltersLayout: BaseLayout {
             maker.leading.equalTo(projectLabel.snp.trailing).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5))
             maker.trailing.equalTo(projectArrowImageView.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2) * -1)
             maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
+        }
+        
+        projectView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(projectTextField)
         }
         
         orderLabel.snp.makeConstraints { (maker) in
@@ -263,6 +316,10 @@ public class FiltersLayout: BaseLayout {
             maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
         }
         
+        orderView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(orderTextField)
+        }
+        
         teamLabel.snp.makeConstraints { (maker) in
             maker.leading.equalTo(superview).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 1))
             maker.top.equalTo(orderLabel.snp.bottom).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 2))
@@ -282,6 +339,10 @@ public class FiltersLayout: BaseLayout {
             maker.leading.equalTo(teamLabel.snp.trailing).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 5))
             maker.trailing.equalTo(teamArrowImageView.snp.leading).offset(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 2) * -1)
             maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 4))
+        }
+        
+        teamView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(teamTextField)
         }
         
         horizontalView.snp.makeConstraints { (maker) in

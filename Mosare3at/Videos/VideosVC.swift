@@ -55,7 +55,7 @@ extension VideosVC: VideosLayoutDelegate {
         vc.teams = teams
         vc.delegate = self
         
-        let popupVC = PopupViewController(contentController: vc, popupWidth: UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 90), popupHeight: UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 70))
+        let popupVC = PopupViewController(contentController: vc, popupWidth: UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 90), popupHeight: UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 41))
         present(popupVC, animated: true)
     }
     
@@ -72,7 +72,18 @@ extension VideosVC: FiltersDelegate {
         } else {
             order = CommonConstants.DESCENDING
         }
-        self.presenter.getVideos(programId: self.programId, projectId: self.projects.get(at: selectedProjectIndex)?.id, teamId: self.teams.get(at: selectedTeamIndex)?.id, order: order)
+        var projectId: Int?
+        var teamId: Int?
+        
+        if selectedProjectIndex > -1 {
+            projectId = self.projects.get(at: selectedProjectIndex)?.id
+        }
+        
+        if selectedTeamIndex > -1 {
+            teamId = self.teams.get(at: selectedTeamIndex)?.id
+        }
+        
+        self.presenter.getVideos(programId: self.programId, projectId: projectId, teamId: teamId, order: order)
     }
 }
 
@@ -114,6 +125,9 @@ extension VideosVC: VideosView {
     }
     
     func getVideosSuccess(videos: [Video]) {
+        if self.videos != nil && self.videos.count > 0 {
+            self.videos.removeAll()
+        }
         self.videos = videos
         self.layout.videosTableView.reloadData()
     }

@@ -22,11 +22,11 @@ class FiltersVC: BaseVC {
     
     var projects: [Project]!
 //    var filteredProjects: [Project]!
-    var selectedProjectIndex: Int = 0
+    var selectedProjectIndex: Int = -1
     
     var teams: [Team]!
 //    var filteredTeams: [Team]!
-    var selectedTeamIndex: Int = 0
+    var selectedTeamIndex: Int = -1
     
     var orders: [String] = ["asc".localized(), "desc".localized()]
     var selectedOrderIndex: Int = 0
@@ -43,12 +43,10 @@ class FiltersVC: BaseVC {
         
         layout = FiltersLayout(superview: self.view, delegate: self)
         layout.setupViews()
-        
-        setupProgramsDropDown()
-        setupProjectsDropDown()
-        setupOrderDropDown()
-        setupTeamsDropDown()
     }
+}
+
+extension FiltersVC: FiltersLayoutDelegate {
     
     func setupProgramsDropDown() {
         let dropDown = DropDown()
@@ -80,13 +78,19 @@ class FiltersVC: BaseVC {
         dropDown.dataSource = dataSource
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            self.selectedProjectIndex = index - 1
-            self.layout.projectTextField.text = self.projects.get(at: self.selectedProjectIndex)?.title
+            if index == 0 {
+                self.selectedProjectIndex = -1
+                self.layout.projectTextField.text = "allProjects".localized()
+            } else {
+                self.selectedProjectIndex = index - 1
+                self.layout.projectTextField.text = self.projects.get(at: self.selectedProjectIndex)?.title
+            }
+            
         }
         dropDown.show()
     }
     
-    func setupOrderDropDown() {
+    func setupOrdersDropDown() {
         let dropDown = DropDown()
         dropDown.anchorView = self.layout.orderTextField
         dropDown.bottomOffset = CGPoint(x: 0, y: self.layout.orderTextField.bounds.height)
@@ -101,7 +105,7 @@ class FiltersVC: BaseVC {
     }
     
     func setupTeamsDropDown() {
-         let dropDown = DropDown()
+        let dropDown = DropDown()
         dropDown.anchorView = self.layout.teamTextField
         dropDown.bottomOffset = CGPoint(x: 0, y: self.layout.teamTextField.bounds.height)
         var dataSource = ["allTeams".localized()]
@@ -112,17 +116,22 @@ class FiltersVC: BaseVC {
         dropDown.dataSource = dataSource
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            self.selectedTeamIndex = index - 1
-            self.layout.teamTextField.text = self.teams.get(at: self.selectedProjectIndex)?.name
+            if index == 0 {
+                self.selectedTeamIndex = -1
+                self.layout.teamTextField.text = "allTeams".localized()
+            } else {
+                self.selectedTeamIndex = index - 1
+                self.layout.teamTextField.text = self.teams.get(at: self.selectedTeamIndex)?.name
+            }
+            
         }
-         dropDown.show()
+        dropDown.show()
     }
-
-}
-
-extension FiltersVC: FiltersLayoutDelegate {
+    
     func applyFilters() {
-        self.delegate.applyFilters(selectedProgramIndex: self.selectedProgramIndex, selectedProjectIndex: self.selectedProjectIndex, selectedTeamIndex: self.selectedTeamIndex, selectedOrderIndex: self.selectedOrderIndex)
+        self.dismiss(animated: true) {
+            self.delegate.applyFilters(selectedProgramIndex: self.selectedProgramIndex, selectedProjectIndex: self.selectedProjectIndex, selectedTeamIndex: self.selectedTeamIndex, selectedOrderIndex: self.selectedOrderIndex)
+        }
     }
     
     func cancel() {
