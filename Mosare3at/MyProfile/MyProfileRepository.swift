@@ -48,4 +48,11 @@ public class MyProfileRepository {
             }
         }
     }
+    
+    public func getProgramsProgress() {
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        let programId = Subscribtion.getInstance(dictionary: Defaults[.subscription]!).program.requestId.components(separatedBy: "/")[Subscribtion.getInstance(dictionary: Defaults[.subscription]!).program.requestId.components(separatedBy: "/").count - 1]
+        
+        
+    }
 }
