@@ -8,6 +8,13 @@
 
 import UIKit
 
+public protocol MemberCellDelegate: class {
+    func goToMyProfile()
+    func goToMyTeam(index: Int)
+    func goToMemberDetails(index: Int)
+    func goToTeamDetails(index: Int)
+}
+
 class MemberCell: UITableViewCell {
 
     static let identifier = "MemberCell"
@@ -18,6 +25,10 @@ class MemberCell: UITableViewCell {
     var user: User!
     var index: Int!
     var myTeamPoints: Int!
+    var isMe: Bool = false
+    var isMyTeam: Bool = false
+    var tabIndex: Int!
+    var delegate:MemberCellDelegate!
     
     lazy var indexImageview: UIImageView = {
         let imageView = UIImageView()
@@ -204,15 +215,40 @@ class MemberCell: UITableViewCell {
             userNameLabel.text = team.name
             userBadgesLabel.text = "\(team.badges!) \("badges".localized())"
         }
+        
+        self.superView.addTapGesture { (_) in
+            if self.tabIndex == 0 || self.tabIndex == 1 { // my team or all members
+                if self.isMe {
+                    // go to my profile
+                    self.delegate.goToMyProfile()
+                } else {
+                    // go to member details
+                    self.delegate.goToMemberDetails(index: self.index)
+                }
+            } else if self.tabIndex == 2 { // all teams
+                if self.isMyTeam {
+                    // go to my team
+                    self.delegate.goToMyTeam(index: self.index)
+                } else {
+                    // go to team details
+                    self.delegate.goToTeamDetails(index: self.index)
+                }
+                
+            }
+        }
     }
     
     func getUserPointsWidth() -> CGFloat {
         var points = 0//member.points
         var diffPoints = 0//member.points - user.totalPoints
         if member != nil {
+            
+            isMyTeam = false
+            
             points = member.points
             diffPoints = member.points - user.totalPoints
             if member.member.id == user.id {
+                isMe = true
                 userPointsLabel.text = "\(points) \("point".localized())"
                 self.superView.backgroundColor = UIColor.AppColors.lightGray
                 return "\(points) \("point".localized())".widthOfString(usingFont: userPointsLabel.font)
@@ -241,8 +277,7 @@ class MemberCell: UITableViewCell {
                 return finalString.widthOfString(usingFont: userPointsLabel.font)
             }
         } else {
-            var isMyTeam = false
-            
+            isMe = false
             for member1 in team.teamMembers {
                 if member1.member.id == user.id {
                     isMyTeam = true

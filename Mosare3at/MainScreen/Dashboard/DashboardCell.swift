@@ -14,6 +14,9 @@ public protocol DashboardCellDelegate {
     func openMyProfile()
     func openBadgeDialog(badge: Badge)
     func openAllBadges()
+    func goToMyTeam(index: Int)
+    func goToMemberDetails(index: Int)
+    func goToTeamDetails(index: Int)
 }
 
 class DashboardCell: UITableViewCell {
@@ -552,6 +555,8 @@ extension DashboardCell: UITableViewDataSource, UITableViewDelegate {
             cell.team = allTeams.get(at: indexPath.row)!
             cell.myTeamPoints = getMyTeamPoints()
         }
+        cell.tabIndex = selection
+        cell.delegate = self
         cell.setupViews()
         cell.populateData()
         
@@ -573,4 +578,24 @@ extension DashboardCell: UITableViewDataSource, UITableViewDelegate {
         
         return 0
     }
+}
+
+extension DashboardCell: MemberCellDelegate {
+    func goToMyProfile() {
+        self.delegate.openMyProfile()
+    }
+    
+    func goToMyTeam(index: Int) {
+        
+    }
+    
+    func goToMemberDetails(index: Int) {
+        
+    }
+    
+    func goToTeamDetails(index: Int) {
+        
+    }
+    
+    
 }

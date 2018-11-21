@@ -133,6 +133,18 @@ extension DashboardVC: DashboardCellDelegate {
     func openAllBadges() {
         self.navigationController?.presentVC(AllBadgesVC.buildVC(badges: Singleton.getInstance().badges))
     }
+    
+    func goToMyTeam(index: Int) {
+        
+    }
+    
+    func goToMemberDetails(index: Int) {
+        
+    }
+    
+    func goToTeamDetails(index: Int) {
+        
+    }
 }
 
 extension DashboardVC: DashboardView {
