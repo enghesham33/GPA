@@ -91,6 +91,10 @@ extension MyProfileVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyProfileVC: MyProfileCellDelegate {
+    func navigateToVideos() {
+        self.navigator.navigateToVideos(isFromProfile: true)
+    }
+    
     func close() {
         self.navigationController?.popViewController(animated: true)
     }

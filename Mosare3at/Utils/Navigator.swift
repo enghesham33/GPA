@@ -102,6 +102,12 @@ public class Navigator {
         self.navigationController.pushViewController(vc, animated: true)
     }
     
+    public func navigateToVideos(isFromProfile: Bool) {
+        let vc = VideosVC.buildVC()
+        vc.isFromProfile = isFromProfile
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
     public func navigateToMyProfile() {
         let vc = MyProfileVC.buildVC()
         self.navigationController.pushViewController(vc, animated: true)
@@ -109,6 +115,11 @@ public class Navigator {
     
     public func navigateToRegisteredPrograms(programs: [RegisteredProgram]) {
         let vc = RegisteredProgramsVC.buildVC(programs: programs)
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+    
+    public func navigateToMemberDetails(member: TeamMember, isTeamMate: Bool) {
+        let vc = MemberDetailsVC.buildVC(member: member, isTeamMate: isTeamMate)
         self.navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -21,9 +21,17 @@ class VideosVC: BaseVC {
     var teams: [Team]!
     var presenter: VideosPresenter!
     
+    var isFromProfile: Bool!
+    
     
     public static func buildVC() -> VideosVC {
         let vc = VideosVC()
+        return vc
+    }
+    
+    public static func buildVC(isFromProfile: Bool) -> VideosVC {
+        let vc = VideosVC()
+        vc.isFromProfile = isFromProfile
         return vc
     }
     
@@ -36,6 +44,10 @@ class VideosVC: BaseVC {
         layout.setupViews()
         layout.videosTableView.dataSource = self
         layout.videosTableView.delegate = self
+        
+        if let  _ = isFromProfile {
+            layout.topView.leftImageView.isHidden = true
+        }
         
         presenter = Injector.provideVideosPresenter()
         presenter.setView(view: self)
@@ -83,13 +95,17 @@ extension VideosVC: FiltersDelegate {
             teamId = self.teams.get(at: selectedTeamIndex)?.id
         }
         
-        self.presenter.getVideos(programId: self.programId, projectId: projectId, teamId: teamId, order: order)
+        self.presenter.getVideos(programId: self.programId, projectId: projectId, teamId: teamId, order: order, isFromProfile: self.isFromProfile)
     }
 }
 
 extension VideosVC: VideoCellDelegate {
     func playVideo(index: Int) {
-        self.presenter.getVideoLinks(videoId: (self.videos.get(at: index)?.id)!, index: index)
+        if let link = self.videos.get(at: index)?.videoLink, !link.isEmpty {
+            self.getVideoLinkSuccess(videoLink: link, index: index)
+        } else {
+            self.presenter.getVideoLinks(videoId: (self.videos.get(at: index)?.id)!, index: index)
+        }
     }
 }
 
@@ -129,7 +145,15 @@ extension VideosVC: VideosView {
             self.videos.removeAll()
         }
         self.videos = videos
-        self.layout.videosTableView.reloadData()
+        if self.videos.count == 0 {
+            self.layout.noVideosLabel.isHidden = false
+            self.layout.videosTableView.isHidden = true
+        } else {
+            self.layout.noVideosLabel.isHidden = true
+            self.layout.videosTableView.isHidden = false
+            self.layout.videosTableView.reloadData()
+        }
+        
     }
     
     func getProjectsSuccess(projects: [Project]) {
@@ -139,7 +163,7 @@ extension VideosVC: VideosView {
     
     func getTeamsSuccess(teams: [Team]) {
         self.teams = teams
-        self.presenter.getVideos(programId: self.programId, projectId: nil, teamId: nil, order: CommonConstants.ASCENDING)
+        self.presenter.getVideos(programId: self.programId, projectId: nil, teamId: nil, order: CommonConstants.ASCENDING, isFromProfile: self.isFromProfile)
     }
     
     func getVideoLinkSuccess(videoLink: String, index: Int) {

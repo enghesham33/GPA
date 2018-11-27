@@ -149,4 +149,9 @@ public class PopupDialogLayout: BaseLayout {
         badgeNameLabel.text = badge.name
         badgeDescLabel.text = badge.description
     }
+    
+    public func hideShare() {
+        shareImageview.isHidden = true
+        shareLabel.isHidden = true
+    }
 }

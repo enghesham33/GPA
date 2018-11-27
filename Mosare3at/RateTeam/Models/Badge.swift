@@ -16,6 +16,7 @@ public class Badge {
     var image: String!
     var weight: Int!
     var description: String!
+    var count: Int!
     
     var isSelected: Bool = false // for internal use not from API
     
@@ -31,6 +32,7 @@ public class Badge {
         dictionary["image"] = image
         dictionary["weight"] = weight
         dictionary["description"] = description
+        dictionary["count"] = count
         return dictionary
     }
     
@@ -41,6 +43,7 @@ public class Badge {
         badge.name =  dictionary["name"] as? String
         badge.image =  dictionary["image"] as? String
         badge.weight =  dictionary["weight"] as? Int
+        badge.count =  dictionary["count"] as? Int
         badge.description =  dictionary["description"] as? String
         return badge
     }

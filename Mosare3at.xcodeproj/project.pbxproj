@@ -59,6 +59,10 @@
 		E86FA6B8219CC56A0085E761 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FA6B7219CC56A0085E761 /* MemberCell.swift */; };
 		E8724BA621A33B2B00F33C75 /* FiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8724BA521A33B2B00F33C75 /* FiltersVC.swift */; };
 		E8724BA821A33B3500F33C75 /* FiltersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8724BA721A33B3500F33C75 /* FiltersLayout.swift */; };
+		E878354F21AD399C009D69A2 /* MemberDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878354E21AD399C009D69A2 /* MemberDetailsPresenter.swift */; };
+		E878355121AD39A9009D69A2 /* MemberDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878355021AD39A9009D69A2 /* MemberDetailsRepository.swift */; };
+		E878355321AD6418009D69A2 /* MemberBadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878355221AD6418009D69A2 /* MemberBadgeCell.swift */; };
+		E878355521AD786D009D69A2 /* MemberVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878355421AD786D009D69A2 /* MemberVideoCell.swift */; };
 		E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */; };
 		E88B0F91219AAE74005DEB38 /* GameMethodologyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */; };
 		E88B0F93219AB008005DEB38 /* GameMethodologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */; };
@@ -92,6 +96,9 @@
 		E89FEB9D219485CB0051D3B9 /* TeacherAssistantMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */; };
 		E89FEB9F2194869D0051D3B9 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEB9E2194869D0051D3B9 /* Badge.swift */; };
 		E89FEBA1219487F60051D3B9 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEBA0219487F60051D3B9 /* BadgeCell.swift */; };
+		E8AC603C21AAA55900DE0A1C /* MemberDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC603B21AAA55900DE0A1C /* MemberDetailsVC.swift */; };
+		E8AC603E21AAA58900DE0A1C /* MemberDetailsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC603D21AAA58900DE0A1C /* MemberDetailsLayout.swift */; };
+		E8AC604021AAAC2700DE0A1C /* MemberDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC603F21AAAC2700DE0A1C /* MemberDetailsCell.swift */; };
 		E8B73F5021A3FEF000CE2590 /* RegisteredProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F4F21A3FEF000CE2590 /* RegisteredProgram.swift */; };
 		E8B73F5221A3FEFA00CE2590 /* RegisteredProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5121A3FEFA00CE2590 /* RegisteredProject.swift */; };
 		E8B73F5521A404A000CE2590 /* RegisteredProgramsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B73F5421A404A000CE2590 /* RegisteredProgramsVC.swift */; };
@@ -248,6 +255,10 @@
 		E86FA6B7219CC56A0085E761 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		E8724BA521A33B2B00F33C75 /* FiltersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersVC.swift; sourceTree = "<group>"; };
 		E8724BA721A33B3500F33C75 /* FiltersLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersLayout.swift; sourceTree = "<group>"; };
+		E878354E21AD399C009D69A2 /* MemberDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsPresenter.swift; sourceTree = "<group>"; };
+		E878355021AD39A9009D69A2 /* MemberDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsRepository.swift; sourceTree = "<group>"; };
+		E878355221AD6418009D69A2 /* MemberBadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberBadgeCell.swift; sourceTree = "<group>"; };
+		E878355421AD786D009D69A2 /* MemberVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVideoCell.swift; sourceTree = "<group>"; };
 		E88B0F8E219AAE61005DEB38 /* GameMethodologyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyLayout.swift; sourceTree = "<group>"; };
 		E88B0F90219AAE74005DEB38 /* GameMethodologyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyVC.swift; sourceTree = "<group>"; };
 		E88B0F92219AB008005DEB38 /* GameMethodologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMethodologyCell.swift; sourceTree = "<group>"; };
@@ -281,6 +292,9 @@
 		E89FEB9C219485CB0051D3B9 /* TeacherAssistantMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAssistantMark.swift; sourceTree = "<group>"; };
 		E89FEB9E2194869D0051D3B9 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		E89FEBA0219487F60051D3B9 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		E8AC603B21AAA55900DE0A1C /* MemberDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsVC.swift; sourceTree = "<group>"; };
+		E8AC603D21AAA58900DE0A1C /* MemberDetailsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsLayout.swift; sourceTree = "<group>"; };
+		E8AC603F21AAAC2700DE0A1C /* MemberDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsCell.swift; sourceTree = "<group>"; };
 		E8B73F4F21A3FEF000CE2590 /* RegisteredProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProgram.swift; sourceTree = "<group>"; };
 		E8B73F5121A3FEFA00CE2590 /* RegisteredProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProject.swift; sourceTree = "<group>"; };
 		E8B73F5421A404A000CE2590 /* RegisteredProgramsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredProgramsVC.swift; sourceTree = "<group>"; };
@@ -430,6 +444,20 @@
 				E80615D2217E3F0600DAFB5A /* ProjectPageRepository.swift */,
 			);
 			path = BottomCellContent;
+			sourceTree = "<group>";
+		};
+		E83212BF21A5F7E900EF1374 /* MemberDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E8AC603B21AAA55900DE0A1C /* MemberDetailsVC.swift */,
+				E8AC603D21AAA58900DE0A1C /* MemberDetailsLayout.swift */,
+				E8AC603F21AAAC2700DE0A1C /* MemberDetailsCell.swift */,
+				E878355221AD6418009D69A2 /* MemberBadgeCell.swift */,
+				E878355421AD786D009D69A2 /* MemberVideoCell.swift */,
+				E878354E21AD399C009D69A2 /* MemberDetailsPresenter.swift */,
+				E878355021AD39A9009D69A2 /* MemberDetailsRepository.swift */,
+			);
+			path = MemberDetails;
 			sourceTree = "<group>";
 		};
 		E839D895216CC1A90097911F /* JoinSuccess */ = {
@@ -665,6 +693,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E8AC604121AAD95E00DE0A1C /* TeamDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TeamDetails;
+			sourceTree = "<group>";
+		};
 		E8B73F4D21A3FE8300CE2590 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +854,8 @@
 				E8C5475621A15DA500B915DD /* PopupDialog */,
 				E8C5475B21A171DC00B915DD /* AllBadges */,
 				E8C5476221A1762500B915DD /* MyProfile */,
+				E83212BF21A5F7E900EF1374 /* MemberDetails */,
+				E8AC604121AAD95E00DE0A1C /* TeamDetails */,
 				E8E841AA2160E96C009E5080 /* Utils */,
 				E8E841B72160F551009E5080 /* Fonts */,
 				E8EB00232163582300CD23ED /* Localizable.strings */,
@@ -1178,6 +1215,7 @@
 				E8C5475821A15DE700B915DD /* PopupDialogVC.swift in Sources */,
 				E84D8859218A7EEE009147CC /* WeekDetailsPresenter.swift in Sources */,
 				E8E841B42160E9F9009E5080 /* BaseLayout.swift in Sources */,
+				E8AC603C21AAA55900DE0A1C /* MemberDetailsVC.swift in Sources */,
 				E8E3E3452166738200CDCBF0 /* TutorialPagerVC.swift in Sources */,
 				E8F1A7AF2175BCEC00DA0DB2 /* Subscription.swift in Sources */,
 				E8E841C0216102D8009E5080 /* LoginLayout.swift in Sources */,
@@ -1192,6 +1230,7 @@
 				E812F6B6216520AA00A02952 /* TopView.swift in Sources */,
 				E86678B3217C9F63000D31A3 /* ProgramTopCell.swift in Sources */,
 				E86FA6AB219C9B5F0085E761 /* TutorialPresenter.swift in Sources */,
+				E878355321AD6418009D69A2 /* MemberBadgeCell.swift in Sources */,
 				E8925A78218AE1D700EC344F /* TaskCell.swift in Sources */,
 				E8EB00182163540500CD23ED /* CommonConstants.swift in Sources */,
 				E8540B792193834800AE1FFC /* UploadVideoCell.swift in Sources */,
@@ -1225,6 +1264,7 @@
 				E8C7592B216BB4330075B0E9 /* ChooseAvatarLayout.swift in Sources */,
 				E89FEB9A2194762D0051D3B9 /* TeacherAssitantMarksCell.swift in Sources */,
 				E8E841872160E409009E5080 /* AppDelegate.swift in Sources */,
+				E8AC604021AAAC2700DE0A1C /* MemberDetailsCell.swift in Sources */,
 				E88B0F8F219AAE61005DEB38 /* GameMethodologyLayout.swift in Sources */,
 				E89FEB9821946A1D0051D3B9 /* TeamRatingLayout.swift in Sources */,
 				E8B73F5021A3FEF000CE2590 /* RegisteredProgram.swift in Sources */,
@@ -1239,11 +1279,15 @@
 				E89FEB8F21943EED0051D3B9 /* NotificationData.swift in Sources */,
 				E89FEB932194421A0051D3B9 /* NotificationCell.swift in Sources */,
 				E8F1A7BB2175D00C00DA0DB2 /* TeacherAssistant.swift in Sources */,
+				E878354F21AD399C009D69A2 /* MemberDetailsPresenter.swift in Sources */,
+				E878355121AD39A9009D69A2 /* MemberDetailsRepository.swift in Sources */,
 				E8F1A7B12175BCF700DA0DB2 /* Program.swift in Sources */,
 				E8E841BB2160F58F009E5080 /* FontUtils.swift in Sources */,
+				E8AC603E21AAA58900DE0A1C /* MemberDetailsLayout.swift in Sources */,
 				E8F1A7BD2175D16E00DA0DB2 /* TeamMember.swift in Sources */,
 				E8925A74218ADA5A00EC344F /* WeekVisionVC.swift in Sources */,
 				E89FEB8621943D980051D3B9 /* NotificationsLayout.swift in Sources */,
+				E878355521AD786D009D69A2 /* MemberVideoCell.swift in Sources */,
 				E8F1A7AD2175BC8600DA0DB2 /* SubscribtionsResponse.swift in Sources */,
 				E8C5476E21A1953500B915DD /* MyProfileRepository.swift in Sources */,
 				E8EE4175218B2D0800F1CE08 /* WeekVisionCell.swift in Sources */,

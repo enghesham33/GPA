@@ -138,8 +138,14 @@ extension DashboardVC: DashboardCellDelegate {
         
     }
     
-    func goToMemberDetails(index: Int) {
-        
+    func goToMemberDetails(index: Int, isTeamMate: Bool) {
+        var member: TeamMember!
+        if isTeamMate {
+            member = myTeamMembers.get(at: index)!
+        } else {
+            member = allMembers.get(at: index)!
+        }
+        self.navigator.navigateToMemberDetails(member: member, isTeamMate: isTeamMate)
     }
     
     func goToTeamDetails(index: Int) {
@@ -174,16 +180,26 @@ extension DashboardVC: DashboardView {
     
     func getTeamMembersSuccess(members: [TeamMember]) {
         myTeamMembers = members
+        for count in 0...myTeamMembers.count {
+            myTeamMembers.get(at: count)?.rank = count + 1
+        }
         presenter.getAllMembers()
     }
     
     func getAllMembersSuccess(members: [TeamMember]) {
         allMembers = members
+        for count in 0...allMembers.count {
+            allMembers.get(at: count)?.rank = count + 1
+        }
         presenter.getAllTeams()
     }
     
     func getAllTeamsSuccess(teams: [Team]) {
         self.allTeams = teams
+        for count in 0...allTeams.count {
+            allTeams.get(at: count)?.rank = count + 1
+        }
+        
         calculateCellHeight(selection: 0)
         layout.dashboardTableView.dataSource = self
         layout.dashboardTableView.delegate = self

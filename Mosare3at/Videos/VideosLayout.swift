@@ -34,8 +34,18 @@ public class VideosLayout: BaseLayout {
         return tableView
     }()
     
+    lazy var noVideosLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.isHidden = true
+        label.text = "noVideos".localized()
+        label.font = AppFont.font(type: .Bold, size: 18)
+        return label
+    }()
+    
     public func setupViews() {
-        let views = [topView, videosTableView]
+        let views = [topView, videosTableView, noVideosLabel]
         
         superview.addSubviews(views)
         
@@ -52,6 +62,12 @@ public class VideosLayout: BaseLayout {
         self.videosTableView.snp.makeConstraints { (maker) in
             maker.top.equalTo(topView.snp.bottom)
             maker.leading.trailing.bottom.equalTo(superview)
+        }
+        
+        self.noVideosLabel.snp.makeConstraints { (maker) in
+            maker.leading.trailing.equalTo(superview)
+            maker.center.equalTo(superview)
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 5))
         }
         
     }

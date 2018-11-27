@@ -120,4 +120,12 @@ public class Injector {
     public class func provideMyProfilePresenter() -> MyProfilePresenter {
         return MyProfilePresenter(repository: Injector.provideMyProfileRepository())
     }
+    
+    public class func provideMemberDetailsRepository() -> MemberDetailsRepository {
+        return MemberDetailsRepository()
+    }
+    
+    public class func provideMemberDetailsPresenter() -> MemberDetailsPresenter {
+        return MemberDetailsPresenter(repository: Injector.provideMemberDetailsRepository())
+    }
 }

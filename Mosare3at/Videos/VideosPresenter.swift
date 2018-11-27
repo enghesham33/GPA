@@ -51,10 +51,10 @@ extension VideosPresenter {
         }
     }
     
-    public func getVideos(programId: Int?, projectId: Int?, teamId: Int?, order: String) {
+    public func getVideos(programId: Int?, projectId: Int?, teamId: Int?, order: String, isFromProfile: Bool?) {
         if UiHelpers.isInternetAvailable() {
             UiHelpers.showLoader()
-            self.videosRepository.getVideos(programId: programId, projectId: projectId, teamId: teamId, order: order)
+            self.videosRepository.getVideos(programId: programId, projectId: projectId, teamId: teamId, order: order, isFromProfile: isFromProfile)
         } else {
             self.videosView?.opetaionFailed(message: "noInternetConnection".localized())
         }
@@ -69,13 +69,13 @@ extension VideosPresenter {
         }
     }
     
-    public func updateUserPoints(points: Int) {
-        if UiHelpers.isInternetAvailable() {
-            self.videosRepository.updateUserPoints(points: points)
-        } else {
-            self.videosView?.opetaionFailed(message: "noInternetConnection".localized())
-        }
-    }
+//    public func updateUserPoints(points: Int) {
+//        if UiHelpers.isInternetAvailable() {
+//            self.videosRepository.updateUserPoints(points: points)
+//        } else {
+//            self.videosView?.opetaionFailed(message: "noInternetConnection".localized())
+//        }
+//    }
 }
 
 extension VideosPresenter: VideosPresenterDelegate {

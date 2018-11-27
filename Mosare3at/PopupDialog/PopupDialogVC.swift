@@ -11,10 +11,8 @@ import UIKit
 class PopupDialogVC: BaseVC {
 
     var badge: Badge!
-    
+    var showShare: Bool = true
     var layout: PopupDialogLayout!
-    
-    var presenter: VideosPresenter!
     
     public static func buildVC() -> PopupDialogVC {
         let vc = PopupDialogVC()
@@ -29,7 +27,9 @@ class PopupDialogVC: BaseVC {
         layout.badge = badge
         layout.populateData()
         
-        presenter = Injector.provideVideosPresenter()
+        if !showShare {
+            layout.hideShare()
+        }
     }
 }
 
@@ -40,7 +40,10 @@ extension PopupDialogVC: PopupDialogLayoutDelegate {
     
     func share() {
         UiHelpers.share(textToShare: "youGot".localized() + " " + badge.name, sourceView: self.view, vc: self)
-        presenter.updateUserPoints(points: 5)
+        if !UiHelpers.isBadgeSharedBefore(badge: badge) {
+            UiHelpers.updateUserPoints(points: 5)
+            UiHelpers.saveBadgeToSharedBadges(badge: badge)
+        }
     }
     
     func retry() {

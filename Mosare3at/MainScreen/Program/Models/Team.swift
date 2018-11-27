@@ -23,6 +23,7 @@ public class Team {
     var points: Int!
     var status: String!
     var badges: Int!
+    var rank: Int!// for internal usage
     
     init() {
         

@@ -11,7 +11,7 @@ import UIKit
 public protocol MemberCellDelegate: class {
     func goToMyProfile()
     func goToMyTeam(index: Int)
-    func goToMemberDetails(index: Int)
+    func goToMemberDetails(index: Int, isTeamMate: Bool)
     func goToTeamDetails(index: Int)
 }
 
@@ -223,7 +223,7 @@ class MemberCell: UITableViewCell {
                     self.delegate.goToMyProfile()
                 } else {
                     // go to member details
-                    self.delegate.goToMemberDetails(index: self.index)
+                    self.delegate.goToMemberDetails(index: self.index, isTeamMate: self.tabIndex == 0)
                 }
             } else if self.tabIndex == 2 { // all teams
                 if self.isMyTeam {

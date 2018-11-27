@@ -14,6 +14,7 @@ public protocol MyProfileCellDelegate: class {
     func logout()
     func navigateToRegisteredPrograms()
     func navigateToAllBadges()
+    func navigateToVideos()
 }
 
 class MyProfileCell: UITableViewCell {
@@ -303,7 +304,7 @@ extension MyProfileCell : MyProfileDetailsCellDelegate {
             break
             
         case 1:
-            
+            self.delegate.navigateToVideos()
             break
             
         case 2:

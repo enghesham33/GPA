@@ -15,7 +15,7 @@ public protocol DashboardCellDelegate {
     func openBadgeDialog(badge: Badge)
     func openAllBadges()
     func goToMyTeam(index: Int)
-    func goToMemberDetails(index: Int)
+    func goToMemberDetails(index: Int, isTeamMate: Bool)
     func goToTeamDetails(index: Int)
 }
 
@@ -83,7 +83,7 @@ class DashboardCell: UITableViewCell {
     lazy var pointsAccessoryImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "prize")
+        imageView.image = UIImage(named: "points")
         return imageView
     }()
     
@@ -339,8 +339,8 @@ class DashboardCell: UITableViewCell {
         pointsAccessoryImageview.snp.makeConstraints { (maker) in
             maker.top.equalTo(pointsTitleLabel.snp.bottom)
             maker.centerX.equalTo(pointsImageview)
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 6))
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 7))
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 7))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 6))
         }
         
         badgesImageview.snp.makeConstraints { (maker) in
@@ -365,8 +365,8 @@ class DashboardCell: UITableViewCell {
         badgesAccessoryImageview.snp.makeConstraints { (maker) in
             maker.top.equalTo(badgesTitleLabel.snp.bottom)
             maker.centerX.equalTo(badgesImageview)
-            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 6))
-            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 7))
+            maker.width.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_WIDTH, relativeView: nil, percentage: 8))
+            maker.height.equalTo(UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, relativeView: nil, percentage: 6))
         }
         
         userNameLabel.snp.makeConstraints { (maker) in
@@ -589,8 +589,8 @@ extension DashboardCell: MemberCellDelegate {
         
     }
     
-    func goToMemberDetails(index: Int) {
-        
+    func goToMemberDetails(index: Int, isTeamMate: Bool) {
+        self.delegate.goToMemberDetails(index: index, isTeamMate: isTeamMate)
     }
     
     func goToTeamDetails(index: Int) {

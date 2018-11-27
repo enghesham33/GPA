@@ -58,7 +58,6 @@ class RegisteredProgramsLayout: BaseLayout {
     public func setupTopView(screenTitle: String) {
         self.topView.setupViews(screenTitle: screenTitle)
         self.topView.screenTitleLabel.isHidden = false
-        self.topView.leftImageView.isHidden = false
         self.topView.delegate = self
     }
     

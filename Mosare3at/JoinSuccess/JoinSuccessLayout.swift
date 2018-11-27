@@ -69,7 +69,7 @@ public class JoinSuccessLayout: BaseLayout {
     lazy var badgeImageview: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "prize")
+        imageView.image = UIImage(named: "points")
         return imageView
     }()
     

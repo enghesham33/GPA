@@ -82,53 +82,103 @@ public class VideosRepository {
         }
     }
     
-    public func getVideos(programId: Int?, projectId: Int?, teamId: Int?, order: String) {
+    public func getVideos(programId: Int?, projectId: Int?, teamId: Int?, order: String, isFromProfile: Bool?) {
         let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        let userId = User.getInstance(dictionary: Defaults[.user]!).id!
+        
         var parameters = ["order" : order] as [String : Any]
         
-        if let _ = programId {
-            parameters["program"] =  programId
+        var defaultUrl = "aws/get-videos-by-filter"
+        var method: HTTPMethod = .post
+        var parameterEncoding: ParameterEncoding = JSONEncoding.default
+        
+        
+        if let _ = isFromProfile {
+            defaultUrl = "aws/get-user-videos/\(userId)/\(programId!)"
+            method = .get
+            parameterEncoding = URLEncoding.default
+            
+        } else {
+            if let _ = programId {
+                parameters["program"] =  programId
+            }
+            
+            if let _ = projectId {
+                parameters["project"] =  projectId
+            }
+            
+            if let _ = teamId {
+                parameters["team"] =  teamId
+            }
         }
         
-        if let _ = projectId {
-            parameters["project"] =  projectId
-        }
         
-        if let _ = teamId {
-            parameters["team"] =  teamId
-        }
-        
-        Alamofire.request(URL(string: CommonConstants.BASE_URL + "aws/get-videos-by-filter")!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON{
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + defaultUrl)!, method: method, parameters: parameters, encoding: parameterEncoding, headers: headers).responseJSON{
             (response) in
             
             UiHelpers.hideLoader()
             if response.result.isSuccess {
-                if let json = response.result.value as? [[Dictionary<String,AnyObject>]] {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
-                        
-                        let jsonArray = json[0]
-                        var videos: [Video] = [Video]()
-                        for dic in jsonArray {
-                            let video = Video()
-                            video.id = dic["id"] as? Int
-                            let uploadDateDic = dic["uploadedDate"] as? Dictionary<String,AnyObject>
-                            video.uploadDate = uploadDateDic!["date"] as? String
-                            if let thumbnailsDic = dic["thumbnail"], thumbnailsDic is [Dictionary<String, Any>] {
-                                var thumbnails: [Thumbnail] = []
-                                for dic in thumbnailsDic as! [Dictionary<String, Any>] {
-                                    thumbnails.append(Thumbnail.getInstance(dictionary: dic))
+                
+                if let _ = isFromProfile {
+                    if let json = response.result.value as? Dictionary<String,AnyObject> {
+                        if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                            var videos: [Video] = [Video]()
+                            let jsonArray = json["videos"] as? [Dictionary<String,AnyObject>]
+                            
+                            for dic in jsonArray! {
+                                let video = Video()
+                                video.id = dic["id"] as? Int
+                                let uploadDateDic = dic["uploadedDate"] as? Dictionary<String,AnyObject>
+                                video.uploadDate = uploadDateDic!["date"] as? String
+                                if let thumbnailsDic = dic["thumbnail"], thumbnailsDic is [Dictionary<String, Any>] {
+                                    var thumbnails: [Thumbnail] = []
+                                    for dic in thumbnailsDic as! [Dictionary<String, Any>] {
+                                        thumbnails.append(Thumbnail.getInstance(dictionary: dic))
+                                    }
+                                    video.thumbnails =  thumbnails
                                 }
-                                video.thumbnails =  thumbnails
+                                video.description = dic["description"] as? String
+                                if let ownerDic = dic["owner"], ownerDic is  Dictionary<String, Any> {
+                                    video.owner =  User.getInstance(dictionary: ownerDic as! Dictionary<String, Any>)
+                                }
+                                videos.append(video)
                             }
-                            video.description = dic["description"] as? String
-                            if let ownerDic = dic["owner"], ownerDic is  Dictionary<String, Any> {
-                                video.owner =  User.getInstance(dictionary: ownerDic as! Dictionary<String, Any>)
-                            }
-                            videos.append(video)
+                            self.delegate.getVideosSuccess(videos: videos)
+                            
+                        } else {
+                            self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                         }
-                        self.delegate.getVideosSuccess(videos: videos)
                     } else {
                         self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                    }
+                } else {
+                    if let json = response.result.value as? [[Dictionary<String,AnyObject>]] {
+                        if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                            
+                            let jsonArray = json[0]
+                            var videos: [Video] = [Video]()
+                            for dic in jsonArray {
+                                let video = Video()
+                                video.id = dic["id"] as? Int
+                                let uploadDateDic = dic["uploadedDate"] as? Dictionary<String,AnyObject>
+                                video.uploadDate = uploadDateDic!["date"] as? String
+                                if let thumbnailsDic = dic["thumbnail"], thumbnailsDic is [Dictionary<String, Any>] {
+                                    var thumbnails: [Thumbnail] = []
+                                    for dic in thumbnailsDic as! [Dictionary<String, Any>] {
+                                        thumbnails.append(Thumbnail.getInstance(dictionary: dic))
+                                    }
+                                    video.thumbnails =  thumbnails
+                                }
+                                video.description = dic["description"] as? String
+                                if let ownerDic = dic["owner"], ownerDic is  Dictionary<String, Any> {
+                                    video.owner =  User.getInstance(dictionary: ownerDic as! Dictionary<String, Any>)
+                                }
+                                videos.append(video)
+                            }
+                            self.delegate.getVideosSuccess(videos: videos)
+                        } else {
+                            self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                        }
                     }
                 }
             } else {
@@ -155,24 +205,6 @@ public class VideosRepository {
                 } else {
                     self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
                 }
-            } else {
-                self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
-            }
-        }
-    }
-    
-    public func updateUserPoints(points: Int) {
-        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
-        let teamMemberId = Defaults[.teamMemberId]!
-        let params = ["activity":"/activities/2", "points" : points, "teamMember" : teamMemberId] as [String : Any]
-        Alamofire.request(URL(string: CommonConstants.BASE_URL + "user_points")!, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-            UiHelpers.hideLoader()
-            if response.result.isSuccess {
-                    if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
-                        print("updated")
-                    } else {
-                        self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
-                    }
             } else {
                 self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
             }

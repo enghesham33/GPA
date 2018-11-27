@@ -20,6 +20,7 @@ public class TeamMember {
     var collectives: Int!
     
     var badges: [Badge]! // for internal usage
+    var rank: Int! // for internal usage
     
     // the following is for the rating
     var ratedUser: String! // the user's request id

@@ -12,6 +12,8 @@ import Material
 import Localize_Swift
 import SystemConfiguration
 import SideMenu
+import SwiftyUserDefaults
+import Alamofire
 
 class UiHelpers {
     
@@ -97,6 +99,47 @@ class UiHelpers {
         vc.present(activityViewController, animated: true, completion: nil)
     }
     
+    class func isBadgeSharedBefore(badge: Badge) -> Bool {
+        let subscription: Subscribtion = Subscribtion.getInstance(dictionary: Defaults[.subscription]!)
+        if let sharedBadges = subscription.sharedBadgesArr {
+            if sharedBadges.contains(badge.id) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
+    
+    class func saveBadgeToSharedBadges(badge: Badge) {
+        let subscription: Subscribtion = Subscribtion.getInstance(dictionary: Defaults[.subscription]!)
+        
+        // save to server
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        let params = ["sharedBadgesArr" : subscription.sharedBadgesArr] as [String : Any]
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + "subscriptions/\(subscription.id!)")!, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            UiHelpers.hideLoader()
+            if response.result.isSuccess {
+                if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                    print("updated")
+                    if let _ = subscription.sharedBadgesArr {
+                        subscription.sharedBadgesArr.append(badge.id)
+                    } else {
+                        subscription.sharedBadgesArr = [Int]()
+                        subscription.sharedBadgesArr.append(badge.id)
+                    }
+                    
+                    Defaults[.subscription] = subscription.convertToDictionary()
+                } else {
+                    //self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                }
+            } else {
+                //self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+            }
+        }
+    }
+    
     class func setupSideMenu(delegate: UISideMenuNavigationControllerDelegate, viewToPresent: UIView, viewToEdge: UIView, sideMenuCellDelegate: SideMenuCellDelegate, sideMenuHeaderDelegate: SideMenuHeaderDelegate) -> SideMenuVC {
         
         let sideMenuVC = SideMenuVC.buildVC()
@@ -139,6 +182,24 @@ class UiHelpers {
         let formatter = DateFormatter()
         formatter.dateFormat = dateFormat        
         return formatter.string(from: date)
+    }
+    
+    public class func updateUserPoints(points: Int) {
+        let headers = ["X-AUTH-TOKEN" : Defaults[.token]!]
+        let teamMemberId = Defaults[.teamMemberId]!
+        let params = ["activity":"/activities/2", "points" : points, "teamMember" : teamMemberId] as [String : Any]
+        Alamofire.request(URL(string: CommonConstants.BASE_URL + "user_points")!, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            UiHelpers.hideLoader()
+            if response.result.isSuccess {
+                if response.response?.statusCode == 200 ||  response.response?.statusCode == 201 || response.response?.statusCode == 204 {
+                    print("updated")
+                } else {
+                    //self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+                }
+            } else {
+                //self.delegate.opetaionFailed(message: "somethingWentWrong".localized())
+            }
+        }
     }
 }
 
