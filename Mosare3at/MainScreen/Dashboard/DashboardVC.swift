@@ -180,14 +180,20 @@ extension DashboardVC: DashboardView {
     
     func getTeamMembersSuccess(members: [TeamMember]) {
         myTeamMembers = members
-        for count in 0...myTeamMembers.count {
-            myTeamMembers.get(at: count)?.rank = count + 1
-        }
         presenter.getAllMembers()
     }
     
     func getAllMembersSuccess(members: [TeamMember]) {
         allMembers = members
+        
+        for count1 in 0...myTeamMembers.count {
+            for count in 0...allMembers.count {
+                if allMembers.get(at: count)?.member.id == myTeamMembers.get(at: count1)?.member.id {
+                    myTeamMembers.get(at: count1)?.rank = count + 1
+                }
+            }
+        }
+        
         for count in 0...allMembers.count {
             allMembers.get(at: count)?.rank = count + 1
         }
